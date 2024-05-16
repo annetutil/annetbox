@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=66.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "annetbox"
+version = "0.1"
+readme = "README.md"
+authors = [
+    { name = "Andrey Tikhonov", email = "tishka17@nebius.com" },
+]
+license = { text = "Apache-2.0" }
+description = "Annet Netbox client"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+    "Typing :: Typed",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    'adaptix~=3.0.0b2',
+    'dataclass-rest~=0.4',
+    'python-dateutil~=2.8',
+]
+[project.optional-dependencies]
+sync = [
+    "requests",
+]
+async = [
+    "aiohttp",
+]
+
+[project.urls]
+"Source" = "https://github.com/annetutil/annetbox"
+"Homepage" = "https://github.com/annetutil/annetbox"
+"Bug Tracker" = "https://github.com/annetutil/annetbox/issues"
+
+
