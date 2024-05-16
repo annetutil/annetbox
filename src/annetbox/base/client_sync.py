@@ -2,10 +2,13 @@ from collections.abc import Callable
 from functools import wraps
 from typing import TypeVar
 
+from adaptix import NameStyle, Retort, name_mapping
+from dataclass_rest import get
+from dataclass_rest.client_protocol import FactoryProtocol
 from dataclass_rest.http.requests import RequestsClient
 from requests import Session
 
-from .models import PagingResponse
+from .models import PagingResponse, Status
 
 Func = TypeVar("Func", bound=Callable)
 
@@ -77,3 +80,11 @@ class BaseNetboxClient(RequestsClient):
         if token:
             session.headers["Authorization"] = f"Token {token}"
         super().__init__(url, session)
+
+
+class NetboxStatusClient(BaseNetboxClient):
+    def _init_response_body_factory(self) -> FactoryProtocol:
+        return Retort(recipe=[name_mapping(name_style=NameStyle.LOWER_KEBAB)])
+
+    @get("status")
+    def status(self) -> Status: ...

@@ -2,11 +2,14 @@ from collections.abc import Callable
 from functools import wraps
 from typing import TypeVar
 
+from adaptix import NameStyle, Retort, name_mapping
 from aiohttp import ClientSession
+from dataclass_rest import get
+from dataclass_rest.client_protocol import FactoryProtocol
 from dataclass_rest.http.aiohttp import AiohttpClient, AiohttpMethod
 from dataclass_rest.http_request import HttpRequest
 
-from .models import PagingResponse
+from .models import PagingResponse, Status
 
 Func = TypeVar("Func", bound=Callable)
 
@@ -91,3 +94,11 @@ class BaseNetboxClient(AiohttpClient):
 
     async def close(self):
         await self.session.close()
+
+
+class NetboxStatusClient(BaseNetboxClient):
+    def _init_response_body_factory(self) -> FactoryProtocol:
+        return Retort(recipe=[name_mapping(name_style=NameStyle.LOWER_KEBAB)])
+
+    @get("status")
+    async def status(self) -> Status: ...
