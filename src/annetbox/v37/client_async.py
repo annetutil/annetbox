@@ -14,8 +14,9 @@ class NetboxV37(BaseNetboxClient):
     def _init_response_body_factory(self) -> FactoryProtocol:
         return Retort(recipe=[loader(datetime, dateutil.parser.parse)])
 
+    # dcim
     @get("dcim/interfaces")
-    async def interfaces(
+    async def dcim_interfaces(
         self,
         device_id: list[int] | None = None,
         limit: int = 20,
@@ -23,21 +24,10 @@ class NetboxV37(BaseNetboxClient):
     ) -> PagingResponse[Interface]:
         pass
 
-    all_interfaces = collect(interfaces, field="device_id")
-
-    @get("ipam/ip-addresses")
-    async def ip_addresses(
-        self,
-        interface_id: list[int] | None = None,
-        limit: int = 20,
-        offset: int = 0,
-    ) -> PagingResponse[IpAddress]:
-        pass
-
-    all_ip_addresses = collect(ip_addresses, field="interface_id")
+    dcim_all_interfaces = collect(dcim_interfaces, field="device_id")
 
     @get("dcim/devices")
-    async def devices(
+    async def dcim_devices(
         self,
         name: list[str] | None = None,
         name__ic: list[str] | None = None,
@@ -47,11 +37,23 @@ class NetboxV37(BaseNetboxClient):
     ) -> PagingResponse[Device]:
         pass
 
-    all_devices = collect(devices)
+    dcim_all_devices = collect(dcim_devices)
 
     @get("dcim/devices/{device_id}")
-    async def get_device(
+    async def dcim_device(
         self,
         device_id: int,
     ) -> Device:
         pass
+
+    # ipam
+    @get("ipam/ip-addresses")
+    async def ipam_ip_addresses(
+        self,
+        interface_id: list[int] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[IpAddress]:
+        pass
+
+    ipam_all_ip_addresses = collect(ipam_ip_addresses, field="interface_id")
