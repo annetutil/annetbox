@@ -18,7 +18,10 @@ class NetboxV37(BaseNetboxClient):
     @get("dcim/interfaces")
     async def dcim_interfaces(
         self,
+        device: list[str] | None = None,
+        device_n: list[str] | None = None,
         device_id: list[int] | None = None,
+        device_id_n: list[int] | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> PagingResponse[Interface]:
@@ -26,11 +29,33 @@ class NetboxV37(BaseNetboxClient):
 
     dcim_all_interfaces = collect(dcim_interfaces, field="device_id")
 
+    @get("dcim/cables")
+    def dcim_cables(
+        self,
+        device: list[str] | None = None,
+        device_id: list[int] | None = None,
+        interface_id: list[int] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ):
+        pass
+
+    dcim_all_cables = collect(dcim_cables, field="interface_id")
+
     @get("dcim/devices")
     async def dcim_devices(
         self,
         name: list[str] | None = None,
-        name__ic: list[str] | None = None,
+        name_empty: bool | None = None,
+        name_ic: list[str] | None = None,
+        name_ie: list[str] | None = None,
+        name_iew: list[str] | None = None,
+        name_isw: list[str] | None = None,
+        name_n: list[str] | None = None,
+        name_nic: list[str] | None = None,
+        name_nie: list[str] | None = None,
+        name_niew: list[str] | None = None,
+        name_nisw: list[str] | None = None,
         tag: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
