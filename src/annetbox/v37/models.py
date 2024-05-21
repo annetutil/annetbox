@@ -124,8 +124,8 @@ class Cable:
     custom_fields: dict[str, Any]
     tags: list[Entity]
     type: CableType | None = None
-    a_terminations: None | list["GenericObject"] = None
-    b_terminations: None | list["GenericObject"] = None
+    a_terminations: None | list[GenericObject] = None
+    b_terminations: None | list[GenericObject] = None
     status: None | Label = None
     tenant: Entity | None = None
     label: None | str = None
@@ -141,8 +141,8 @@ class NewCable:
     custom_fields: dict[str, Any] | None = None
     tags: list[Entity] | None = None
     type: CableType | None = None
-    a_terminations: None | list["GenericObject"] = None
-    b_terminations: None | list["GenericObject"] = None
+    a_terminations: None | list[GenericObject] = None
+    b_terminations: None | list[GenericObject] = None
     status: None | Label = None
     tenant: Entity | None = None
     label: None | str = None

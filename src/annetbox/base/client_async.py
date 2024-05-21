@@ -1,9 +1,10 @@
+import http
 from collections.abc import Callable
 from functools import wraps
-from typing import TypeVar
+from typing import Any, TypeVar
 
 from adaptix import NameStyle, Retort, name_mapping
-from aiohttp import ClientSession
+from aiohttp import ClientResponse, ClientSession
 from dataclass_rest import get
 from dataclass_rest.client_protocol import FactoryProtocol
 from dataclass_rest.http.aiohttp import AiohttpClient, AiohttpMethod
@@ -80,6 +81,11 @@ class NoneAwareAiohttpMethod(AiohttpMethod):
             k: v for k, v in request.query_params.items() if v is not None
         }
         return request
+
+    async def _response_body(self, response: ClientResponse) -> Any:
+        if response.status == http.HTTPStatus.NO_CONTENT:
+            return None
+        return await super()._response_body(response)
 
 
 class BaseNetboxClient(AiohttpClient):

@@ -5,8 +5,8 @@ from annetbox.v37.client_sync import NetboxV37
 
 
 def main():
-    url = os.getenv("NETBOX_URI")
-
+    url = os.getenv("NETBOX_URL")
+    token = os.getenv("NETBOX_TOKEN")
     # check the status of netbox installation
     # ClientError with `.status_code == 404` for 2.x versions
     status_client = NetboxStatusClient(url=url)
@@ -14,7 +14,7 @@ def main():
     print(status)
 
     # basic netbox methods
-    netbox = NetboxV37(url=url)
+    netbox = NetboxV37(url=url, token=token)
     res = netbox.dcim_devices(limit=1)
     print(res)
     print()

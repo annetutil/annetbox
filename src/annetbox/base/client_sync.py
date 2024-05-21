@@ -1,12 +1,13 @@
+import http
 from collections.abc import Callable
 from functools import wraps
-from typing import TypeVar
+from typing import Any, TypeVar
 
 from adaptix import NameStyle, Retort, name_mapping
 from dataclass_rest import get
 from dataclass_rest.client_protocol import FactoryProtocol
-from dataclass_rest.http.requests import RequestsClient
-from requests import Session
+from dataclass_rest.http.requests import RequestsClient, RequestsMethod
+from requests import Response, Session
 
 from .models import PagingResponse, Status
 
@@ -73,7 +74,16 @@ def collect(func: Func, field: str = "", batch_size: int = 100) -> Func:
     return wrapper
 
 
+class NoneAwareRequestsMethod(RequestsMethod):
+    def _response_body(self, response: Response) -> Any:
+        if response.status_code == http.HTTPStatus.NO_CONTENT:
+            return None
+        return super()._response_body(response)
+
+
 class BaseNetboxClient(RequestsClient):
+    method_class = NoneAwareRequestsMethod
+
     def __init__(self, url: str, token: str = ""):
         url = url.rstrip("/") + "/api/"
         session = Session()
