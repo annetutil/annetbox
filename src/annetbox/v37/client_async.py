@@ -1,33 +1,53 @@
+from collections.abc import Iterable
 from datetime import datetime
+from typing import Any
 
 import dateutil.parser
-from adaptix import Retort, loader
-from dataclass_rest import get
+from adaptix import Retort, loader, name_mapping
+from dataclass_rest import delete, get, post
 from dataclass_rest.client_protocol import FactoryProtocol
 
 from annetbox.base.client_async import BaseNetboxClient, collect
 from annetbox.base.models import PagingResponse
-from .models import Device, Interface, IpAddress
+from .models import (
+    Cable,
+    Device,
+    Interface,
+    IpAddress,
+    ItemToDelete,
+    NewCable,
+)
 
 
 class NetboxV37(BaseNetboxClient):
     def _init_response_body_factory(self) -> FactoryProtocol:
         return Retort(recipe=[loader(datetime, dateutil.parser.parse)])
 
+    def _init_request_body_factory(self) -> FactoryProtocol:
+        return Retort(
+            recipe=[
+                name_mapping(NewCable, omit_default=True),
+            ],
+        )
+
     # dcim
     @get("dcim/interfaces")
     async def dcim_interfaces(
         self,
         device: list[str] | None = None,
-        device_n: list[str] | None = None,
+        device__n: list[str] | None = None,
         device_id: list[int] | None = None,
-        device_id_n: list[int] | None = None,
+        device_id__n: list[int] | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> PagingResponse[Interface]:
         pass
 
     dcim_all_interfaces = collect(dcim_interfaces, field="device_id")
+
+    @get("dcim/interfaces/{id}")
+    async def dcim_interface(self, id: int) -> Interface:
+        pass
 
     @get("dcim/cables")
     def dcim_cables(
@@ -37,25 +57,44 @@ class NetboxV37(BaseNetboxClient):
         interface_id: list[int] | None = None,
         limit: int = 20,
         offset: int = 0,
-    ):
+    ) -> PagingResponse[Cable]:
         pass
 
     dcim_all_cables = collect(dcim_cables, field="interface_id")
+
+    @post("dcim/cables")
+    def dcim_cable_create(self, body: NewCable) -> Cable:
+        pass
+
+    @post("dcim/cables")
+    def dcim_cable_bulk_create(self, body: list[NewCable]) -> list[Cable]:
+        pass
+
+    @delete("dcim/cables")
+    def _dcim_cable_bulk_delete(self, body: list[ItemToDelete]) -> Any:
+        pass
+
+    def dcim_cable_bulk_delete(self, body: Iterable[int]) -> Any:
+        return self._dcim_cable_bulk_delete([ItemToDelete(id=x) for x in body])
+
+    @delete("dcim/cables/{id}")
+    def dcim_cable_delete(self, id: int) -> Any:
+        pass
 
     @get("dcim/devices")
     async def dcim_devices(
         self,
         name: list[str] | None = None,
-        name_empty: bool | None = None,
-        name_ic: list[str] | None = None,
-        name_ie: list[str] | None = None,
-        name_iew: list[str] | None = None,
-        name_isw: list[str] | None = None,
-        name_n: list[str] | None = None,
-        name_nic: list[str] | None = None,
-        name_nie: list[str] | None = None,
-        name_niew: list[str] | None = None,
-        name_nisw: list[str] | None = None,
+        name__empty: bool | None = None,
+        name__ic: list[str] | None = None,
+        name__ie: list[str] | None = None,
+        name__iew: list[str] | None = None,
+        name__isw: list[str] | None = None,
+        name__n: list[str] | None = None,
+        name__nic: list[str] | None = None,
+        name__nie: list[str] | None = None,
+        name__niew: list[str] | None = None,
+        name__nisw: list[str] | None = None,
         tag: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,

@@ -17,15 +17,15 @@ async def main():
 
     # basic netbox methods
     netbox = NetboxV37(url=url)
-    res = await netbox.devices(limit=1)
+    res = await netbox.dcim_devices(limit=1)
     print(res)
     print()
 
-    res = await netbox.interfaces(limit=1)
+    res = await netbox.dcim_interfaces(limit=1)
     print(res)
     print()
 
-    res = await netbox.ip_addresses(limit=1)
+    res = await netbox.ipam_ip_addresses(limit=1)
     print(res)
     print()
 

@@ -15,15 +15,19 @@ def main():
 
     # basic netbox methods
     netbox = NetboxV37(url=url)
-    res = netbox.devices(limit=1)
+    res = netbox.dcim_devices(limit=1)
     print(res)
     print()
 
-    res = netbox.interfaces(limit=1)
+    res = netbox.dcim_interfaces(limit=1)
     print(res)
     print()
 
-    res = netbox.ip_addresses(limit=1)
+    res = netbox.dcim_cables(limit=1)
+    print(res)
+    print()
+
+    res = netbox.ipam_ip_addresses(limit=1)
     print(res)
     print()
 
