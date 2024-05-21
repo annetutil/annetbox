@@ -6,7 +6,7 @@ from annetbox.v37.client_async import NetboxV37
 
 
 async def main():
-    url = os.getenv("NETBOX_URI")
+    url = os.getenv("NETBOX_URL")
 
     # check the status of netbox installation
     # ClientError with `.status_code == 404` for 2.x versions
@@ -17,15 +17,15 @@ async def main():
 
     # basic netbox methods
     netbox = NetboxV37(url=url)
-    res = await netbox.devices(limit=1)
+    res = await netbox.dcim_devices(limit=1)
     print(res)
     print()
 
-    res = await netbox.interfaces(limit=1)
+    res = await netbox.dcim_interfaces(limit=1)
     print(res)
     print()
 
-    res = await netbox.ip_addresses(limit=1)
+    res = await netbox.ipam_ip_addresses(limit=1)
     print(res)
     print()
 
