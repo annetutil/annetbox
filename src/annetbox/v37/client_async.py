@@ -1,6 +1,5 @@
 from collections.abc import Iterable
 from datetime import datetime
-from typing import Any
 
 import dateutil.parser
 from adaptix import Retort, loader, name_mapping
