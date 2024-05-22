@@ -1,10 +1,11 @@
 import http
 from collections.abc import Callable
 from functools import wraps
+from ssl import SSLContext
 from typing import Any, TypeVar
 
 from adaptix import NameStyle, Retort, name_mapping
-from aiohttp import ClientResponse, ClientSession
+from aiohttp import ClientResponse, ClientSession, TCPConnector
 from dataclass_rest import get
 from dataclass_rest.client_protocol import FactoryProtocol
 from dataclass_rest.http.aiohttp import AiohttpClient, AiohttpMethod
@@ -91,9 +92,16 @@ class NoneAwareAiohttpMethod(AiohttpMethod):
 class BaseNetboxClient(AiohttpClient):
     method_class = NoneAwareAiohttpMethod
 
-    def __init__(self, url: str, token: str = ""):
+    def __init__(
+        self,
+        url: str,
+        token: str = "",
+        ssl_context: SSLContext | None = None,
+    ):
         url = url.rstrip("/") + "/api/"
-        session = ClientSession()
+
+        connector = TCPConnector(ssl=ssl_context)
+        session = ClientSession(connector=connector)
         if token:
             session.headers["Authorization"] = f"Token {token}"
         super().__init__(url, session)
