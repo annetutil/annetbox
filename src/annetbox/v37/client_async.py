@@ -6,7 +6,7 @@ from adaptix import Retort, loader, name_mapping
 from dataclass_rest import delete, get, post
 from dataclass_rest.client_protocol import FactoryProtocol
 
-from annetbox.base.client_sync import BaseNetboxClient, collect
+from annetbox.base.client_async import BaseNetboxClient, collect
 from annetbox.base.models import PagingResponse
 from .models import (
     Cable,
@@ -31,7 +31,7 @@ class NetboxV37(BaseNetboxClient):
 
     # dcim
     @get("dcim/interfaces")
-    def dcim_interfaces(
+    async def dcim_interfaces(
         self,
         device: list[str] | None = None,
         device__n: list[str] | None = None,
@@ -45,7 +45,7 @@ class NetboxV37(BaseNetboxClient):
     dcim_all_interfaces = collect(dcim_interfaces, field="device_id")
 
     @get("dcim/interfaces/{id}")
-    def dcim_interface(self, id: int) -> Interface:
+    async def dcim_interface(self, id: int) -> Interface:
         pass
 
     @get("dcim/cables")
@@ -81,7 +81,7 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     @get("dcim/devices")
-    def dcim_devices(
+    async def dcim_devices(
         self,
         name: list[str] | None = None,
         name__empty: bool | None = None,
@@ -103,7 +103,7 @@ class NetboxV37(BaseNetboxClient):
     dcim_all_devices = collect(dcim_devices)
 
     @get("dcim/devices/{device_id}")
-    def dcim_device(
+    async def dcim_device(
         self,
         device_id: int,
     ) -> Device:
@@ -111,7 +111,7 @@ class NetboxV37(BaseNetboxClient):
 
     # ipam
     @get("ipam/ip-addresses")
-    def ipam_ip_addresses(
+    async def ipam_ip_addresses(
         self,
         interface_id: list[int] | None = None,
         limit: int = 20,

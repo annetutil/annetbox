@@ -15,7 +15,7 @@ readme = "README.md"
 authors = [
     { name = "Andrey Tikhonov", email = "tishka17@nebius.com" },
 ]
-license = { text = "Apache-2.0" }
+license = { text = "MIT" }
 description = "Annet Netbox client"
 requires-python = ">=3.10"
 classifiers = [
@@ -25,7 +25,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
     "Typing :: Typed",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: Apache Software License",
+    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 dependencies = [
