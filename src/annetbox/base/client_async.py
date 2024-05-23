@@ -56,11 +56,12 @@ def collect(func: Func, field: str = "", batch_size: int = 100) -> Func:
 
     @wraps(func)
     async def wrapper(self, *args, **kwargs):
+        method = func.__get__(self, self.__class__)
+
         value = kwargs.get(field)
         if not value:
-            return await func(*args, **kwargs)
+            return await method(*args, **kwargs)
 
-        method = func.__get__(self, self.__class__)
         results = []
         for offset in range(0, len(value), batch_size):
             kwargs[field] = value[offset : offset + batch_size]
