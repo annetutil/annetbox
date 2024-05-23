@@ -8,6 +8,8 @@ from typing import Any
 class Entity:
     id: int
     name: str
+    display: str
+    url: str
 
 
 @dataclass
@@ -32,10 +34,21 @@ class DeviceIp:
 
 
 @dataclass
-class Interface(Entity):
+class LinkPeer(Entity):
+    cable: int
     device: Entity
+
+
+@dataclass
+class Interface(Entity):
+    cable: Entity
+    cable_end: str
+    device: Entity
+    link_peers: list[LinkPeer]
+    link_peers_type: str
     enabled: bool
-    display: str = ""  # added in 3.x
+    created: datetime
+    last_updated: datetime
 
 
 @dataclass
