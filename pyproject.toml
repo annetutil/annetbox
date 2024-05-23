@@ -10,7 +10,7 @@ where = ["src"]
 
 [project]
 name = "annetbox"
-version = "0.1.1"
+version = "0.1.2"
 readme = "README.md"
 authors = [
     { name = "Andrey Tikhonov", email = "tishka17@nebius.com" },
