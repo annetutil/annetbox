@@ -16,6 +16,7 @@ def main():
 
     data = data.replace("annetbox.base.client_async", "annetbox.base.client_sync")
     data = data.replace("async ", "")
+    data = data.replace("await ", "")
     print(data, end="")
 
 
