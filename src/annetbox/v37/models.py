@@ -40,12 +40,20 @@ class LinkPeer(Entity):
 
 
 @dataclass
+class InterfaceCable:
+    id: int
+    label: str
+    display: str
+    url: str
+
+
+@dataclass
 class Interface(Entity):
-    cable: Entity
+    cable: InterfaceCable | None
     cable_end: str
     device: Entity
     link_peers: list[LinkPeer]
-    link_peers_type: str
+    link_peers_type: str | None
     enabled: bool
     created: datetime
     last_updated: datetime
@@ -84,7 +92,7 @@ class IpFamily:
 @dataclass
 class IpAddress:
     id: int
-    assigned_object_id: int
+    assigned_object_id: int | None
     display: str
     family: IpFamily
     address: str
