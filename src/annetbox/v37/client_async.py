@@ -49,7 +49,7 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     @get("dcim/cables")
-    def dcim_cables(
+    async def dcim_cables(
         self,
         device: list[str] | None = None,
         device_id: list[int] | None = None,
@@ -62,22 +62,26 @@ class NetboxV37(BaseNetboxClient):
     dcim_all_cables = collect(dcim_cables, field="interface_id")
 
     @post("dcim/cables/")
-    def dcim_cable_create(self, body: NewCable) -> Cable:
+    async def dcim_cable_create(self, body: NewCable) -> Cable:
         pass
 
     @post("dcim/cables/")
-    def dcim_cable_bulk_create(self, body: list[NewCable]) -> list[Cable]:
+    async def dcim_cable_bulk_create(
+            self, body: list[NewCable],
+    ) -> list[Cable]:
         pass
 
     @delete("dcim/cables/")
-    def _dcim_cable_bulk_delete(self, body: list[ItemToDelete]) -> None:
+    async def _dcim_cable_bulk_delete(self, body: list[ItemToDelete]) -> None:
         pass
 
-    def dcim_cable_bulk_delete(self, body: Iterable[int]) -> None:
-        return self._dcim_cable_bulk_delete([ItemToDelete(id=x) for x in body])
+    async def dcim_cable_bulk_delete(self, body: Iterable[int]) -> None:
+        return await self._dcim_cable_bulk_delete([
+            ItemToDelete(id=x) for x in body
+        ])
 
     @delete("dcim/cables/{id}")
-    def dcim_cable_delete(self, id: int) -> None:
+    async def dcim_cable_delete(self, id: int) -> None:
         pass
 
     @get("dcim/devices")
