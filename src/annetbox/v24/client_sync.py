@@ -14,7 +14,7 @@ class NetboxV24(BaseNetboxClient):
         return Retort(recipe=[loader(datetime, dateutil.parser.parse)])
 
     # dcim
-    @get("dcim/interfaces")
+    @get("dcim/interfaces/")
     def dcim_interfaces(
         self,
         device_id: list[int] | None = None,
@@ -25,7 +25,7 @@ class NetboxV24(BaseNetboxClient):
 
     dcim_all_interfaces = collect(dcim_interfaces, field="device_id")
 
-    @get("dcim/devices")
+    @get("dcim/devices/")
     def dcim_devices(
         self,
         name: list[str] | None = None,
@@ -45,7 +45,7 @@ class NetboxV24(BaseNetboxClient):
         pass
 
     # ipam
-    @get("ipam/ip-addresses")
+    @get("ipam/ip-addresses/")
     def ipam_ip_addresses(
         self,
         interface_id: list[int] | None = None,
