@@ -191,3 +191,19 @@ class NewCable:
 @dataclass
 class ItemToDelete:
     id: int
+
+
+@dataclass
+class Prefix:
+    id: int
+    prefix: str
+    site: Entity | None
+    vrf: Entity | None
+    tenant: Entity | None
+    vlan: Entity | None
+    role: Entity | None
+    status: Label
+    is_pool: bool
+    custom_fields: dict[str, Any]
+    created: datetime
+    last_updated: datetime

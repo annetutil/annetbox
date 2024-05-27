@@ -15,6 +15,7 @@ from .models import (
     IpAddress,
     ItemToDelete,
     NewCable,
+    Prefix,
 )
 
 
@@ -124,3 +125,15 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     ipam_all_ip_addresses = collect(ipam_ip_addresses, field="interface_id")
+
+
+    @get("ipam/prefixes/")
+    def prefixes(
+            self,
+            prefix: list[str] | None = None,
+            limit: int = 20,
+            offset: int = 0,
+    ) -> PagingResponse[Prefix]:
+        pass
+
+    ipam_all_prefixes = collect(prefixes, field="prefix")

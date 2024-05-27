@@ -15,6 +15,7 @@ from .models import (
     IpAddress,
     ItemToDelete,
     NewCable,
+    Prefix,
 )
 
 
@@ -66,7 +67,9 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     @post("dcim/cables/")
-    def dcim_cable_bulk_create(self, body: list[NewCable]) -> list[Cable]:
+    def dcim_cable_bulk_create(
+            self, body: list[NewCable],
+    ) -> list[Cable]:
         pass
 
     @delete("dcim/cables/")
@@ -74,7 +77,9 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     def dcim_cable_bulk_delete(self, body: Iterable[int]) -> None:
-        return self._dcim_cable_bulk_delete([ItemToDelete(id=x) for x in body])
+        return self._dcim_cable_bulk_delete([
+            ItemToDelete(id=x) for x in body
+        ])
 
     @delete("dcim/cables/{id}/")
     def dcim_cable_delete(self, id: int) -> None:
@@ -120,3 +125,15 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     ipam_all_ip_addresses = collect(ipam_ip_addresses, field="interface_id")
+
+
+    @get("ipam/prefixes/")
+    def prefixes(
+            self,
+            prefix: list[str] | None = None,
+            limit: int = 20,
+            offset: int = 0,
+    ) -> PagingResponse[Prefix]:
+        pass
+
+    ipam_all_prefixes = collect(prefixes, field="prefix")
