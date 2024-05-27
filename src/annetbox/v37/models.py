@@ -48,6 +48,17 @@ class InterfaceCable:
 
 
 @dataclass
+class InterfaceType:
+    value: str
+    label: str
+
+
+@dataclass
+class InterfaceConnectedEndpoint(Entity):
+    device: Entity
+
+
+@dataclass
 class Interface(Entity):
     cable: InterfaceCable | None
     cable_end: str
@@ -55,6 +66,9 @@ class Interface(Entity):
     link_peers: list[LinkPeer]
     link_peers_type: str | None
     enabled: bool
+    type: InterfaceType
+    description: str
+    connected_endpoints: list[InterfaceConnectedEndpoint] | None
     created: datetime
     last_updated: datetime
 
