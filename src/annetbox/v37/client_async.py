@@ -15,6 +15,7 @@ from .models import (
     IpAddress,
     ItemToDelete,
     NewCable,
+    Prefix,
 )
 
 
@@ -30,9 +31,10 @@ class NetboxV37(BaseNetboxClient):
         )
 
     # dcim
-    @get("dcim/interfaces")
+    @get("dcim/interfaces/")
     async def dcim_interfaces(
         self,
+        id: list[int] | None = None,
         device: list[str] | None = None,
         device__n: list[str] | None = None,
         device_id: list[int] | None = None,
@@ -43,12 +45,13 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     dcim_all_interfaces = collect(dcim_interfaces, field="device_id")
+    dcim_all_interfaces_by_id = collect(dcim_interfaces, field="id")
 
-    @get("dcim/interfaces/{id}")
+    @get("dcim/interfaces/{id}/")
     async def dcim_interface(self, id: int) -> Interface:
         pass
 
-    @get("dcim/cables")
+    @get("dcim/cables/")
     async def dcim_cables(
         self,
         device: list[str] | None = None,
@@ -67,7 +70,8 @@ class NetboxV37(BaseNetboxClient):
 
     @post("dcim/cables/")
     async def dcim_cable_bulk_create(
-            self, body: list[NewCable],
+        self,
+        body: list[NewCable],
     ) -> list[Cable]:
         pass
 
@@ -76,15 +80,15 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     async def dcim_cable_bulk_delete(self, body: Iterable[int]) -> None:
-        return await self._dcim_cable_bulk_delete([
-            ItemToDelete(id=x) for x in body
-        ])
+        return await self._dcim_cable_bulk_delete(
+            [ItemToDelete(id=x) for x in body],
+        )
 
-    @delete("dcim/cables/{id}")
+    @delete("dcim/cables/{id}/")
     async def dcim_cable_delete(self, id: int) -> None:
         pass
 
-    @get("dcim/devices")
+    @get("dcim/devices/")
     async def dcim_devices(
         self,
         name: list[str] | None = None,
@@ -98,6 +102,7 @@ class NetboxV37(BaseNetboxClient):
         name__nie: list[str] | None = None,
         name__niew: list[str] | None = None,
         name__nisw: list[str] | None = None,
+        id: list[int] | None = None,
         tag: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
@@ -105,8 +110,9 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     dcim_all_devices = collect(dcim_devices)
+    dcim_all_devices_by_id = collect(dcim_devices, field="id")
 
-    @get("dcim/devices/{device_id}")
+    @get("dcim/devices/{device_id}/")
     async def dcim_device(
         self,
         device_id: int,
@@ -114,7 +120,7 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     # ipam
-    @get("ipam/ip-addresses")
+    @get("ipam/ip-addresses/")
     async def ipam_ip_addresses(
         self,
         interface_id: list[int] | None = None,
@@ -124,3 +130,14 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     ipam_all_ip_addresses = collect(ipam_ip_addresses, field="interface_id")
+
+    @get("ipam/prefixes/")
+    def prefixes(
+        self,
+        prefix: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Prefix]:
+        pass
+
+    ipam_all_prefixes = collect(prefixes, field="prefix")

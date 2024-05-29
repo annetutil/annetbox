@@ -48,6 +48,17 @@ class InterfaceCable:
 
 
 @dataclass
+class InterfaceType:
+    value: str
+    label: str
+
+
+@dataclass
+class InterfaceConnectedEndpoint(Entity):
+    device: Entity
+
+
+@dataclass
 class Interface(Entity):
     cable: InterfaceCable | None
     cable_end: str
@@ -55,6 +66,9 @@ class Interface(Entity):
     link_peers: list[LinkPeer]
     link_peers_type: str | None
     enabled: bool
+    type: InterfaceType
+    description: str
+    connected_endpoints: list[InterfaceConnectedEndpoint] | None
     created: datetime
     last_updated: datetime
 
@@ -177,3 +191,19 @@ class NewCable:
 @dataclass
 class ItemToDelete:
     id: int
+
+
+@dataclass
+class Prefix:
+    id: int
+    prefix: str
+    site: Entity | None
+    vrf: Entity | None
+    tenant: Entity | None
+    vlan: Entity | None
+    role: Entity | None
+    status: Label
+    is_pool: bool
+    custom_fields: dict[str, Any]
+    created: datetime
+    last_updated: datetime
