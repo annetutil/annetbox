@@ -34,6 +34,7 @@ class NetboxV37(BaseNetboxClient):
     @get("dcim/interfaces/")
     async def dcim_interfaces(
         self,
+        id: list[int] | None = None,
         device: list[str] | None = None,
         device__n: list[str] | None = None,
         device_id: list[int] | None = None,
@@ -44,6 +45,7 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     dcim_all_interfaces = collect(dcim_interfaces, field="device_id")
+    dcim_all_interfaces_by_id = collect(dcim_interfaces, field="id")
 
     @get("dcim/interfaces/{id}/")
     async def dcim_interface(self, id: int) -> Interface:
@@ -99,6 +101,7 @@ class NetboxV37(BaseNetboxClient):
         name__nie: list[str] | None = None,
         name__niew: list[str] | None = None,
         name__nisw: list[str] | None = None,
+        id: list[int] | None = None,
         tag: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
@@ -106,6 +109,7 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     dcim_all_devices = collect(dcim_devices)
+    dcim_all_devices_by_id = collect(dcim_devices, field="id")
 
     @get("dcim/devices/{device_id}/")
     async def dcim_device(
