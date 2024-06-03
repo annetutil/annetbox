@@ -13,6 +13,11 @@ class Entity:
 
 
 @dataclass
+class EntityWithSlug(Entity):
+    slug: str
+
+
+@dataclass
 class Label:
     value: str
     label: str
@@ -21,8 +26,9 @@ class Label:
 @dataclass
 class DeviceType:
     id: int
-    manufacturer: Entity
+    manufacturer: EntityWithSlug
     model: str
+    slug: str
 
 
 @dataclass
@@ -78,12 +84,12 @@ class Device(Entity):
     url: str
     display: str  # renamed in 3.x from display_name
     device_type: DeviceType
-    device_role: Entity
-    tenant: Entity | None
+    device_role: EntityWithSlug
+    tenant: EntityWithSlug | None
     platform: Entity | None
     serial: str
     asset_tag: str | None
-    site: Entity
+    site: EntityWithSlug
     rack: Entity | None
     position: float | None
     face: Label | None
@@ -114,6 +120,7 @@ class IpAddress:
     tags: list[Entity]
     created: datetime
     last_updated: datetime
+    tenant: EntityWithSlug | None
 
 
 class CableType(str, Enum):
