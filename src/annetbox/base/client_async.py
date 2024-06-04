@@ -59,8 +59,15 @@ def collect(func: Func, field: str = "", batch_size: int = 100) -> Func:
         method = func.__get__(self, self.__class__)
 
         value = kwargs.get(field)
-        if not value:
+        if value is None:
             return await method(*args, **kwargs)
+        elif not value:
+            return PagingResponse(
+                previous=None,
+                next=None,
+                count=0,
+                results=[],
+            )
 
         results = []
         for offset in range(0, len(value), batch_size):

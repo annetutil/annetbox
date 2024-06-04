@@ -32,8 +32,19 @@ class FakeClient:
     all = collect(page)
 
     async def items(
-        self, ids: list[int], offset: int = 0, limit: int = 10,
+        self,
+        ids: list[int] | None = None,
+        offset: int = 0,
+        limit: int = 10,
     ) -> PagingResponse[int]:
+        if ids is None:
+            self.items_mock(ids)
+            return PagingResponse(
+                results=[1, 2],
+                next=None,
+                previous=None,
+                count=limit,
+            )
         if offset > len(ids):
             return PagingResponse(
                 results=[],
@@ -62,20 +73,18 @@ async def test_collect_all():
 
 
 @pytest.mark.asyncio
-async def test_collect_by_field():
+async def test_collect_by_missing_filter():
     client = FakeClient()
-    ids = [1, 2, 3, 4, 5]
-    res = await client.all_items(ids=ids)
+    res = await client.all_items()
     assert res.next is None
-    assert res.results == ids
-    assert client.items_mock.call_count == 3
+    assert res.results == [1, 2]
+    assert client.items_mock.call_count == 1
 
 
 @pytest.mark.asyncio
 async def test_collect_by_empty_field():
     client = FakeClient()
-    ids = []
-    res = await client.all_items(ids=ids)
+    res = await client.all_items(ids=[])
     assert res.next is None
-    assert res.results == ids
-    assert client.items_mock.call_count == 1
+    assert res.results == []
+    assert client.items_mock.call_count == 0
