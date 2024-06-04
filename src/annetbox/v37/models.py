@@ -59,6 +59,17 @@ class InterfaceConnectedEndpoint(Entity):
 
 
 @dataclass
+class InterfaceMode:
+    value: str
+    label: str
+
+
+@dataclass
+class InterfaceVlan(Entity):
+    vid: int
+
+
+@dataclass
 class Interface(Entity):
     cable: InterfaceCable | None
     cable_end: str
@@ -69,6 +80,9 @@ class Interface(Entity):
     type: InterfaceType
     description: str
     connected_endpoints: list[InterfaceConnectedEndpoint] | None
+    mode: InterfaceMode | None
+    untagged_vlan: InterfaceVlan | None
+    tagged_vlans: list[InterfaceVlan] | None
     created: datetime
     last_updated: datetime
 
