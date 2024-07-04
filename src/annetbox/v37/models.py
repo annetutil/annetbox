@@ -76,6 +76,11 @@ class InterfaceVlan(Entity):
 
 
 @dataclass
+class InterfaceVrf(Entity):
+    name: str
+
+
+@dataclass
 class Interface(Entity):
     cable: InterfaceCable | None
     cable_end: str
@@ -91,6 +96,7 @@ class Interface(Entity):
     tagged_vlans: list[InterfaceVlan] | None
     created: datetime
     last_updated: datetime
+    vrf: InterfaceVrf | None
 
 
 @dataclass
@@ -135,6 +141,7 @@ class IpAddress:
     created: datetime
     last_updated: datetime
     tenant: EntityWithSlug | None
+    vrf: InterfaceVrf | None
 
 
 class CableType(str, Enum):
