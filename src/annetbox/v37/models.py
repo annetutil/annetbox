@@ -229,4 +229,5 @@ class Prefix:
     is_pool: bool
     custom_fields: dict[str, Any]
     created: datetime
+    description: str
     last_updated: datetime
