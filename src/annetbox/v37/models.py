@@ -91,6 +91,7 @@ class Interface(Entity):
     tagged_vlans: list[InterfaceVlan] | None
     created: datetime
     last_updated: datetime
+    vrf: Entity | None
 
 
 @dataclass
@@ -135,6 +136,7 @@ class IpAddress:
     created: datetime
     last_updated: datetime
     tenant: EntityWithSlug | None
+    vrf: Entity | None
 
 
 class CableType(str, Enum):
@@ -227,4 +229,5 @@ class Prefix:
     is_pool: bool
     custom_fields: dict[str, Any]
     created: datetime
+    description: str
     last_updated: datetime
