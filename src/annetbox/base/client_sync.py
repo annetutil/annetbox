@@ -2,7 +2,7 @@ import http
 from collections.abc import Callable
 from functools import wraps
 from ssl import SSLContext
-from typing import Any, TypeVar
+from typing import Any, Concatenate, ParamSpec, TypeVar
 
 from adaptix import NameStyle, Retort, name_mapping
 from dataclass_rest import get
@@ -11,16 +11,23 @@ from dataclass_rest.http.requests import RequestsClient, RequestsMethod
 from requests import Response, Session
 from requests.adapters import HTTPAdapter
 
-from .models import PagingResponse, Status
+from .models import Model, PagingResponse, Status
 
-Func = TypeVar("Func", bound=Callable)
+Class = TypeVar("Class")
+ArgsSpec = ParamSpec("ArgsSpec")
 
 
-def _collect_by_pages(func: Func) -> Func:
+def _collect_by_pages(
+    func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]],
+) -> Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]]:
     """Collect all results using only pagination."""
 
     @wraps(func)
-    def wrapper(self, *args, **kwargs):
+    def wrapper(
+        self: Class,
+        *args: ArgsSpec.args,
+        **kwargs: ArgsSpec.kwargs,
+    ) -> PagingResponse[Model]:
         kwargs.setdefault("offset", 0)
         limit = kwargs.setdefault("limit", 100)
         results = []
@@ -42,11 +49,15 @@ def _collect_by_pages(func: Func) -> Func:
 
 
 # default batch size 100 is calculated to fit list of UUIDs in 4k URL length
-def collect(func: Func, field: str = "", batch_size: int = 100) -> Func:
+def collect(
+    func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]],
+    field: str = "",
+    batch_size: int = 100,
+) -> Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]]:
     """
     Collect data from method iterating over pages and filter batches.
 
-    :param func: Method to call
+    :param func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]] to call
     :param field: Field which defines a filter split into batches
     :param batch_size: Limit of values in `field` filter requested at a time
     """
@@ -55,7 +66,11 @@ def collect(func: Func, field: str = "", batch_size: int = 100) -> Func:
         return func
 
     @wraps(func)
-    def wrapper(self, *args, **kwargs):
+    def wrapper(
+        self: Class,
+        *args: ArgsSpec.args,
+        **kwargs: ArgsSpec.kwargs,
+    ) -> PagingResponse[Model]:
         method = func.__get__(self, self.__class__)
 
         value = kwargs.get(field)

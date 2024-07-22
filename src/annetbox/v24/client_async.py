@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Self
 
 import dateutil.parser
 from adaptix import Retort, loader
@@ -16,7 +17,7 @@ class NetboxV24(BaseNetboxClient):
     # dcim
     @get("dcim/interfaces/")
     async def dcim_interfaces(
-        self,
+        self: Self,
         device_id: list[int] | None = None,
         limit: int = 20,
         offset: int = 0,
@@ -27,7 +28,7 @@ class NetboxV24(BaseNetboxClient):
 
     @get("dcim/devices/")
     async def dcim_devices(
-        self,
+        self: Self,
         name: list[str] | None = None,
         tag: str | None = None,
         limit: int = 20,
@@ -39,7 +40,7 @@ class NetboxV24(BaseNetboxClient):
 
     @get("dcim/devices/{device_id}/")
     async def dcim_device(
-        self,
+        self: Self,
         device_id: int,
     ) -> Device:
         pass
@@ -47,7 +48,7 @@ class NetboxV24(BaseNetboxClient):
     # ipam
     @get("ipam/ip-addresses/")
     async def ipam_ip_addresses(
-        self,
+        self: Self,
         interface_id: list[int] | None = None,
         limit: int = 20,
         offset: int = 0,
