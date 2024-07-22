@@ -1,6 +1,5 @@
 from collections.abc import Iterable
 from datetime import datetime
-from typing import Self
 
 import dateutil.parser
 from adaptix import Retort, loader, name_mapping
@@ -34,7 +33,7 @@ class NetboxV37(BaseNetboxClient):
     # dcim
     @get("dcim/interfaces/")
     def dcim_interfaces(
-        self: Self,
+        self,
         id: list[int] | None = None,
         device: list[str] | None = None,
         device__n: list[str] | None = None,
@@ -49,12 +48,12 @@ class NetboxV37(BaseNetboxClient):
     dcim_all_interfaces_by_id = collect(dcim_interfaces, field="id")
 
     @get("dcim/interfaces/{id}/")
-    def dcim_interface(self: Self, id: int) -> Interface:
+    def dcim_interface(self, id: int) -> Interface:
         pass
 
     @get("dcim/cables/")
     def dcim_cables(
-        self: Self,
+        self,
         device: list[str] | None = None,
         device_id: list[int] | None = None,
         interface_id: list[int] | None = None,
@@ -66,30 +65,30 @@ class NetboxV37(BaseNetboxClient):
     dcim_all_cables = collect(dcim_cables, field="interface_id")
 
     @post("dcim/cables/")
-    def dcim_cable_create(self: Self, body: NewCable) -> Cable:
+    def dcim_cable_create(self, body: NewCable) -> Cable:
         pass
 
     @post("dcim/cables/")
     def dcim_cable_bulk_create(
-        self: Self,
+        self,
         body: list[NewCable],
     ) -> list[Cable]:
         pass
 
     @delete("dcim/cables/")
-    def _dcim_cable_bulk_delete(self: Self, body: list[ItemToDelete]) -> None:
+    def _dcim_cable_bulk_delete(self, body: list[ItemToDelete]) -> None:
         pass
 
-    def dcim_cable_bulk_delete(self: Self, body: Iterable[int]) -> None:
+    def dcim_cable_bulk_delete(self, body: Iterable[int]) -> None:
         return self._dcim_cable_bulk_delete([ItemToDelete(id=x) for x in body])
 
     @delete("dcim/cables/{id}/")
-    def dcim_cable_delete(self: Self, id: int) -> None:
+    def dcim_cable_delete(self, id: int) -> None:
         pass
 
     @get("dcim/devices/")
     def dcim_devices(
-        self: Self,
+        self,
         name: list[str] | None = None,
         name__empty: bool | None = None,
         name__ic: list[str] | None = None,
@@ -113,7 +112,7 @@ class NetboxV37(BaseNetboxClient):
 
     @get("dcim/devices/{device_id}/")
     def dcim_device(
-        self: Self,
+        self,
         device_id: int,
     ) -> Device:
         pass
@@ -121,7 +120,7 @@ class NetboxV37(BaseNetboxClient):
     # ipam
     @get("ipam/ip-addresses/")
     def ipam_ip_addresses(
-        self: Self,
+        self,
         interface_id: list[int] | None = None,
         limit: int = 20,
         offset: int = 0,
@@ -132,7 +131,7 @@ class NetboxV37(BaseNetboxClient):
 
     @get("ipam/prefixes/")
     def prefixes(
-        self: Self,
+        self,
         prefix: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
