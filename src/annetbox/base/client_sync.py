@@ -57,7 +57,7 @@ def collect(
     """
     Collect data from method iterating over pages and filter batches.
 
-    :param func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]] to call
+    :param func: Method to call
     :param field: Field which defines a filter split into batches
     :param batch_size: Limit of values in `field` filter requested at a time
     """
