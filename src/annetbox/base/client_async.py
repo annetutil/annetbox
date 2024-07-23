@@ -1,8 +1,8 @@
 import http
-from collections.abc import Callable
+from collections.abc import Awaitable, Callable
 from functools import wraps
 from ssl import SSLContext
-from typing import Any, TypeVar
+from typing import Any, Concatenate, ParamSpec, TypeVar
 
 from adaptix import NameStyle, Retort, name_mapping
 from aiohttp import ClientResponse, ClientSession, TCPConnector
@@ -11,16 +11,26 @@ from dataclass_rest.client_protocol import FactoryProtocol
 from dataclass_rest.http.aiohttp import AiohttpClient, AiohttpMethod
 from dataclass_rest.http_request import HttpRequest
 
-from .models import PagingResponse, Status
+from .models import Model, PagingResponse, Status
 
-Func = TypeVar("Func", bound=Callable)
+Class = TypeVar("Class")
+ArgsSpec = ParamSpec("ArgsSpec")
 
 
-def _collect_by_pages(func: Func) -> Func:
+def _collect_by_pages(
+    func: Callable[
+        Concatenate[Class, ArgsSpec],
+        Awaitable[PagingResponse[Model]],
+    ],
+) -> Callable[Concatenate[Class, ArgsSpec], Awaitable[PagingResponse[Model]]]:
     """Collect all results using only pagination."""
 
     @wraps(func)
-    async def wrapper(self, *args, **kwargs):
+    async def wrapper(
+        self: Class,
+        *args: ArgsSpec.args,
+        **kwargs: ArgsSpec.kwargs,
+    ) -> PagingResponse[Model]:
         kwargs.setdefault("offset", 0)
         limit = kwargs.setdefault("limit", 100)
         results = []
@@ -42,7 +52,14 @@ def _collect_by_pages(func: Func) -> Func:
 
 
 # default batch size 100 is calculated to fit list of UUIDs in 4k URL length
-def collect(func: Func, field: str = "", batch_size: int = 100) -> Func:
+def collect(
+    func: Callable[
+        Concatenate[Class, ArgsSpec],
+        Awaitable[PagingResponse[Model]],
+    ],
+    field: str = "",
+    batch_size: int = 100,
+) -> Callable[Concatenate[Class, ArgsSpec], Awaitable[PagingResponse[Model]]]:
     """
     Collect data from method iterating over pages and filter batches.
 
@@ -55,7 +72,11 @@ def collect(func: Func, field: str = "", batch_size: int = 100) -> Func:
         return func
 
     @wraps(func)
-    async def wrapper(self, *args, **kwargs):
+    async def wrapper(
+        self: Class,
+        *args: ArgsSpec.args,
+        **kwargs: ArgsSpec.kwargs,
+    ) -> PagingResponse[Model]:
         method = func.__get__(self, self.__class__)
 
         value = kwargs.get(field)
