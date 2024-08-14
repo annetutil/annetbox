@@ -124,12 +124,20 @@ class NetboxV37(BaseNetboxClient):
     async def ipam_ip_addresses(
         self,
         interface_id: list[int] | None = None,
+        device_id: list[int] | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> PagingResponse[IpAddress]:
         pass
 
     ipam_all_ip_addresses = collect(ipam_ip_addresses, field="interface_id")
+
+    @get("ipam/ip-addresses/{id}/")
+    def ipam_ip_address(
+        self,
+        id: int,
+    ) -> IpAddress:
+        pass
 
     @get("ipam/prefixes/")
     def prefixes(
