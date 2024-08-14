@@ -133,14 +133,14 @@ class NetboxV37(BaseNetboxClient):
     ipam_all_ip_addresses = collect(ipam_ip_addresses, field="interface_id")
 
     @get("ipam/ip-addresses/{id}/")
-    def ipam_ip_address(
+    async def ipam_ip_address(
         self,
         id: int,
     ) -> IpAddress:
         pass
 
     @get("ipam/prefixes/")
-    def prefixes(
+    async def prefixes(
         self,
         prefix: list[str] | None = None,
         limit: int = 20,
