@@ -125,9 +125,15 @@ class IpFamily:
 
 
 @dataclass
+class IpAddrAssignedObject(Entity):
+    device: Entity | None
+
+
+@dataclass
 class IpAddress:
     id: int
     assigned_object_id: int | None
+    assigned_object: IpAddrAssignedObject | None
     display: str
     family: IpFamily
     address: str
