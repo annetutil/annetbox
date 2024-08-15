@@ -116,6 +116,7 @@ class Device(Entity):
     custom_fields: dict[str, Any]
     created: datetime
     last_updated: datetime
+    comments: None | str
 
 
 @dataclass
