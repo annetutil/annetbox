@@ -80,6 +80,7 @@ class Interface(Entity):
     cable: InterfaceCable | None
     cable_end: str
     device: Entity
+    label: str
     link_peers: list[LinkPeer]
     link_peers_type: str | None
     enabled: bool
@@ -92,6 +93,7 @@ class Interface(Entity):
     created: datetime
     last_updated: datetime
     vrf: Entity | None
+    mgmt_only: bool
 
 
 @dataclass
