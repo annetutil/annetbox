@@ -10,12 +10,13 @@ from annetbox.base.client_async import BaseNetboxClient, collect
 from annetbox.base.models import PagingResponse
 from .models import (
     Cable,
+    ConsolePort,
     Device,
     Interface,
     IpAddress,
     ItemToDelete,
     NewCable,
-    Prefix, ConsolePort,
+    Prefix,
 )
 
 
