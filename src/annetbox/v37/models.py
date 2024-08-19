@@ -62,6 +62,7 @@ class InterfaceType:
 @dataclass
 class InterfaceConnectedEndpoint(Entity):
     device: Entity
+    cable: int
 
 
 @dataclass
@@ -94,6 +95,20 @@ class Interface(Entity):
     last_updated: datetime
     vrf: Entity | None
     mgmt_only: bool
+
+
+@dataclass
+class ConsolePort(Entity):
+    cable: InterfaceCable | None
+    device: Entity
+    label: str
+    type: InterfaceType
+    description: str
+    link_peers: list[LinkPeer] | None
+    link_peers_type: str | None
+    connected_endpoints: list[InterfaceConnectedEndpoint] | None
+    created: datetime
+    last_updated: datetime
 
 
 @dataclass
