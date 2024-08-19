@@ -15,7 +15,7 @@ from .models import (
     IpAddress,
     ItemToDelete,
     NewCable,
-    Prefix,
+    Prefix, ConsolePort,
 )
 
 
@@ -49,6 +49,26 @@ class NetboxV37(BaseNetboxClient):
 
     @get("dcim/interfaces/{id}/")
     async def dcim_interface(self, id: int) -> Interface:
+        pass
+
+    @get("dcim/console-ports/")
+    async def dcim_console_ports(
+        self,
+        id: list[int] | None = None,
+        device: list[str] | None = None,
+        device__n: list[str] | None = None,
+        device_id: list[int] | None = None,
+        device_id__n: list[int] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[ConsolePort]:
+        pass
+
+    dcim_all_console_ports = collect(dcim_console_ports, field="device_id")
+    dcim_all_console_ports_by_id = collect(dcim_console_ports, field="id")
+
+    @get("dcim/console-ports/{id}/")
+    async def dcim_console_port(self, id: int) -> ConsolePort:
         pass
 
     @get("dcim/cables/")
