@@ -95,6 +95,7 @@ class Interface(Entity):
     last_updated: datetime
     vrf: Entity | None
     mgmt_only: bool
+    lag: Entity | None
 
 
 @dataclass
