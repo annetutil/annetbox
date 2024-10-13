@@ -96,6 +96,7 @@ class Interface(Entity):
     vrf: Entity | None
     mgmt_only: bool
     lag: Entity | None
+    mtu: int | None
 
 
 @dataclass
