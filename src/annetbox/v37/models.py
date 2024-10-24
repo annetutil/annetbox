@@ -146,7 +146,8 @@ class IpFamily:
 
 @dataclass
 class IpAddrAssignedObject(Entity):
-    device: Entity | None
+    device: Entity | None = None
+    virtual_machine: Entity | None = None
 
 
 @dataclass
