@@ -125,6 +125,7 @@ class NetboxV37(BaseNetboxClient):
         name__nisw: list[str] | None = None,
         id: list[int] | None = None,
         tag: list[str] | None = None,
+        role: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> PagingResponse[Device]:
