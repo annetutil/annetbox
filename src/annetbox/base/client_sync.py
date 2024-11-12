@@ -142,6 +142,8 @@ class BaseNetboxClient(RequestsClient):
             timeout=300,
         )
         session = Session()
+        if ssl_context and not ssl_context.check_hostname:
+            session.verify = False
         session.mount("http://", adapter)
         session.mount("https://", adapter)
 
