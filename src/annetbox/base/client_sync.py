@@ -11,6 +11,7 @@ from dataclass_rest.http.requests import RequestsClient, RequestsMethod
 from requests import Response, Session
 from requests.adapters import HTTPAdapter
 
+from .exceptions import ClientWithBodyError, ServerWithBodyError
 from .models import Model, PagingResponse, Status
 
 Class = TypeVar("Class")
@@ -100,6 +101,13 @@ def collect(
 
 
 class NoneAwareRequestsMethod(RequestsMethod):
+    def _on_error_default(self, response: Response) -> Any:
+        body = self._response_body(response)
+        if http.HTTPStatus.BAD_REQUEST <= response.status_code \
+                                       < http.HTTPStatus.INTERNAL_SERVER_ERROR:
+            raise ClientWithBodyError(response.status_code, body=body)
+        raise ServerWithBodyError(response.status_code, body=body)
+
     def _response_body(self, response: Response) -> Any:
         if response.status_code == http.HTTPStatus.NO_CONTENT:
             return None

@@ -11,6 +11,7 @@ from dataclass_rest.client_protocol import FactoryProtocol
 from dataclass_rest.http.aiohttp import AiohttpClient, AiohttpMethod
 from dataclass_rest.http_request import HttpRequest
 
+from .exceptions import ClientWithBodyError, ServerWithBodyError
 from .models import Model, PagingResponse, Status
 
 Class = TypeVar("Class")
@@ -106,6 +107,13 @@ def collect(
 
 
 class NoneAwareAiohttpMethod(AiohttpMethod):
+    async def _on_error_default(self, response: ClientResponse) -> Any:
+        body = await self._response_body(response)
+        if http.HTTPStatus.BAD_REQUEST <= response.status \
+                                       < http.HTTPStatus.INTERNAL_SERVER_ERROR:
+            raise ClientWithBodyError(response.status, body=body)
+        raise ServerWithBodyError(response.status, body=body)
+
     async def _pre_process_request(self, request: HttpRequest) -> HttpRequest:
         request.query_params = {
             k: v for k, v in request.query_params.items() if v is not None
