@@ -157,8 +157,8 @@ class NetboxV37(BaseNetboxClient):
     ) -> PagingResponse[Entity]:
         pass
 
-    dcim_all_devices_brief = collect(dcim_devices)
-    dcim_all_devices_brief_by_id = collect(dcim_devices, field="id")
+    dcim_all_devices_brief = collect(dcim_devices_brief)
+    dcim_all_devices_brief_by_id = collect(dcim_devices_brief, field="id")
 
     @get("dcim/devices/{device_id}/")
     def dcim_device(
