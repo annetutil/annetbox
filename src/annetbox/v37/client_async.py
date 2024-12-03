@@ -12,6 +12,7 @@ from .models import (
     Cable,
     ConsolePort,
     Device,
+    Entity,
     Interface,
     IpAddress,
     ItemToDelete,
@@ -133,6 +134,31 @@ class NetboxV37(BaseNetboxClient):
 
     dcim_all_devices = collect(dcim_devices)
     dcim_all_devices_by_id = collect(dcim_devices, field="id")
+
+
+    @get("dcim/devices/?brief=1")
+    async def dcim_devices_brief(
+        self,
+        name: list[str] | None = None,
+        name__empty: bool | None = None,
+        name__ic: list[str] | None = None,
+        name__ie: list[str] | None = None,
+        name__iew: list[str] | None = None,
+        name__isw: list[str] | None = None,
+        name__n: list[str] | None = None,
+        name__nic: list[str] | None = None,
+        name__nie: list[str] | None = None,
+        name__niew: list[str] | None = None,
+        name__nisw: list[str] | None = None,
+        id: list[int] | None = None,
+        tag: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Entity]:
+        pass
+
+    dcim_all_devices_brief = collect(dcim_devices_brief)
+    dcim_all_devices_brief_by_id = collect(dcim_devices_brief, field="id")
 
     @get("dcim/devices/{device_id}/")
     async def dcim_device(
