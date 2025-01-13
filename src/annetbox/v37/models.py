@@ -40,9 +40,19 @@ class DeviceIp:
 
 
 @dataclass
+class Circuit:
+    id: int
+    url: str
+    display: str
+    cid: str
+
+
+@dataclass
 class LinkPeer(Entity):
     cable: int
-    device: Entity
+    device: Entity | None = None
+    term_side: str | None = None
+    circuit: Circuit | None = None
 
 
 @dataclass
