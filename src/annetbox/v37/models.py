@@ -176,6 +176,15 @@ class IpAddress:
     vrf: Entity | None
 
 
+@dataclass
+class IpAddressBrief:
+    id: int
+    url: str
+    display: str
+    family: int
+    address: str
+
+
 class CableType(str, Enum):
     AOC = "aoc"
     CAT3 = "cat3"

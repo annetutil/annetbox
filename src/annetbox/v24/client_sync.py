@@ -55,3 +55,4 @@ class NetboxV24(BaseNetboxClient):
         pass
 
     ipam_all_ip_addresses = collect(ipam_ip_addresses, field="interface_id")
+    ipam_all_ip_addresses_brief = ipam_all_ip_addresses

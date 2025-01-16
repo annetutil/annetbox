@@ -15,6 +15,7 @@ from .models import (
     Entity,
     Interface,
     IpAddress,
+    IpAddressBrief,
     ItemToDelete,
     NewCable,
     Prefix,
@@ -179,6 +180,19 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     ipam_all_ip_addresses = collect(ipam_ip_addresses, field="interface_id")
+
+    @get("ipam/ip-addresses/?brief=1")
+    def ipam_ip_addresses_brief(
+        self,
+        interface_id: list[int] | None = None,
+        device_id: list[int] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[IpAddressBrief]:
+        pass
+
+    ipam_all_ip_addresses_brief = collect(ipam_ip_addresses_brief,
+                                          field="interface_id")
 
     @get("ipam/ip-addresses/{id}/")
     def ipam_ip_address(
