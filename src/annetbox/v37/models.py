@@ -48,7 +48,10 @@ class Circuit:
 
 
 @dataclass
-class LinkPeer(Entity):
+class LinkPeer:
+    id: int
+    display: str
+    url: str
     cable: int
     device: Entity | None = None
     term_side: str | None = None
