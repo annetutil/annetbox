@@ -1,11 +1,11 @@
 import http
 import logging
 import time
-from collections.abc import Callable
+from abc import abstractmethod
+from collections.abc import Callable, Iterable
 from functools import wraps
-from multiprocessing.pool import ThreadPool
 from ssl import SSLContext
-from typing import Any, Concatenate, ParamSpec, TypeVar
+from typing import Any, Concatenate, ParamSpec, TypeVar, Protocol
 
 from adaptix import NameStyle, Retort, name_mapping
 from dataclass_rest import get
@@ -20,8 +20,22 @@ from .models import Model, PagingResponse, Status
 Class = TypeVar("Class")
 ArgsSpec = ParamSpec("ArgsSpec")
 
-executor = ThreadPool(processes=50)
 logger = logging.getLogger(__name__)
+
+T = TypeVar("T")
+R = TypeVar("R")
+
+
+class _BasePool(Protocol):
+    @abstractmethod
+    def map(self, func: Callable[[T], R], iterable: Iterable[T]) -> Iterable[R]:
+        raise NotImplementedError()
+
+
+class FakePool(_BasePool):
+    def map(self, func: Callable[[T], R], iterable: Iterable[T]) -> Iterable[R]:
+        for item in iterable:
+            yield func(item)
 
 
 def _collect_by_pages(
@@ -45,7 +59,7 @@ def _collect_by_pages(
             if limit is None:
                 kwargs["limit"] = page_size
             else:
-                kwargs["limit"] = min(limit-kwargs["offset"], page_size)
+                kwargs["limit"] = min(limit - kwargs["offset"], page_size)
             page = method(*args, **kwargs)
             kwargs["offset"] += page_size
             results.extend(page.results)
@@ -99,17 +113,19 @@ def collect(
                 results=[],
             )
 
-        results = []
         batches = [
             value[offset: offset + batch_size]
             for offset in range(0, len(value), batch_size)
         ]
+
         def apply(batch):
             nonlocal kwargs
             kwargs = kwargs.copy()
             kwargs[field] = batch
             return method(*args, **kwargs)
-        for page in executor.imap_unordered(apply, batches):
+
+        results = []
+        for page in self.pool.map(apply, batches):
             results.extend(page.results)
         return PagingResponse(
             previous=None,
@@ -124,8 +140,7 @@ def collect(
 class NoneAwareRequestsMethod(RequestsMethod):
     def _on_error_default(self, response: Response) -> Any:
         body = self._response_body(response)
-        if http.HTTPStatus.BAD_REQUEST <= response.status_code \
-                                       < http.HTTPStatus.INTERNAL_SERVER_ERROR:
+        if http.HTTPStatus.BAD_REQUEST <= response.status_code < http.HTTPStatus.INTERNAL_SERVER_ERROR:
             raise ClientWithBodyError(response.status_code, body=body)
         raise ServerWithBodyError(response.status_code, body=body)
 
@@ -169,12 +184,14 @@ class BaseNetboxClient(RequestsClient):
     ):
         url = url.rstrip("/") + "/api/"
         session = self._init_session(ssl_context)
+        self.pool = self._init_pool()
 
         if token:
             session.headers["Authorization"] = f"Token {token}"
         super().__init__(url, session)
 
-    def _init_session(self,
+    def _init_session(
+        self,
         ssl_context: SSLContext | None = None,
     ) -> Session:
         adapter = CustomHTTPAdapter(
@@ -188,7 +205,8 @@ class BaseNetboxClient(RequestsClient):
         session.mount("https://", adapter)
         return session
 
-
+    def _init_pool(self) -> _BasePool:
+        return FakePool()
 
 
 class NetboxStatusClient(BaseNetboxClient):
