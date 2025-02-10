@@ -1,6 +1,9 @@
 import http
+import logging
+import time
 from collections.abc import Callable
 from functools import wraps
+from multiprocessing.pool import ThreadPool
 from ssl import SSLContext
 from typing import Any, Concatenate, ParamSpec, TypeVar
 
@@ -17,6 +20,9 @@ from .models import Model, PagingResponse, Status
 Class = TypeVar("Class")
 ArgsSpec = ParamSpec("ArgsSpec")
 
+executor = ThreadPool(processes=50)
+logger = logging.getLogger(__name__)
+
 
 def _collect_by_pages(
     func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]],
@@ -30,15 +36,23 @@ def _collect_by_pages(
         **kwargs: ArgsSpec.kwargs,
     ) -> PagingResponse[Model]:
         kwargs.setdefault("offset", 0)
-        limit = kwargs.setdefault("limit", 100)
+        page_size = kwargs.pop("page_size", 100)
+        limit = kwargs.pop("limit", None)
         results = []
         method = func.__get__(self, self.__class__)
         has_next = True
         while has_next:
+            if limit is None:
+                kwargs["limit"] = page_size
+            else:
+                kwargs["limit"] = min(limit-kwargs["offset"], page_size)
             page = method(*args, **kwargs)
-            kwargs["offset"] += limit
+            kwargs["offset"] += page_size
             results.extend(page.results)
-            has_next = bool(page.next)
+            if limit is None:
+                has_next = bool(page.next)
+            else:
+                has_next = kwargs["offset"] < limit
         return PagingResponse(
             previous=None,
             next=None,
@@ -86,9 +100,16 @@ def collect(
             )
 
         results = []
-        for offset in range(0, len(value), batch_size):
-            kwargs[field] = value[offset : offset + batch_size]
-            page = method(*args, **kwargs)
+        batches = [
+            value[offset: offset + batch_size]
+            for offset in range(0, len(value), batch_size)
+        ]
+        def apply(batch):
+            nonlocal kwargs
+            kwargs = kwargs.copy()
+            kwargs[field] = batch
+            return method(*args, **kwargs)
+        for page in executor.imap_unordered(apply, batches):
             results.extend(page.results)
         return PagingResponse(
             previous=None,
@@ -126,7 +147,10 @@ class CustomHTTPAdapter(HTTPAdapter):
 
     def send(self, request, **kwargs):
         kwargs.setdefault("timeout", self.timeout)
-        return super().send(request, **kwargs)
+        start = time.perf_counter()
+        res = super().send(request, **kwargs)
+        logger.debug("Response time: %.2f, url: %s", time.perf_counter() - start, request.url)
+        return res
 
     def init_poolmanager(self, *args, **kwargs):
         if self.ssl_context is not None:
@@ -144,7 +168,15 @@ class BaseNetboxClient(RequestsClient):
         ssl_context: SSLContext | None = None,
     ):
         url = url.rstrip("/") + "/api/"
+        session = self._init_session(ssl_context)
 
+        if token:
+            session.headers["Authorization"] = f"Token {token}"
+        super().__init__(url, session)
+
+    def _init_session(self,
+        ssl_context: SSLContext | None = None,
+    ) -> Session:
         adapter = CustomHTTPAdapter(
             ssl_context=ssl_context,
             timeout=300,
@@ -154,10 +186,9 @@ class BaseNetboxClient(RequestsClient):
             session.verify = False
         session.mount("http://", adapter)
         session.mount("https://", adapter)
+        return session
 
-        if token:
-            session.headers["Authorization"] = f"Token {token}"
-        super().__init__(url, session)
+
 
 
 class NetboxStatusClient(BaseNetboxClient):
