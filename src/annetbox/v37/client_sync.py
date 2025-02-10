@@ -128,6 +128,7 @@ class NetboxV37(BaseNetboxClient):
         tag: list[str] | None = None,
         site: list[str] | None = None,
         role: list[str] | None = None,
+        device_type: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> PagingResponse[Device]:
