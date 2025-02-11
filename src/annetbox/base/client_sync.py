@@ -3,6 +3,7 @@ import logging
 from abc import abstractmethod
 from collections.abc import Callable, Iterable
 from functools import wraps
+from multiprocessing.pool import ThreadPool
 from ssl import SSLContext
 from typing import Any, Concatenate, ParamSpec, Protocol, TypeVar
 
@@ -182,10 +183,11 @@ class BaseNetboxClient(RequestsClient):
         url: str,
         token: str = "",
         ssl_context: SSLContext | None = None,
+        threads: int = 1,
     ):
         url = url.rstrip("/") + "/api/"
         session = self._init_session(ssl_context)
-        self.pool = self._init_pool()
+        self.pool = self._init_pool(threads)
 
         if token:
             session.headers["Authorization"] = f"Token {token}"
@@ -206,7 +208,9 @@ class BaseNetboxClient(RequestsClient):
         session.mount("https://", adapter)
         return session
 
-    def _init_pool(self) -> _BasePool:
+    def _init_pool(self, threads: int) -> _BasePool:
+        if threads > 1:
+            return ThreadPool(processes=threads)
         return FakePool()
 
 
