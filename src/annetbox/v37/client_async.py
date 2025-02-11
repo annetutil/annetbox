@@ -46,7 +46,9 @@ class NetboxV37(BaseNetboxClient):
     ) -> PagingResponse[Interface]:
         pass
 
-    dcim_all_interfaces = collect(dcim_interfaces, field="device_id")
+    dcim_all_interfaces = collect(
+        dcim_interfaces, field="device_id", batch_size=10,  # heavy request
+    )
     dcim_all_interfaces_by_id = collect(dcim_interfaces, field="id")
 
     @get("dcim/interfaces/{id}/")

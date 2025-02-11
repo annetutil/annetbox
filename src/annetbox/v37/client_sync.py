@@ -68,9 +68,7 @@ class NetboxV37(BaseNetboxClient):
     ) -> PagingResponse[ConsolePort]:
         pass
 
-    dcim_all_console_ports = collect(
-        dcim_console_ports, field="device_id", batch_size=50,
-    )
+    dcim_all_console_ports = collect(dcim_console_ports, field="device_id")
     dcim_all_console_ports_by_id = collect(dcim_console_ports, field="id")
 
     @get("dcim/console-ports/{id}/")
