@@ -160,10 +160,15 @@ class CustomHTTPAdapter(HTTPAdapter):
         self,
         ssl_context: SSLContext | None = None,
         timeout: int = 30,
+        pool_connections: int = 10,
+        pool_maxsize: int = 10,
     ) -> None:
         self.ssl_context = ssl_context
         self.timeout = timeout
-        super().__init__()
+        super().__init__(
+            pool_connections=pool_connections,
+            pool_maxsize=pool_maxsize,
+        )
 
     def send(self, request, **kwargs):
         kwargs.setdefault("timeout", self.timeout)
@@ -186,7 +191,7 @@ class BaseNetboxClient(RequestsClient):
         threads: int = 1,
     ):
         url = url.rstrip("/") + "/api/"
-        session = self._init_session(ssl_context)
+        session = self._init_session(ssl_context, threads)
         self.pool = self._init_pool(threads)
 
         if token:
@@ -196,10 +201,13 @@ class BaseNetboxClient(RequestsClient):
     def _init_session(
         self,
         ssl_context: SSLContext | None = None,
+        pool_connections: int = 1,
     ) -> Session:
         adapter = CustomHTTPAdapter(
             ssl_context=ssl_context,
             timeout=300,
+            pool_connections=pool_connections,
+            pool_maxsize=pool_connections,
         )
         session = Session()
         if ssl_context and not ssl_context.check_hostname:
