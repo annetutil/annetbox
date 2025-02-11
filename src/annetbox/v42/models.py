@@ -104,7 +104,7 @@ class InterfaceVlan(Entity):
 @dataclass
 class Interface(Entity):
     cable: InterfaceCable | None
-    cable_end: str | None # instead of "", now it’s None 
+    cable_end: str | None # was an empty string, now None
     device: Entity
     label: str
     link_peers: list[LinkPeer]
@@ -143,8 +143,7 @@ class Device(Entity):
     url: str
     display: str  # renamed in 3.x from display_name
     device_type: DeviceType
-    # device_role: EntityWithSlug # device_role is depricated after 4.0, now use role 
-    role: DeviceRole 
+    role: DeviceRole  # device_role is depricated after 4.0
     tenant: EntityWithSlug | None
     platform: Entity | None
     serial: str
@@ -267,8 +266,7 @@ class ItemToDelete:
 class Prefix:
     id: int
     prefix: str
-    # site: Entity | None
-    scope: Entity | None # new entity, “scope,” has replaced “Site
+    scope: Entity | None # site is depricated after 4.2
     vrf: Entity | None
     tenant: Entity | None
     vlan: Entity | None

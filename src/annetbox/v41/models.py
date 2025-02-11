@@ -143,8 +143,7 @@ class Device(Entity):
     url: str
     display: str  # renamed in 3.x from display_name
     device_type: DeviceType
-    # device_role: EntityWithSlug # "device_role" is depricated after 4.0, now use "role" 
-    role: DeviceRole 
+    role: DeviceRole  # device_role is depricated after 4.0
     tenant: EntityWithSlug | None
     platform: Entity | None
     serial: str
