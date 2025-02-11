@@ -1,11 +1,10 @@
 import http
 import logging
-import time
 from abc import abstractmethod
 from collections.abc import Callable, Iterable
 from functools import wraps
 from ssl import SSLContext
-from typing import Any, Concatenate, ParamSpec, TypeVar, Protocol
+from typing import Any, Concatenate, ParamSpec, Protocol, TypeVar
 
 from adaptix import NameStyle, Retort, name_mapping
 from dataclass_rest import get
@@ -28,18 +27,22 @@ R = TypeVar("R")
 
 class _BasePool(Protocol):
     @abstractmethod
-    def map(self, func: Callable[[T], R], iterable: Iterable[T]) -> Iterable[R]:
-        raise NotImplementedError()
+    def map(
+            self, func: Callable[[T], R], iterable: Iterable[T],
+    ) -> Iterable[R]:
+        raise NotImplementedError
 
 
 class FakePool(_BasePool):
-    def map(self, func: Callable[[T], R], iterable: Iterable[T]) -> Iterable[R]:
+    def map(
+            self, func: Callable[[T], R], iterable: Iterable[T],
+    ) -> Iterable[R]:
         for item in iterable:
             yield func(item)
 
 
 def _collect_by_pages(
-    func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]],
+        func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]],
 ) -> Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]]:
     """Collect all results using only pagination."""
 
@@ -140,7 +143,8 @@ def collect(
 class NoneAwareRequestsMethod(RequestsMethod):
     def _on_error_default(self, response: Response) -> Any:
         body = self._response_body(response)
-        if http.HTTPStatus.BAD_REQUEST <= response.status_code < http.HTTPStatus.INTERNAL_SERVER_ERROR:
+        if http.HTTPStatus.BAD_REQUEST <= response.status_code \
+                < http.HTTPStatus.INTERNAL_SERVER_ERROR:
             raise ClientWithBodyError(response.status_code, body=body)
         raise ServerWithBodyError(response.status_code, body=body)
 
@@ -162,10 +166,7 @@ class CustomHTTPAdapter(HTTPAdapter):
 
     def send(self, request, **kwargs):
         kwargs.setdefault("timeout", self.timeout)
-        start = time.perf_counter()
-        res = super().send(request, **kwargs)
-        logger.debug("Response time: %.2f, url: %s", time.perf_counter() - start, request.url)
-        return res
+        return super().send(request, **kwargs)
 
     def init_poolmanager(self, *args, **kwargs):
         if self.ssl_context is not None:
