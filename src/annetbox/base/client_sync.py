@@ -1,8 +1,11 @@
 import http
-from collections.abc import Callable
+import logging
+from abc import abstractmethod
+from collections.abc import Callable, Iterable
 from functools import wraps
+from multiprocessing.pool import ThreadPool
 from ssl import SSLContext
-from typing import Any, Concatenate, ParamSpec, TypeVar
+from typing import Any, Concatenate, ParamSpec, Protocol, TypeVar
 
 from adaptix import NameStyle, Retort, name_mapping
 from dataclass_rest import get
@@ -17,9 +20,30 @@ from .models import Model, PagingResponse, Status
 Class = TypeVar("Class")
 ArgsSpec = ParamSpec("ArgsSpec")
 
+logger = logging.getLogger(__name__)
+
+T = TypeVar("T")
+R = TypeVar("R")
+
+
+class _BasePool(Protocol):
+    @abstractmethod
+    def map(
+            self, func: Callable[[T], R], iterable: Iterable[T],
+    ) -> Iterable[R]:
+        raise NotImplementedError
+
+
+class FakePool(_BasePool):
+    def map(
+            self, func: Callable[[T], R], iterable: Iterable[T],
+    ) -> Iterable[R]:
+        for item in iterable:
+            yield func(item)
+
 
 def _collect_by_pages(
-    func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]],
+        func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]],
 ) -> Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]]:
     """Collect all results using only pagination."""
 
@@ -30,15 +54,23 @@ def _collect_by_pages(
         **kwargs: ArgsSpec.kwargs,
     ) -> PagingResponse[Model]:
         kwargs.setdefault("offset", 0)
-        limit = kwargs.setdefault("limit", 100)
+        page_size = kwargs.pop("page_size", 100)
+        limit = kwargs.pop("limit", None)
         results = []
         method = func.__get__(self, self.__class__)
         has_next = True
         while has_next:
+            if limit is None:
+                kwargs["limit"] = page_size
+            else:
+                kwargs["limit"] = min(limit - kwargs["offset"], page_size)
             page = method(*args, **kwargs)
-            kwargs["offset"] += limit
+            kwargs["offset"] += page_size
             results.extend(page.results)
-            has_next = bool(page.next)
+            if limit is None:
+                has_next = bool(page.next)
+            else:
+                has_next = kwargs["offset"] < limit
         return PagingResponse(
             previous=None,
             next=None,
@@ -85,10 +117,19 @@ def collect(
                 results=[],
             )
 
+        batches = [
+            value[offset: offset + batch_size]
+            for offset in range(0, len(value), batch_size)
+        ]
+
+        def apply(batch):
+            nonlocal kwargs
+            kwargs = kwargs.copy()
+            kwargs[field] = batch
+            return method(*args, **kwargs)
+
         results = []
-        for offset in range(0, len(value), batch_size):
-            kwargs[field] = value[offset : offset + batch_size]
-            page = method(*args, **kwargs)
+        for page in self.pool.map(apply, batches):
             results.extend(page.results)
         return PagingResponse(
             previous=None,
@@ -104,7 +145,7 @@ class NoneAwareRequestsMethod(RequestsMethod):
     def _on_error_default(self, response: Response) -> Any:
         body = self._response_body(response)
         if http.HTTPStatus.BAD_REQUEST <= response.status_code \
-                                       < http.HTTPStatus.INTERNAL_SERVER_ERROR:
+                < http.HTTPStatus.INTERNAL_SERVER_ERROR:
             raise ClientWithBodyError(response.status_code, body=body)
         raise ServerWithBodyError(response.status_code, body=body)
 
@@ -119,10 +160,15 @@ class CustomHTTPAdapter(HTTPAdapter):
         self,
         ssl_context: SSLContext | None = None,
         timeout: int = 30,
+        pool_connections: int = 10,
+        pool_maxsize: int = 10,
     ) -> None:
         self.ssl_context = ssl_context
         self.timeout = timeout
-        super().__init__()
+        super().__init__(
+            pool_connections=pool_connections,
+            pool_maxsize=pool_maxsize,
+        )
 
     def send(self, request, **kwargs):
         kwargs.setdefault("timeout", self.timeout)
@@ -142,22 +188,38 @@ class BaseNetboxClient(RequestsClient):
         url: str,
         token: str = "",
         ssl_context: SSLContext | None = None,
+        threads: int = 1,
     ):
         url = url.rstrip("/") + "/api/"
+        session = self._init_session(ssl_context, threads)
+        self.pool = self._init_pool(threads)
 
+        if token:
+            session.headers["Authorization"] = f"Token {token}"
+        super().__init__(url, session)
+
+    def _init_session(
+        self,
+        ssl_context: SSLContext | None = None,
+        pool_connections: int = 1,
+    ) -> Session:
         adapter = CustomHTTPAdapter(
             ssl_context=ssl_context,
             timeout=300,
+            pool_connections=pool_connections,
+            pool_maxsize=pool_connections,
         )
         session = Session()
         if ssl_context and not ssl_context.check_hostname:
             session.verify = False
         session.mount("http://", adapter)
         session.mount("https://", adapter)
+        return session
 
-        if token:
-            session.headers["Authorization"] = f"Token {token}"
-        super().__init__(url, session)
+    def _init_pool(self, threads: int) -> _BasePool:
+        if threads > 1:
+            return ThreadPool(processes=threads)
+        return FakePool()
 
 
 class NetboxStatusClient(BaseNetboxClient):

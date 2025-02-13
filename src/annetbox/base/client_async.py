@@ -33,15 +33,23 @@ def _collect_by_pages(
         **kwargs: ArgsSpec.kwargs,
     ) -> PagingResponse[Model]:
         kwargs.setdefault("offset", 0)
-        limit = kwargs.setdefault("limit", 100)
+        page_size = kwargs.pop("page_size", 100)
+        limit = kwargs.pop("limit", None)
         results = []
         method = func.__get__(self, self.__class__)
         has_next = True
         while has_next:
+            if limit is None:
+                kwargs["limit"] = page_size
+            else:
+                kwargs["limit"] = min(limit - kwargs["offset"], page_size)
             page = await method(*args, **kwargs)
-            kwargs["offset"] += limit
+            kwargs["offset"] += page_size
             results.extend(page.results)
-            has_next = bool(page.next)
+            if limit is None:
+                has_next = bool(page.next)
+            else:
+                has_next = kwargs["offset"] < limit
         return PagingResponse(
             previous=None,
             next=None,
