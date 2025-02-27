@@ -46,12 +46,6 @@ class DeviceIp:
 
 
 @dataclass
-class DeviceRole:
-    id: int
-    url: str
-
-
-@dataclass
 class Circuit:
     id: int
     url: str
@@ -143,7 +137,7 @@ class Device(Entity):
     url: str
     display: str  # renamed in 3.x from display_name
     device_type: DeviceType
-    role: DeviceRole  # device_role is depricated after 4.0
+    role: Entity  # device_role is depricated after 4.0
     tenant: EntityWithSlug | None
     platform: Entity | None
     serial: str
