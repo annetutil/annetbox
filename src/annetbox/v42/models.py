@@ -54,22 +54,22 @@ class Circuit:
 
 
 @dataclass
-class LinkPeer:
-    id: int
-    display: str
-    url: str
-    cable: int
-    device: Entity | None = None
-    term_side: str | None = None
-    circuit: Circuit | None = None
-
-
-@dataclass
 class InterfaceCable:
     id: int
     label: str
     display: str
     url: str
+
+
+@dataclass
+class LinkPeer:
+    id: int
+    display: str
+    url: str
+    cable: InterfaceCable # after 4.0 `int` deprecated
+    device: Entity | None = None
+    term_side: str | None = None
+    circuit: Circuit | None = None
 
 
 @dataclass
@@ -81,7 +81,7 @@ class InterfaceType:
 @dataclass
 class InterfaceConnectedEndpoint(Entity):
     device: Entity
-    cable: int
+    cable: InterfaceCable # after 4.0 `int` deprecated
 
 
 @dataclass
