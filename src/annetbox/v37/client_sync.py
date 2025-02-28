@@ -131,6 +131,8 @@ class NetboxV37(BaseNetboxClient):
         site: list[str] | None = None,
         role: list[str] | None = None,
         device_type: list[str] | None = None,
+        tenant: list[str] | None = None,
+        status: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> PagingResponse[Device]:
@@ -155,8 +157,12 @@ class NetboxV37(BaseNetboxClient):
         name__niew: list[str] | None = None,
         name__nisw: list[str] | None = None,
         id: list[int] | None = None,
-        site: list[str] | None = None,
         tag: list[str] | None = None,
+        site: list[str] | None = None,
+        role: list[str] | None = None,
+        device_type: list[str] | None = None,
+        tenant: list[str] | None = None,
+        status: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> PagingResponse[Entity]:
