@@ -68,4 +68,6 @@ netbox = NetboxV37(url=url, token=token, ssl_context=context)
 
 ```shell
 python transform_to_sync.py src/annetbox/v37/client_async.py > src/annetbox/v37/client_sync.py
+python transform_to_sync.py src/annetbox/v41/client_async.py > src/annetbox/v41/client_sync.py
+python transform_to_sync.py src/annetbox/v42/client_async.py > src/annetbox/v42/client_sync.py
 ```
