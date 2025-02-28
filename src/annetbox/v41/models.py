@@ -66,7 +66,7 @@ class LinkPeer:
     id: int
     display: str
     url: str
-    cable: InterfaceCable # after 4.0 `int` deprecated
+    cable: InterfaceCable
     device: Entity | None = None
     term_side: str | None = None
     circuit: Circuit | None = None
@@ -81,7 +81,7 @@ class InterfaceType:
 @dataclass
 class InterfaceConnectedEndpoint(Entity):
     device: Entity
-    cable: InterfaceCable # after 4.0 `int` deprecated
+    cable: InterfaceCable
 
 
 @dataclass
