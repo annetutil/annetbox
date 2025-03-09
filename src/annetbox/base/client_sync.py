@@ -1,5 +1,7 @@
 import http
 import logging
+import os
+import urllib.parse
 from abc import abstractmethod
 from collections.abc import Callable, Iterable
 from functools import wraps
@@ -19,7 +21,11 @@ from .models import Model, PagingResponse, Status
 
 Class = TypeVar("Class")
 ArgsSpec = ParamSpec("ArgsSpec")
-
+default_page_size = int(os.getenv("NETBOX_PAGE_SIZE", 100))
+# rfc9110:
+# It is RECOMMENDED that all senders and recipients support, at a minimum,
+# URIs with lengths of 8000 octets in protocol elements
+max_url_size = int(os.getenv("NETBOX_MAX_URL_SIZE", 8000))
 logger = logging.getLogger(__name__)
 
 T = TypeVar("T")
@@ -42,6 +48,25 @@ class FakePool(_BasePool):
             yield func(item)
 
 
+def split_by_len(pref_len: int, max_batch_len: int, data: list[Any]) -> list[list[Any]]:
+    res = []
+    current_batch = []
+    current_batch_len = 0
+    if not len(data):
+        return res
+    for item in data:
+        item_len = len(urllib.parse.quote_plus(str(item))) + pref_len
+        if current_batch_len + item_len > max_batch_len:
+            current_batch = []
+            current_batch_len = item_len
+            res.append(current_batch)
+        else:
+            current_batch_len += item_len
+            current_batch.append(item)
+    res.append(current_batch)
+    return res
+
+
 def _collect_by_pages(
         func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]],
 ) -> Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]]:
@@ -54,7 +79,7 @@ def _collect_by_pages(
         **kwargs: ArgsSpec.kwargs,
     ) -> PagingResponse[Model]:
         kwargs.setdefault("offset", 0)
-        page_size = kwargs.pop("page_size", 100)
+        page_size = kwargs.pop("page_size", default_page_size)
         limit = kwargs.pop("limit", None)
         results = []
         method = func.__get__(self, self.__class__)
@@ -117,12 +142,10 @@ def collect(
                 results=[],
             )
 
-        batches = [
-            value[offset: offset + batch_size]
-            for offset in range(0, len(value), batch_size)
-        ]
+        max_len = max_url_size - 200  # minus base url, TODO: calc using real base URL
+        batches = split_by_len(len(field)+2, max_len, value)  # +1 for equal sign, +1 for &
 
-        def apply(batch):
+        def apply(batch: list[Any]):
             nonlocal kwargs
             kwargs = kwargs.copy()
             kwargs[field] = batch
