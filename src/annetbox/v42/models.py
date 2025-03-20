@@ -260,6 +260,7 @@ class ItemToDelete:
 class Prefix:
     id: int
     prefix: str
+    scope_type: str | None
     scope: Entity | None # site is depricated after 4.2
     vrf: Entity | None
     tenant: Entity | None
