@@ -6,6 +6,7 @@ from functools import wraps
 from multiprocessing.pool import ThreadPool
 from ssl import SSLContext
 from typing import Any, Concatenate, ParamSpec, Protocol, TypeVar
+from urllib.parse import parse_qs, urlparse
 
 from adaptix import NameStyle, Retort, name_mapping
 from dataclass_rest import get
@@ -67,6 +68,15 @@ def _collect_by_pages(
             page = method(*args, **kwargs)
             kwargs["offset"] += page_size
             results.extend(page.results)
+            if page.next:
+                # we must follow page.next, but it's hard to redo current
+                # approach here we copy 'limit' and 'offset' from next page
+                parsed_url = urlparse(page.next)
+                query_parameters = parse_qs(parsed_url.query)
+                if  "offset" in query_parameters:
+                    kwargs["offset"] = int(query_parameters["offset"][0])
+                if "limit" in query_parameters:
+                    kwargs["limit"] = int(query_parameters["limit"][0])
             if limit is None:
                 has_next = bool(page.next)
             else:
