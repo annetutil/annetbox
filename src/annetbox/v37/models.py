@@ -132,6 +132,7 @@ class Device(Entity):
     display: str  # renamed in 3.x from display_name
     device_type: DeviceType
     device_role: EntityWithSlug
+    role: EntityWithSlug
     tenant: EntityWithSlug | None
     platform: Entity | None
     serial: str
