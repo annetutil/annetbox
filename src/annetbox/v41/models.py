@@ -156,6 +156,7 @@ class Device(Entity):
     created: datetime
     last_updated: datetime
     comments: None | str
+    cluster: Entity | None
 
 
 @dataclass

@@ -151,6 +151,7 @@ class Device(Entity):
     last_updated: datetime
     comments: None | str
     role: EntityWithSlug | None = None  # in 3.4 it's optional
+    cluster: Entity | None
 
 
 @dataclass
