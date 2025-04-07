@@ -110,6 +110,7 @@ class Interface(Entity):
     mgmt_only: bool
     lag: Entity | None
     mtu: int | None
+    tags: list[Entity] | None
 
 
 @dataclass
