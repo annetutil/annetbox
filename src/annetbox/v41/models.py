@@ -151,7 +151,7 @@ class Device(Entity):
     primary_ip: DeviceIp | None
     primary_ip4: DeviceIp | None
     primary_ip6: DeviceIp | None
-    tags: list[Entity]
+    tags: list[EntityWithSlug]
     custom_fields: dict[str, Any]
     created: datetime
     last_updated: datetime
@@ -174,7 +174,7 @@ class IpAddress:
     family: IpFamily
     address: str
     status: Label
-    tags: list[Entity]
+    tags: list[EntityWithSlug]
     created: datetime
     last_updated: datetime
     tenant: EntityWithSlug | None
@@ -222,7 +222,7 @@ class Cable:
     created: None | datetime
     last_updated: None | datetime
     custom_fields: dict[str, Any]
-    tags: list[Entity]
+    tags: list[EntityWithSlug]
     type: CableType | None = None
     a_terminations: None | list[GenericObject] = None
     b_terminations: None | list[GenericObject] = None
@@ -239,7 +239,7 @@ class Cable:
 @dataclass
 class NewCable:
     custom_fields: dict[str, Any] | None = None
-    tags: list[Entity] | None = None
+    tags: list[EntityWithSlug] | None = None
     type: CableType | None = None
     a_terminations: None | list[GenericObject] = None
     b_terminations: None | list[GenericObject] = None
