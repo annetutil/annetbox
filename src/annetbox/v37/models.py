@@ -111,6 +111,7 @@ class Interface(Entity):
     lag: Entity | None
     mtu: int | None
     tags: list[EntityWithSlug]
+    speed: int | None
 
 
 @dataclass
