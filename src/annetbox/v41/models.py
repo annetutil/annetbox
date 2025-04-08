@@ -116,6 +116,7 @@ class Interface(Entity):
     mgmt_only: bool
     lag: Entity | None
     mtu: int | None
+    tags: list[Entity]
 
 
 @dataclass
@@ -155,6 +156,7 @@ class Device(Entity):
     created: datetime
     last_updated: datetime
     comments: None | str
+    cluster: Entity | None
 
 
 @dataclass
