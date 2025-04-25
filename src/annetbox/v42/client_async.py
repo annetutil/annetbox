@@ -18,6 +18,8 @@ from .models import (
     ItemToDelete,
     NewCable,
     Prefix,
+    Vlan,
+    Vrf,
 )
 
 
@@ -206,3 +208,40 @@ class NetboxV42(BaseNetboxClient):
         pass
 
     ipam_all_prefixes = collect(prefixes, field="prefix")
+
+    @get("ipam/vlans/")
+    async def ipam_vlans(
+        self,
+        id: list[int] | None = None,
+        vid: list[int] | None = None,
+        group: list[str] | None = None,
+        status: list[str] | None = None,
+        tag: list[str] | None = None,
+        tenant: list[str] | None = None,
+        name: list[str] | None = None,
+        name__ic: list[str] | None = None,
+        role: list[str] | None = None,
+        site: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Vlan]:
+        pass
+
+    ipam_all_vlans = collect(ipam_vlans, field="vid")
+    ipam_all_vlans_by_id = collect(ipam_vlans, field="id")
+
+    @get("ipam/vrfs/")
+    async def ipam_vrfs(
+        self,
+        id: list[int] | None = None,
+        tag: list[str] | None = None,
+        tenant: list[str] | None = None,
+        name: list[str] | None = None,
+        name__ic: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Vrf]:
+        pass
+
+    ipam_all_vrfs = collect(ipam_vrfs, field="vid")
+    ipam_all_vrfs_by_id = collect(ipam_vrfs, field="id")
