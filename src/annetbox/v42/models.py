@@ -275,3 +275,42 @@ class Prefix:
     created: datetime
     description: str
     last_updated: datetime
+
+
+@dataclass
+class Vlan:
+    id: int
+    name: str
+    display: str
+    url: str
+    prefix_count: int
+    status: Label
+    tags: list[EntityWithSlug]
+    custom_fields: dict[str, Any]
+    vid: int
+    created: datetime
+    last_updated: datetime
+    role: Entity | None = None
+    comments: str | None = None
+    site: Entity | None = None
+    tenant: EntityWithSlug | None = None
+    group: EntityWithSlug | None = None
+
+
+@dataclass
+class Vrf:
+    id: int
+    name: str
+    display: str
+    url: str
+    enforce_unique: bool
+    created: datetime
+    last_updated: datetime
+    tags: list[EntityWithSlug]
+    custom_fields: dict[str, Any]
+    import_targets: list[EntityWithSlug]
+    export_targets: list[EntityWithSlug]
+    tenant: EntityWithSlug | None = None
+    description: str | None = None
+    comments: str | None = None
+    rd: str | None = None
