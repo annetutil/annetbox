@@ -158,6 +158,8 @@ class Device(Entity):
     last_updated: datetime
     comments: None | str
     cluster: Entity | None
+    config_context: dict[str, Any] | None
+    config_template: dict[str, Any] | None
 
 
 @dataclass
