@@ -152,9 +152,9 @@ class Device(Entity):
     last_updated: datetime
     comments: None | str
     cluster: Entity | None
+    config_context: dict[str, Any] | None
+    config_template: dict[str, Any] | None
     role: EntityWithSlug | None = None  # in 3.4 it's optional
-    config_context: dict[str, Any] | None = None
-    config_template: dict[str, Any] | None = None
 
 
 @dataclass
