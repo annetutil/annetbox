@@ -80,8 +80,8 @@ class InterfaceType:
 
 @dataclass
 class InterfaceConnectedEndpoint(Entity):
-    device: Entity
-    cable: InterfaceCable
+    device: Entity | None = None
+    cable: InterfaceCable | None = None
 
 
 @dataclass
