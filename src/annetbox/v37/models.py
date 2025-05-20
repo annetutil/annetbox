@@ -153,7 +153,7 @@ class Device(Entity):
     comments: None | str
     cluster: Entity | None
     config_context: dict[str, Any] | None
-    config_template: dict[str, Any] | None
+    config_template: dict[str, Any] | None = None  # in 3.4 it's None
     role: EntityWithSlug | None = None  # in 3.4 it's optional
 
 
