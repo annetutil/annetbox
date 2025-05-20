@@ -74,8 +74,8 @@ class InterfaceType:
 
 @dataclass
 class InterfaceConnectedEndpoint(Entity):
-    device: Entity
-    cable: int
+    device: Entity | None = None
+    cable: int | None = None
 
 
 @dataclass
@@ -153,8 +153,8 @@ class Device(Entity):
     comments: None | str
     cluster: Entity | None
     role: EntityWithSlug | None = None  # in 3.4 it's optional
-    config_context: dict[str, Any] | None
-    config_template: dict[str, Any] | None
+    config_context: dict[str, Any] | None = None
+    config_template: dict[str, Any] | None = None
 
 
 @dataclass
