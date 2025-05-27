@@ -13,6 +13,7 @@ from .models import (
     ConsolePort,
     Device,
     Entity,
+    FHRPGroup,
     Interface,
     IpAddress,
     ItemToDelete,
@@ -247,3 +248,19 @@ class NetboxV42(BaseNetboxClient):
 
     ipam_all_vrfs = collect(ipam_vrfs, field="vid")
     ipam_all_vrfs_by_id = collect(ipam_vrfs, field="id")
+
+    @get("ipam/fhrp-groups/")
+    def ipam_fhrp_groups(
+        self,
+        id: list[int] | None = None,
+        tag: list[str] | None = None,
+        protocol: list[str] | None = None,
+        name: list[str] | None = None,
+        name__ic: list[str] | None = None,
+        related_ip: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[FHRPGroup]:
+        pass
+
+    ipam_all_fhrp_groups = collect(ipam_fhrp_groups)

@@ -316,3 +316,18 @@ class Vrf:
     description: str | None = None
     comments: str | None = None
     rd: str | None = None
+
+
+@dataclass
+class FHRPGroup:
+    id: int
+    name: str
+    protocol: str
+    group_id: int
+    auth_type: str | None
+    auth_key: str
+    tags: list[EntityWithSlug]
+    custom_fields: dict[str, Any]
+    ip_addresses: list[DeviceIp]
+    description: str | None = None
+    comments: str | None = None
