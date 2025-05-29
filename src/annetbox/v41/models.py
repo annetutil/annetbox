@@ -280,6 +280,7 @@ class Prefix:
     last_updated: datetime
 
 
+@dataclass
 class FHRPGroupBrief:
     id: int
     group_id: int

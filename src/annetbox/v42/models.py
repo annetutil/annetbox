@@ -320,6 +320,7 @@ class Vrf:
     rd: str | None = None
 
 
+@dataclass
 class FHRPGroupBrief:
     id: int
     group_id: int

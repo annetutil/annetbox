@@ -228,8 +228,8 @@ class NetboxV37(BaseNetboxClient):
     ipam_all_fhrp_groups = collect(ipam_fhrp_groups)
     ipam_all_fhrp_groups_by_id = collect(ipam_fhrp_groups, field="id")
 
-    @get("ipam/fhrp-groups-assignments/?brief=1")
-    def ipam_fhrp_groups_assignments_brief(
+    @get("ipam/fhrp-group-assignments/?brief=1")
+    def ipam_fhrp_group_assignments_brief(
         self,
         id: list[int] | None = None,
         interface_id: list[int] | None = None,
@@ -243,8 +243,8 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     ipam_all_fhrp_group_assignments = collect(
-        ipam_fhrp_groups_assignments_brief,
+        ipam_fhrp_group_assignments_brief,
     )
     ipam_all_fhrp_group_assignments_by_interface = collect(
-        ipam_fhrp_groups_assignments_brief, field="interface_id",
+        ipam_fhrp_group_assignments_brief, field="interface_id",
     )
