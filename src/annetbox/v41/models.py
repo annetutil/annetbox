@@ -278,3 +278,33 @@ class Prefix:
     created: datetime
     description: str
     last_updated: datetime
+
+
+class FHRPGroupBrief:
+    id: int
+    group_id: int
+    display: str
+    protocol: str
+    description: str
+
+
+@dataclass
+class FHRPGroup(FHRPGroupBrief):
+    name: str
+    auth_type: str | None
+    auth_key: str
+    tags: list[EntityWithSlug]
+    custom_fields: dict[str, Any]
+    ip_addresses: list[DeviceIp]
+    comments: str | None = None
+
+
+@dataclass
+class FHRPGroupAssignmentBrief:
+    id: int
+    display: str
+    priority: int
+
+    interface_type: str | None
+    interface_id: int | None
+    group: FHRPGroupBrief

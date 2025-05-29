@@ -13,6 +13,8 @@ from .models import (
     ConsolePort,
     Device,
     Entity,
+    FHRPGroup,
+    FHRPGroupAssignmentBrief,
     Interface,
     IpAddress,
     ItemToDelete,
@@ -208,3 +210,41 @@ class NetboxV37(BaseNetboxClient):
         pass
 
     ipam_all_prefixes = collect(prefixes, field="prefix")
+
+    @get("ipam/fhrp-groups/")
+    def ipam_fhrp_groups(
+        self,
+        id: list[int] | None = None,
+        tag: list[str] | None = None,
+        protocol: list[str] | None = None,
+        name: list[str] | None = None,
+        name__ic: list[str] | None = None,
+        related_ip: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[FHRPGroup]:
+        pass
+
+    ipam_all_fhrp_groups = collect(ipam_fhrp_groups)
+    ipam_all_fhrp_groups_by_id = collect(ipam_fhrp_groups, field="id")
+
+    @get("ipam/fhrp-groups-assignments/?brief=1")
+    def ipam_fhrp_groups_assignments_brief(
+        self,
+        id: list[int] | None = None,
+        interface_id: list[int] | None = None,
+        device: list[str] | None = None,
+        device_id: list[int] | None = None,
+        group_id: list[int] | None = None,
+
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[FHRPGroupAssignmentBrief]:
+        pass
+
+    ipam_all_fhrp_group_assignments = collect(
+        ipam_fhrp_groups_assignments_brief,
+    )
+    ipam_all_fhrp_group_assignments_by_interface = collect(
+        ipam_fhrp_groups_assignments_brief, field="interface_id",
+    )

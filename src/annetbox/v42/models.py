@@ -345,6 +345,6 @@ class FHRPGroupAssignmentBrief:
     display: str
     priority: int
 
-    interface_type: str
-    interface_id: int
+    interface_type: str | None
+    interface_id: int | None
     group: FHRPGroupBrief
