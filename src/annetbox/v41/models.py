@@ -118,6 +118,8 @@ class Interface(Entity):
     mtu: int | None
     tags: list[EntityWithSlug]
     speed: int | None
+    count_ipaddresses: int
+    count_fhrp_groups: int
 
 
 @dataclass

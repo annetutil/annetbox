@@ -118,6 +118,8 @@ class Interface(Entity):
     mtu: int | None
     tags: list[EntityWithSlug]
     speed: int | None
+    count_ipaddresses: int
+    count_fhrp_groups: int
 
 
 @dataclass
@@ -318,16 +320,31 @@ class Vrf:
     rd: str | None = None
 
 
-@dataclass
-class FHRPGroup:
+class FHRPGroupBrief:
     id: int
-    name: str
-    protocol: str
     group_id: int
+    display: str
+    protocol: str
+    description: str
+
+
+@dataclass
+class FHRPGroup(FHRPGroupBrief):
+    name: str
     auth_type: str | None
     auth_key: str
     tags: list[EntityWithSlug]
     custom_fields: dict[str, Any]
     ip_addresses: list[DeviceIp]
-    description: str | None = None
     comments: str | None = None
+
+
+@dataclass
+class FHRPGroupAssignmentBrief:
+    id: int
+    display: str
+    priority: int
+
+    interface_type: str
+    interface_id: int
+    group: FHRPGroupBrief
