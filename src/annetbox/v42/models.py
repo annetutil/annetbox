@@ -98,7 +98,7 @@ class InterfaceVlan(Entity):
 @dataclass
 class Interface(Entity):
     cable: InterfaceCable | None
-    cable_end: str | None # was an empty string, now None
+    cable_end: str | None  # was an empty string, now None
     device: Entity
     label: str
     link_peers: list[LinkPeer]
@@ -179,6 +179,7 @@ class IpAddress:
     family: IpFamily
     address: str
     status: Label
+    role: Label | None
     tags: list[EntityWithSlug]
     created: datetime
     last_updated: datetime
@@ -268,7 +269,7 @@ class Prefix:
     id: int
     prefix: str
     scope_type: str | None
-    scope: Entity | None # site is depricated after 4.2
+    scope: Entity | None  # site is depricated after 4.2
     vrf: Entity | None
     tenant: Entity | None
     vlan: Entity | None

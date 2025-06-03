@@ -180,6 +180,7 @@ class IpAddress:
     family: IpFamily
     address: str
     status: Label
+    role: Label | None
     tags: list[EntityWithSlug]
     created: datetime
     last_updated: datetime
