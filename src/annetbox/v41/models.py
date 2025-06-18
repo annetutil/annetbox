@@ -24,11 +24,9 @@ class Label:
 
 
 @dataclass
-class DeviceType:
-    id: int
+class DeviceType(EntityWithSlug):
     manufacturer: EntityWithSlug
     model: str
-    slug: str
 
 
 @dataclass
