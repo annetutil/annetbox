@@ -143,7 +143,7 @@ class Device(Entity):
     device_type: DeviceType
     role: EntityWithSlug  # device_role is depricated after 4.0
     tenant: EntityWithSlug | None
-    platform: Entity | None
+    platform: EntityWithSlug | None
     serial: str
     asset_tag: str | None
     site: EntityWithSlug
