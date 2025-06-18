@@ -137,7 +137,7 @@ class Device(Entity):
     device_type: DeviceType
     device_role: EntityWithSlug
     tenant: EntityWithSlug | None
-    platform: Entity | None
+    platform: EntityWithSlug | None
     serial: str
     asset_tag: str | None
     site: EntityWithSlug
