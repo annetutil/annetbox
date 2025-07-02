@@ -112,6 +112,7 @@ class Interface(Entity):
     mtu: int | None
     tags: list[EntityWithSlug]
     speed: int | None
+    custom_fields: dict[str, Any] | None
     count_ipaddresses: int
     count_fhrp_groups: int
 
