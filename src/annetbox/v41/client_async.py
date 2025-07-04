@@ -133,6 +133,7 @@ class NetboxV41(BaseNetboxClient):
         device_type: list[str] | None = None,
         tenant: list[str] | None = None,
         status: list[str] | None = None,
+        asset_tag: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> PagingResponse[Device]:
@@ -163,6 +164,7 @@ class NetboxV41(BaseNetboxClient):
         device_type: list[str] | None = None,
         tenant: list[str] | None = None,
         status: list[str] | None = None,
+        asset_tag: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> PagingResponse[Entity]:
