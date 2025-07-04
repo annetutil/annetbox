@@ -142,11 +142,16 @@ class BaseNetboxClient(AiohttpClient):
         url: str,
         token: str = "",
         ssl_context: SSLContext | None = None,
+        session_kwargs: dict[str, Any] | None = None,
     ):
         url = url.rstrip("/") + "/api/"
-
         connector = TCPConnector(ssl=ssl_context)
-        session = ClientSession(connector=connector)
+
+        if not session_kwargs:
+            session_kwargs = {}
+        session_kwargs["connector"] = connector
+
+        session = ClientSession(**session_kwargs)
         if token:
             session.headers["Authorization"] = f"Token {token}"
         super().__init__(url, session)
