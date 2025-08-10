@@ -167,6 +167,9 @@ class NetboxV42(BaseNetboxClient):
         tenant: list[str] | None = None,
         status: list[str] | None = None,
         asset_tag: list[str] | None = None,
+        has_oob_ip: list[str] | None = None,
+        has_primary_ip: list[str] | None = None,
+        location_id:  list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> PagingResponse[Entity]:
