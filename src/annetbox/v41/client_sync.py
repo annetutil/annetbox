@@ -48,7 +48,9 @@ class NetboxV41(BaseNetboxClient):
     ) -> PagingResponse[Interface]:
         pass
 
-    dcim_all_interfaces = collect(dcim_interfaces, field="device_id")
+    dcim_all_interfaces = collect(
+        dcim_interfaces, field="device_id", batch_size=10,  # heavy request
+    )
     dcim_all_interfaces_by_id = collect(dcim_interfaces, field="id")
 
     @get("dcim/interfaces/{id}/")
@@ -167,7 +169,7 @@ class NetboxV41(BaseNetboxClient):
         asset_tag: list[str] | None = None,
         has_oob_ip: list[str] | None = None,
         has_primary_ip: list[str] | None = None,
-        location_id:  list[str] | None = None,
+        location_id: list[str] | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> PagingResponse[Entity]:
