@@ -20,6 +20,8 @@ from .models import Model, PagingResponse, Status
 
 Class = TypeVar("Class")
 ArgsSpec = ParamSpec("ArgsSpec")
+SessionFactoryT = Callable[[Session], Session]
+
 
 logger = logging.getLogger(__name__)
 
@@ -199,6 +201,7 @@ class BaseNetboxClient(RequestsClient):
         token: str = "",
         ssl_context: SSLContext | None = None,
         threads: int = 1,
+        session_factory: SessionFactoryT | None = None,
     ):
         url = url.rstrip("/") + "/api/"
         session = self._init_session(ssl_context, threads)
@@ -206,6 +209,8 @@ class BaseNetboxClient(RequestsClient):
 
         if token:
             session.headers["Authorization"] = f"Token {token}"
+        if session_factory:
+            session = session_factory(session)
         super().__init__(url, session)
 
     def _init_session(

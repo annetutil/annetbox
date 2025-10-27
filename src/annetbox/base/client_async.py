@@ -16,6 +16,7 @@ from .models import Model, PagingResponse, Status
 
 Class = TypeVar("Class")
 ArgsSpec = ParamSpec("ArgsSpec")
+SessionFactoryT = Callable[[ClientSession], ClientSession]
 
 
 def _collect_by_pages(
@@ -142,6 +143,7 @@ class BaseNetboxClient(AiohttpClient):
         url: str,
         token: str = "",
         ssl_context: SSLContext | None = None,
+        session_factory: SessionFactoryT | None = None,
     ):
         url = url.rstrip("/") + "/api/"
 
@@ -149,6 +151,8 @@ class BaseNetboxClient(AiohttpClient):
         session = ClientSession(connector=connector)
         if token:
             session.headers["Authorization"] = f"Token {token}"
+        if session_factory:
+            session = session_factory(session)
         super().__init__(url, session)
 
     async def close(self):
