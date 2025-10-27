@@ -199,6 +199,7 @@ class BaseNetboxClient(RequestsClient):
         token: str = "",
         ssl_context: SSLContext | None = None,
         threads: int = 1,
+        session_factory: Callable[[Session], Session] | None = None,
     ):
         url = url.rstrip("/") + "/api/"
         session = self._init_session(ssl_context, threads)
@@ -206,6 +207,8 @@ class BaseNetboxClient(RequestsClient):
 
         if token:
             session.headers["Authorization"] = f"Token {token}"
+        if session_factory:
+            session = session_factory(session)
         super().__init__(url, session)
 
     def _init_session(
