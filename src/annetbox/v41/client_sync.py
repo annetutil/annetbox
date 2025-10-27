@@ -39,6 +39,8 @@ class NetboxV41(BaseNetboxClient):
     def dcim_interfaces(
         self,
         id: list[int] | None = None,
+        cable_id: list[int] | None = None,
+        cable_id__n: list[int] | None = None,
         device: list[str] | None = None,
         device__n: list[str] | None = None,
         device_id: list[int] | None = None,
