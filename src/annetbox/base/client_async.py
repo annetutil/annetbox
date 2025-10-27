@@ -142,6 +142,7 @@ class BaseNetboxClient(AiohttpClient):
         url: str,
         token: str = "",
         ssl_context: SSLContext | None = None,
+        session_factory: Callable[[ClientSession], ClientSession] | None = None,
     ):
         url = url.rstrip("/") + "/api/"
 
@@ -149,6 +150,8 @@ class BaseNetboxClient(AiohttpClient):
         session = ClientSession(connector=connector)
         if token:
             session.headers["Authorization"] = f"Token {token}"
+        if session_factory:
+            session = session_factory(session)
         super().__init__(url, session)
 
     async def close(self):
