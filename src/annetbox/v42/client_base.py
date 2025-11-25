@@ -1,0 +1,296 @@
+from collections.abc import Iterable
+from datetime import datetime
+
+import dateutil.parser
+from adaptix import Retort, loader, name_mapping
+from descanso import RestBuilder
+from descanso.response_transformers import ErrorRaiser
+
+from annetbox.base.client_sync import collect
+from annetbox.base.models import PagingResponse
+from .models import (
+    Cable,
+    ConsolePort,
+    Device,
+    Entity,
+    FHRPGroup,
+    FHRPGroupAssignmentBrief,
+    Interface,
+    IpAddress,
+    ItemToDelete,
+    NewCable,
+    Prefix,
+    Vlan,
+    Vrf,
+)
+
+retort = Retort(recipe=[
+    loader(datetime, dateutil.parser.parse),
+    name_mapping(NewCable, omit_default=True),
+])
+rest = RestBuilder(
+    request_body_dumper=retort,
+    response_body_loader=retort,
+    query_param_dumper=retort,
+    error_raiser=ErrorRaiser(need_body=True),
+)
+
+class BaseNetboxV42:
+    # dcim
+    @rest.get("dcim/interfaces/")
+    def dcim_interfaces(
+        self,
+        id: list[int] | None = None,
+        cable_id: list[int] | None = None,
+        cable_id__n: list[int] | None = None,
+        device: list[str] | None = None,
+        device__n: list[str] | None = None,
+        device_id: list[int] | None = None,
+        device_id__n: list[int] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Interface]:
+        pass
+
+    dcim_all_interfaces = collect(
+        dcim_interfaces, field="device_id", batch_size=10,  # heavy request
+    )
+    dcim_all_interfaces_by_id = collect(dcim_interfaces, field="id")
+
+    @rest.get("dcim/interfaces/{id}/")
+    def dcim_interface(self, id: int) -> Interface:
+        pass
+
+    @rest.get("dcim/console-ports/")
+    def dcim_console_ports(
+        self,
+        id: list[int] | None = None,
+        device: list[str] | None = None,
+        device__n: list[str] | None = None,
+        device_id: list[int] | None = None,
+        device_id__n: list[int] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[ConsolePort]:
+        pass
+
+    dcim_all_console_ports = collect(dcim_console_ports, field="device_id")
+    dcim_all_console_ports_by_id = collect(dcim_console_ports, field="id")
+
+    @rest.get("dcim/console-ports/{id}/")
+    def dcim_console_port(self, id: int) -> ConsolePort:
+        pass
+
+    @rest.get("dcim/cables/")
+    def dcim_cables(
+        self,
+        device: list[str] | None = None,
+        device_id: list[int] | None = None,
+        interface_id: list[int] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Cable]:
+        pass
+
+    dcim_all_cables = collect(dcim_cables, field="interface_id")
+
+    @rest.post("dcim/cables/")
+    def dcim_cable_create(self, body: NewCable) -> Cable:
+        pass
+
+    @rest.post("dcim/cables/")
+    def dcim_cable_bulk_create(
+        self,
+        body: list[NewCable],
+    ) -> list[Cable]:
+        pass
+
+    @rest.delete("dcim/cables/")
+    def _dcim_cable_bulk_delete(self, body: list[ItemToDelete]) -> None:
+        pass
+
+    def dcim_cable_bulk_delete(self, body: Iterable[int]) -> None:
+        return self._dcim_cable_bulk_delete(
+            [ItemToDelete(id=x) for x in body],
+        )
+
+    @rest.delete("dcim/cables/{id}/")
+    def dcim_cable_delete(self, id: int) -> None:
+        pass
+
+    @rest.get("dcim/devices/")
+    def dcim_devices(
+        self,
+        name: list[str] | None = None,
+        name__empty: bool | None = None,
+        name__ic: list[str] | None = None,
+        name__ie: list[str] | None = None,
+        name__iew: list[str] | None = None,
+        name__isw: list[str] | None = None,
+        name__n: list[str] | None = None,
+        name__nic: list[str] | None = None,
+        name__nie: list[str] | None = None,
+        name__niew: list[str] | None = None,
+        name__nisw: list[str] | None = None,
+        id: list[int] | None = None,
+        tag: list[str] | None = None,
+        site: list[str] | None = None,
+        role: list[str] | None = None,
+        device_type: list[str] | None = None,
+        tenant: list[str] | None = None,
+        status: list[str] | None = None,
+        asset_tag: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Device]:
+        pass
+
+    dcim_all_devices = collect(dcim_devices)
+    dcim_all_devices_by_id = collect(dcim_devices, field="id")
+
+
+    @rest.get("dcim/devices/?brief=1")
+    def dcim_devices_brief(
+        self,
+        name: list[str] | None = None,
+        name__empty: bool | None = None,
+        name__ic: list[str] | None = None,
+        name__ie: list[str] | None = None,
+        name__iew: list[str] | None = None,
+        name__isw: list[str] | None = None,
+        name__n: list[str] | None = None,
+        name__nic: list[str] | None = None,
+        name__nie: list[str] | None = None,
+        name__niew: list[str] | None = None,
+        name__nisw: list[str] | None = None,
+        id: list[int] | None = None,
+        tag: list[str] | None = None,
+        site: list[str] | None = None,
+        role: list[str] | None = None,
+        device_type: list[str] | None = None,
+        tenant: list[str] | None = None,
+        status: list[str] | None = None,
+        asset_tag: list[str] | None = None,
+        has_oob_ip: bool | None = None,
+        has_primary_ip: bool | None = None,
+        location_id: list[int] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Entity]:
+        pass
+
+    dcim_all_devices_brief = collect(dcim_devices_brief)
+    dcim_all_devices_brief_by_id = collect(dcim_devices_brief, field="id")
+
+    @rest.get("dcim/devices/{device_id}/")
+    def dcim_device(
+        self,
+        device_id: int,
+    ) -> Device:
+        pass
+
+    # ipam
+    @rest.get("ipam/ip-addresses/")
+    def ipam_ip_addresses(
+        self,
+        interface_id: list[int] | None = None,
+        device_id: list[int] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[IpAddress]:
+        pass
+
+    ipam_all_ip_addresses = collect(ipam_ip_addresses, field="interface_id")
+
+    @rest.get("ipam/ip-addresses/{id}/")
+    def ipam_ip_address(
+        self,
+        id: int,
+    ) -> IpAddress:
+        pass
+
+    @rest.get("ipam/prefixes/")
+    def prefixes(
+        self,
+        prefix: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Prefix]:
+        pass
+
+    ipam_all_prefixes = collect(prefixes, field="prefix")
+
+    @rest.get("ipam/vlans/")
+    def ipam_vlans(
+        self,
+        id: list[int] | None = None,
+        vid: list[int] | None = None,
+        group: list[str] | None = None,
+        status: list[str] | None = None,
+        tag: list[str] | None = None,
+        tenant: list[str] | None = None,
+        name: list[str] | None = None,
+        name__ic: list[str] | None = None,
+        role: list[str] | None = None,
+        site: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Vlan]:
+        pass
+
+    ipam_all_vlans = collect(ipam_vlans, field="vid")
+    ipam_all_vlans_by_id = collect(ipam_vlans, field="id")
+
+    @rest.get("ipam/vrfs/")
+    def ipam_vrfs(
+        self,
+        id: list[int] | None = None,
+        tag: list[str] | None = None,
+        tenant: list[str] | None = None,
+        name: list[str] | None = None,
+        name__ic: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Vrf]:
+        pass
+
+    ipam_all_vrfs = collect(ipam_vrfs, field="vid")
+    ipam_all_vrfs_by_id = collect(ipam_vrfs, field="id")
+
+    @rest.get("ipam/fhrp-groups/")
+    def ipam_fhrp_groups(
+        self,
+        id: list[int] | None = None,
+        tag: list[str] | None = None,
+        protocol: list[str] | None = None,
+        name: list[str] | None = None,
+        name__ic: list[str] | None = None,
+        related_ip: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[FHRPGroup]:
+        pass
+
+    ipam_all_fhrp_groups = collect(ipam_fhrp_groups)
+    ipam_all_fhrp_groups_by_id = collect(ipam_fhrp_groups, field="id")
+
+    @rest.get("ipam/fhrp-group-assignments/?brief=1")
+    def ipam_fhrp_group_assignments_brief(
+        self,
+        id: list[int] | None = None,
+        interface_id: list[int] | None = None,
+        device: list[str] | None = None,
+        device_id: list[int] | None = None,
+        group_id: list[int] | None = None,
+
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[FHRPGroupAssignmentBrief]:
+        pass
+
+    ipam_all_fhrp_group_assignments = collect(
+        ipam_fhrp_group_assignments_brief,
+    )
+    ipam_all_fhrp_group_assignments_by_interface = collect(
+        ipam_fhrp_group_assignments_brief, field="interface_id",
+    )

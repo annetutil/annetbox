@@ -1,7 +1,7 @@
 import os
 
 from annetbox.base.client_sync import NetboxStatusClient
-from annetbox.v37.client_sync import NetboxV37
+from annetbox.v42.client_sync import NetboxV42
 
 
 def main():
@@ -14,8 +14,8 @@ def main():
     print(status)
 
     # basic netbox methods
-    netbox = NetboxV37(url=url, token=token)
-    res = netbox.dcim_devices(limit=1)
+    netbox = NetboxV42(url=url, token=token)
+    res = netbox.dcim_all_devices(limit=1)
     print(res)
     print()
 

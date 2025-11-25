@@ -1,18 +1,13 @@
-import http
 from collections.abc import Awaitable, Callable
 from functools import wraps
 from ssl import SSLContext
-from typing import Any, Concatenate, ParamSpec, TypeVar
+from typing import Concatenate, ParamSpec, TypeVar
 
-from adaptix import NameStyle, Retort, name_mapping
-from aiohttp import ClientResponse, ClientSession, TCPConnector
-from dataclass_rest import get
-from dataclass_rest.client_protocol import FactoryProtocol
-from dataclass_rest.http.aiohttp import AiohttpClient, AiohttpMethod
-from dataclass_rest.http_request import HttpRequest
+from aiohttp import ClientSession, TCPConnector
+from descanso.http.aiohttp import AiohttpClient
 
-from .exceptions import ClientWithBodyError, ServerWithBodyError
-from .models import Model, PagingResponse, Status
+from .models import Model, PagingResponse
+from .status import BaseNetboxStatusClient
 
 Class = TypeVar("Class")
 ArgsSpec = ParamSpec("ArgsSpec")
@@ -115,29 +110,7 @@ def collect(
     return wrapper
 
 
-class NoneAwareAiohttpMethod(AiohttpMethod):
-    async def _on_error_default(self, response: ClientResponse) -> Any:
-        body = await self._response_body(response)
-        if http.HTTPStatus.BAD_REQUEST <= response.status \
-                                       < http.HTTPStatus.INTERNAL_SERVER_ERROR:
-            raise ClientWithBodyError(response.status, body=body)
-        raise ServerWithBodyError(response.status, body=body)
-
-    async def _pre_process_request(self, request: HttpRequest) -> HttpRequest:
-        request.query_params = {
-            k: v for k, v in request.query_params.items() if v is not None
-        }
-        return request
-
-    async def _response_body(self, response: ClientResponse) -> Any:
-        if response.status == http.HTTPStatus.NO_CONTENT:
-            return None
-        return await super()._response_body(response)
-
-
 class BaseNetboxClient(AiohttpClient):
-    method_class = NoneAwareAiohttpMethod
-
     def __init__(
         self,
         url: str,
@@ -156,12 +129,9 @@ class BaseNetboxClient(AiohttpClient):
         super().__init__(url, session)
 
     async def close(self):
-        await self.session.close()
+        await self._session.close()
 
 
-class NetboxStatusClient(BaseNetboxClient):
-    def _init_response_body_factory(self) -> FactoryProtocol:
-        return Retort(recipe=[name_mapping(name_style=NameStyle.LOWER_KEBAB)])
 
-    @get("status")
-    async def status(self) -> Status: ...
+class NetboxStatusClient(BaseNetboxClient, BaseNetboxStatusClient):
+    ...
