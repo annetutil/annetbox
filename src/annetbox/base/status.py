@@ -1,9 +1,8 @@
-from adaptix import Retort, name_mapping, NameStyle
+from adaptix import NameStyle, Retort, name_mapping
 from descanso import RestBuilder
 from descanso.response_transformers import ErrorRaiser
 
 from annetbox.base.models import Status
-
 
 status_retort = Retort(recipe=[name_mapping(name_style=NameStyle.LOWER_KEBAB)])
 status_rest = RestBuilder(
