@@ -1,13 +1,8 @@
 from collections.abc import Iterable
-from datetime import datetime
-
-import dateutil.parser
-from adaptix import Retort, loader, name_mapping
-from dataclass_rest import delete, get, post
-from dataclass_rest.client_protocol import FactoryProtocol
 
 from annetbox.base.client_async import BaseNetboxClient, collect
 from annetbox.base.models import PagingResponse
+from .client_base import rest
 from .models import (
     Cable,
     ConsolePort,
@@ -26,18 +21,8 @@ from .models import (
 
 
 class NetboxV42(BaseNetboxClient):
-    def _init_response_body_factory(self) -> FactoryProtocol:
-        return Retort(recipe=[loader(datetime, dateutil.parser.parse)])
-
-    def _init_request_body_factory(self) -> FactoryProtocol:
-        return Retort(
-            recipe=[
-                name_mapping(NewCable, omit_default=True),
-            ],
-        )
-
     # dcim
-    @get("dcim/interfaces/")
+    @rest.get("dcim/interfaces/")
     async def dcim_interfaces(
         self,
         id: list[int] | None = None,
@@ -55,11 +40,11 @@ class NetboxV42(BaseNetboxClient):
     dcim_all_interfaces = collect(dcim_interfaces, field="device_id")
     dcim_all_interfaces_by_id = collect(dcim_interfaces, field="id")
 
-    @get("dcim/interfaces/{id}/")
+    @rest.get("dcim/interfaces/{id}/")
     async def dcim_interface(self, id: int) -> Interface:
         pass
 
-    @get("dcim/console-ports/")
+    @rest.get("dcim/console-ports/")
     async def dcim_console_ports(
         self,
         id: list[int] | None = None,
@@ -75,11 +60,11 @@ class NetboxV42(BaseNetboxClient):
     dcim_all_console_ports = collect(dcim_console_ports, field="device_id")
     dcim_all_console_ports_by_id = collect(dcim_console_ports, field="id")
 
-    @get("dcim/console-ports/{id}/")
+    @rest.get("dcim/console-ports/{id}/")
     async def dcim_console_port(self, id: int) -> ConsolePort:
         pass
 
-    @get("dcim/cables/")
+    @rest.get("dcim/cables/")
     async def dcim_cables(
         self,
         device: list[str] | None = None,
@@ -92,18 +77,18 @@ class NetboxV42(BaseNetboxClient):
 
     dcim_all_cables = collect(dcim_cables, field="interface_id")
 
-    @post("dcim/cables/")
+    @rest.post("dcim/cables/")
     async def dcim_cable_create(self, body: NewCable) -> Cable:
         pass
 
-    @post("dcim/cables/")
+    @rest.post("dcim/cables/")
     async def dcim_cable_bulk_create(
         self,
         body: list[NewCable],
     ) -> list[Cable]:
         pass
 
-    @delete("dcim/cables/")
+    @rest.delete("dcim/cables/")
     async def _dcim_cable_bulk_delete(self, body: list[ItemToDelete]) -> None:
         pass
 
@@ -112,11 +97,11 @@ class NetboxV42(BaseNetboxClient):
             [ItemToDelete(id=x) for x in body],
         )
 
-    @delete("dcim/cables/{id}/")
+    @rest.delete("dcim/cables/{id}/")
     async def dcim_cable_delete(self, id: int) -> None:
         pass
 
-    @get("dcim/devices/")
+    @rest.get("dcim/devices/")
     async def dcim_devices(
         self,
         name: list[str] | None = None,
@@ -147,7 +132,7 @@ class NetboxV42(BaseNetboxClient):
     dcim_all_devices_by_id = collect(dcim_devices, field="id")
 
 
-    @get("dcim/devices/?brief=1")
+    @rest.get("dcim/devices/?brief=1")
     async def dcim_devices_brief(
         self,
         name: list[str] | None = None,
@@ -180,7 +165,7 @@ class NetboxV42(BaseNetboxClient):
     dcim_all_devices_brief = collect(dcim_devices_brief)
     dcim_all_devices_brief_by_id = collect(dcim_devices_brief, field="id")
 
-    @get("dcim/devices/{device_id}/")
+    @rest.get("dcim/devices/{device_id}/")
     async def dcim_device(
         self,
         device_id: int,
@@ -188,7 +173,7 @@ class NetboxV42(BaseNetboxClient):
         pass
 
     # ipam
-    @get("ipam/ip-addresses/")
+    @rest.get("ipam/ip-addresses/")
     async def ipam_ip_addresses(
         self,
         interface_id: list[int] | None = None,
@@ -200,14 +185,14 @@ class NetboxV42(BaseNetboxClient):
 
     ipam_all_ip_addresses = collect(ipam_ip_addresses, field="interface_id")
 
-    @get("ipam/ip-addresses/{id}/")
+    @rest.get("ipam/ip-addresses/{id}/")
     async def ipam_ip_address(
         self,
         id: int,
     ) -> IpAddress:
         pass
 
-    @get("ipam/prefixes/")
+    @rest.get("ipam/prefixes/")
     async def prefixes(
         self,
         prefix: list[str] | None = None,
@@ -218,7 +203,7 @@ class NetboxV42(BaseNetboxClient):
 
     ipam_all_prefixes = collect(prefixes, field="prefix")
 
-    @get("ipam/vlans/")
+    @rest.get("ipam/vlans/")
     async def ipam_vlans(
         self,
         id: list[int] | None = None,
@@ -239,7 +224,7 @@ class NetboxV42(BaseNetboxClient):
     ipam_all_vlans = collect(ipam_vlans, field="vid")
     ipam_all_vlans_by_id = collect(ipam_vlans, field="id")
 
-    @get("ipam/vrfs/")
+    @rest.get("ipam/vrfs/")
     async def ipam_vrfs(
         self,
         id: list[int] | None = None,
@@ -255,7 +240,7 @@ class NetboxV42(BaseNetboxClient):
     ipam_all_vrfs = collect(ipam_vrfs, field="vid")
     ipam_all_vrfs_by_id = collect(ipam_vrfs, field="id")
 
-    @get("ipam/fhrp-groups/")
+    @rest.get("ipam/fhrp-groups/")
     async def ipam_fhrp_groups(
         self,
         id: list[int] | None = None,
@@ -272,7 +257,7 @@ class NetboxV42(BaseNetboxClient):
     ipam_all_fhrp_groups = collect(ipam_fhrp_groups)
     ipam_all_fhrp_groups_by_id = collect(ipam_fhrp_groups, field="id")
 
-    @get("ipam/fhrp-group-assignments/?brief=1")
+    @rest.get("ipam/fhrp-group-assignments/?brief=1")
     async def ipam_fhrp_group_assignments_brief(
         self,
         id: list[int] | None = None,

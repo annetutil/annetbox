@@ -1,4 +1,3 @@
-import http
 import logging
 import atexit
 from abc import abstractmethod
@@ -6,23 +5,19 @@ from collections.abc import Callable, Iterable
 from functools import wraps
 from multiprocessing.pool import ThreadPool
 from ssl import SSLContext
-from typing import Any, Concatenate, ParamSpec, Protocol, TypeVar
+from typing import Concatenate, ParamSpec, Protocol, TypeVar
 from urllib.parse import parse_qs, urlparse
 
-from adaptix import NameStyle, Retort, name_mapping
-from dataclass_rest import get
-from dataclass_rest.client_protocol import FactoryProtocol
-from dataclass_rest.http.requests import RequestsClient, RequestsMethod
-from requests import Response, Session
+from descanso.http.requests import RequestsClient
+from requests import Session
 from requests.adapters import HTTPAdapter
 
-from .exceptions import ClientWithBodyError, ServerWithBodyError
-from .models import Model, PagingResponse, Status
+from .models import Model, PagingResponse
+from .status import BaseNetboxStatusClient
 
 Class = TypeVar("Class")
 ArgsSpec = ParamSpec("ArgsSpec")
 SessionFactoryT = Callable[[Session], Session]
-
 
 logger = logging.getLogger(__name__)
 
@@ -53,9 +48,9 @@ def _collect_by_pages(
 
     @wraps(func)
     def wrapper(
-        self: Class,
-        *args: ArgsSpec.args,
-        **kwargs: ArgsSpec.kwargs,
+            self: Class,
+            *args: ArgsSpec.args,
+            **kwargs: ArgsSpec.kwargs,
     ) -> PagingResponse[Model]:
         kwargs.setdefault("offset", 0)
         page_size = kwargs.pop("page_size", 100)
@@ -76,7 +71,7 @@ def _collect_by_pages(
                 # approach here we copy 'limit' and 'offset' from next page
                 parsed_url = urlparse(page.next)
                 query_parameters = parse_qs(parsed_url.query)
-                if  "offset" in query_parameters:
+                if "offset" in query_parameters:
                     kwargs["offset"] = int(query_parameters["offset"][0])
                 if "limit" in query_parameters:
                     kwargs["limit"] = int(query_parameters["limit"][0])
@@ -96,9 +91,9 @@ def _collect_by_pages(
 
 # default batch size 100 is calculated to fit list of UUIDs in 4k URL length
 def collect(
-    func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]],
-    field: str = "",
-    batch_size: int = 100,
+        func: Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]],
+        field: str = "",
+        batch_size: int = 100,
 ) -> Callable[Concatenate[Class, ArgsSpec], PagingResponse[Model]]:
     """
     Collect data from method iterating over pages and filter batches.
@@ -113,9 +108,9 @@ def collect(
 
     @wraps(func)
     def wrapper(
-        self: Class,
-        *args: ArgsSpec.args,
-        **kwargs: ArgsSpec.kwargs,
+            self: Class,
+            *args: ArgsSpec.args,
+            **kwargs: ArgsSpec.kwargs,
     ) -> PagingResponse[Model]:
         method = func.__get__(self, self.__class__)
 
@@ -154,27 +149,13 @@ def collect(
     return wrapper
 
 
-class NoneAwareRequestsMethod(RequestsMethod):
-    def _on_error_default(self, response: Response) -> Any:
-        body = self._response_body(response)
-        if http.HTTPStatus.BAD_REQUEST <= response.status_code \
-                < http.HTTPStatus.INTERNAL_SERVER_ERROR:
-            raise ClientWithBodyError(response.status_code, body=body)
-        raise ServerWithBodyError(response.status_code, body=body)
-
-    def _response_body(self, response: Response) -> Any:
-        if response.status_code == http.HTTPStatus.NO_CONTENT:
-            return None
-        return super()._response_body(response)
-
-
 class CustomHTTPAdapter(HTTPAdapter):
     def __init__(
-        self,
-        ssl_context: SSLContext | None = None,
-        timeout: int = 30,
-        pool_connections: int = 10,
-        pool_maxsize: int = 10,
+            self,
+            ssl_context: SSLContext | None = None,
+            timeout: int = 30,
+            pool_connections: int = 10,
+            pool_maxsize: int = 10,
     ) -> None:
         self.ssl_context = ssl_context
         self.timeout = timeout
@@ -194,15 +175,13 @@ class CustomHTTPAdapter(HTTPAdapter):
 
 
 class BaseNetboxClient(RequestsClient):
-    method_class = NoneAwareRequestsMethod
-
     def __init__(
-        self,
-        url: str,
-        token: str = "",
-        ssl_context: SSLContext | None = None,
-        threads: int = 1,
-        session_factory: SessionFactoryT | None = None,
+            self,
+            url: str,
+            token: str = "",
+            ssl_context: SSLContext | None = None,
+            threads: int = 1,
+            session_factory: SessionFactoryT | None = None,
     ):
         url = url.rstrip("/") + "/api/"
         session = self._init_session(ssl_context, threads)
@@ -212,12 +191,13 @@ class BaseNetboxClient(RequestsClient):
             session.headers["Authorization"] = f"Token {token}"
         if session_factory:
             session = session_factory(session)
+        session.verify = False
         super().__init__(url, session)
 
     def _init_session(
-        self,
-        ssl_context: SSLContext | None = None,
-        pool_connections: int = 1,
+            self,
+            ssl_context: SSLContext | None = None,
+            pool_connections: int = 1,
     ) -> Session:
         adapter = CustomHTTPAdapter(
             ssl_context=ssl_context,
@@ -241,9 +221,5 @@ class BaseNetboxClient(RequestsClient):
         return FakePool()
 
 
-class NetboxStatusClient(BaseNetboxClient):
-    def _init_response_body_factory(self) -> FactoryProtocol:
-        return Retort(recipe=[name_mapping(name_style=NameStyle.LOWER_KEBAB)])
-
-    @get("status")
-    def status(self) -> Status: ...
+class NetboxStatusClient(BaseNetboxClient, BaseNetboxStatusClient):
+    ...

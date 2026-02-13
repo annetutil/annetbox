@@ -2,7 +2,7 @@ import asyncio
 import os
 
 from annetbox.base.client_async import NetboxStatusClient
-from annetbox.v37.client_async import NetboxV37
+from annetbox.v42.client_async import NetboxV42
 
 
 async def main():
@@ -17,8 +17,8 @@ async def main():
     await status_client.close()
 
     # basic netbox methods
-    netbox = NetboxV37(url=url, token=token)
-    res = await netbox.dcim_devices(limit=1)
+    netbox = NetboxV42(url=url, token=token)
+    res = await netbox.dcim_all_devices(limit=1)
     print(res)
     print()
 
