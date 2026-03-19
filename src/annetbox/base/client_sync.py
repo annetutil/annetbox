@@ -1,6 +1,6 @@
+import atexit
 import http
 import logging
-import atexit
 from abc import abstractmethod
 from collections.abc import Callable, Iterable
 from functools import wraps
