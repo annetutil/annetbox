@@ -96,6 +96,12 @@ class InterfaceVlan(Entity):
 
 
 @dataclass
+class Vrf(Entity):
+    rd: str
+    description: str
+
+
+@dataclass
 class Interface(Entity):
     cable: InterfaceCable | None
     cable_end: str
@@ -112,7 +118,7 @@ class Interface(Entity):
     tagged_vlans: list[InterfaceVlan] | None
     created: datetime
     last_updated: datetime
-    vrf: Entity | None
+    vrf: Vrf | None
     mgmt_only: bool
     lag: Entity | None
     mtu: int | None
@@ -185,7 +191,7 @@ class IpAddress:
     created: datetime
     last_updated: datetime
     tenant: EntityWithSlug | None
-    vrf: Entity | None
+    vrf: Vrf | None
 
 
 class CableType(str, Enum):
@@ -270,7 +276,7 @@ class Prefix:
     id: int
     prefix: str
     site: Entity | None
-    vrf: Entity | None
+    vrf: Vrf | None
     tenant: Entity | None
     vlan: Entity | None
     role: Entity | None
