@@ -97,7 +97,7 @@ class InterfaceVlan(Entity):
 
 @dataclass
 class Vrf(Entity):
-    rd: str
+    rd: str | None
     description: str
 
 
