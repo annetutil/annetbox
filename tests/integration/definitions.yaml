@@ -1,0 +1,4 @@
+# Netbox API test definitions - shared across all versions
+# Each test case gets its own subdirectory with cassette + expected response
+
+tests: []
