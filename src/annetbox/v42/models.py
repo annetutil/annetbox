@@ -96,7 +96,7 @@ class InterfaceVlan(Entity):
 
 
 @dataclass
-class Vrf(Entity):
+class VrfBrief(Entity):
     rd: str | None
     description: str
 
@@ -117,7 +117,7 @@ class Interface(Entity):
     tagged_vlans: list[InterfaceVlan] | None
     created: datetime
     last_updated: datetime
-    vrf: Vrf | None
+    vrf: VrfBrief | None
     mgmt_only: bool
     lag: Entity | None
     mtu: int | None
@@ -190,7 +190,7 @@ class IpAddress:
     created: datetime
     last_updated: datetime
     tenant: EntityWithSlug | None
-    vrf: Vrf | None
+    vrf: VrfBrief | None
 
 
 class CableType(str, Enum):
@@ -276,7 +276,7 @@ class Prefix:
     prefix: str
     scope_type: str | None
     scope: Entity | None  # site is depricated after 4.2
-    vrf: Vrf | None
+    vrf: VrfBrief | None
     tenant: Entity | None
     vlan: Entity | None
     role: Entity | None
