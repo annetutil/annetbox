@@ -1,4 +1,78 @@
 # Netbox API test definitions - shared across all versions
 # Each test case gets its own subdirectory with cassette + expected response
 
-tests: []
+tests:
+  ####
+  #### Versions: v37, v41, v42
+  ####
+  - id: dcim_devices_01
+    method: dcim_devices
+    versions: ["v37", "v41", "v42"]
+    args:
+      limit: 10
+
+  - id: dcim_all_devices_01
+    method: dcim_all_devices
+    versions: ["v37", "v41", "v42"]
+    args:
+      limit: 30
+
+  - id: dcim_console_ports_01
+    method: dcim_console_ports
+    versions: ["v37", "v41", "v42"]
+    args:
+      limit: 5
+
+  - id: dcim_cables_01
+    method: dcim_cables
+    versions: ["v37", "v41", "v42"]
+    args:
+      limit: 5
+
+  - id: dcim_device_01
+    method: dcim_device
+    versions: ["v37", "v41", "v42"]
+    args:
+      device_id: !from_call
+        call: dcim_devices
+        args: {limit: 10}
+        extract: results[0].id
+
+  - id: dcim_console_port_01
+    method: dcim_console_port
+    versions: ["v37", "v41", "v42"]
+    args:
+      id: !from_call
+        call: dcim_console_ports
+        args: {limit: 5}
+        extract: results[0].id
+
+  - id: ipam_ip_addresses_01
+    method: ipam_ip_addresses
+    versions: ["v37", "v41", "v42"]
+    args:
+      limit: 10
+
+  - id: ipam_all_ip_addresses_01
+    method: ipam_all_ip_addresses
+    versions: ["v37", "v41", "v42"]
+    args:
+      limit: 50
+
+  - id: ipam_ip_address_01
+    method: ipam_ip_address
+    versions: ["v37", "v41", "v42"]
+    args:
+      id: !from_call
+        call: ipam_ip_addresses
+        args: {limit: 10}
+        extract: results[0].id
+
+  ####
+  #### Versions: v42
+  ####
+  - id: ipam_vlans_01
+    method: ipam_vlans  # implemented only for v42
+    versions: ["v42"]
+    args:
+      limit: 10
