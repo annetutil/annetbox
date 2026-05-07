@@ -1,0 +1,339 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: ipam_vlans_01
+  method: ipam_vlans
+  args:
+    limit: 10
+call:
+  client_call: ipam_vlans
+  client_call_args: []
+  client_call_kwargs:
+    limit: 10
+output: !!python/object:annetbox.base.models.PagingResponse
+  next: http://localhost:8042/api/ipam/vlans/?limit=10&offset=10
+  previous: null
+  count: 63
+  results:
+  - !!python/object:annetbox.v42.models.Vlan
+    id: 1
+    name: Data
+    display: Data (100)
+    url: http://localhost:8042/api/ipam/vlans/1/
+    prefix_count: 1
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    tags: []
+    custom_fields: {}
+    vid: 100
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2021-03-10 20:55:36.697000+00:00
+    role: !!python/object:annetbox.v42.models.Entity
+      id: 1
+      name: Access - Data
+      display: Access - Data
+      url: http://localhost:8042/api/ipam/roles/1/
+    comments: ''
+    site: !!python/object:annetbox.v42.models.Entity
+      id: 2
+      name: DM-Akron
+      display: DM-Akron
+      url: http://localhost:8042/api/dcim/sites/2/
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8042/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    group: null
+  - !!python/object:annetbox.v42.models.Vlan
+    id: 2
+    name: Voice
+    display: Voice (200)
+    url: http://localhost:8042/api/ipam/vlans/2/
+    prefix_count: 1
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    tags: []
+    custom_fields: {}
+    vid: 200
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2021-03-10 20:55:36.763000+00:00
+    role: !!python/object:annetbox.v42.models.Entity
+      id: 2
+      name: Access - Voice
+      display: Access - Voice
+      url: http://localhost:8042/api/ipam/roles/2/
+    comments: ''
+    site: !!python/object:annetbox.v42.models.Entity
+      id: 2
+      name: DM-Akron
+      display: DM-Akron
+      url: http://localhost:8042/api/dcim/sites/2/
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8042/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    group: null
+  - !!python/object:annetbox.v42.models.Vlan
+    id: 27
+    name: Wireless
+    display: Wireless (300)
+    url: http://localhost:8042/api/ipam/vlans/27/
+    prefix_count: 1
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    tags: []
+    custom_fields: {}
+    vid: 300
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2021-03-10 20:55:36.823000+00:00
+    role: !!python/object:annetbox.v42.models.Entity
+      id: 3
+      name: Access - Wireless
+      display: Access - Wireless
+      url: http://localhost:8042/api/ipam/roles/3/
+    comments: ''
+    site: !!python/object:annetbox.v42.models.Entity
+      id: 2
+      name: DM-Akron
+      display: DM-Akron
+      url: http://localhost:8042/api/dcim/sites/2/
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8042/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    group: null
+  - !!python/object:annetbox.v42.models.Vlan
+    id: 3
+    name: Data
+    display: Data (100)
+    url: http://localhost:8042/api/ipam/vlans/3/
+    prefix_count: 1
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    tags: []
+    custom_fields: {}
+    vid: 100
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2021-03-10 20:55:36.882000+00:00
+    role: !!python/object:annetbox.v42.models.Entity
+      id: 1
+      name: Access - Data
+      display: Access - Data
+      url: http://localhost:8042/api/ipam/roles/1/
+    comments: ''
+    site: !!python/object:annetbox.v42.models.Entity
+      id: 3
+      name: DM-Albany
+      display: DM-Albany
+      url: http://localhost:8042/api/dcim/sites/3/
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8042/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    group: null
+  - !!python/object:annetbox.v42.models.Vlan
+    id: 4
+    name: Voice
+    display: Voice (200)
+    url: http://localhost:8042/api/ipam/vlans/4/
+    prefix_count: 1
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    tags: []
+    custom_fields: {}
+    vid: 200
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2021-03-10 20:55:36.943000+00:00
+    role: !!python/object:annetbox.v42.models.Entity
+      id: 2
+      name: Access - Voice
+      display: Access - Voice
+      url: http://localhost:8042/api/ipam/roles/2/
+    comments: ''
+    site: !!python/object:annetbox.v42.models.Entity
+      id: 3
+      name: DM-Albany
+      display: DM-Albany
+      url: http://localhost:8042/api/dcim/sites/3/
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8042/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    group: null
+  - !!python/object:annetbox.v42.models.Vlan
+    id: 28
+    name: Wireless
+    display: Wireless (300)
+    url: http://localhost:8042/api/ipam/vlans/28/
+    prefix_count: 1
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    tags: []
+    custom_fields: {}
+    vid: 300
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2021-03-10 20:55:37.003000+00:00
+    role: !!python/object:annetbox.v42.models.Entity
+      id: 3
+      name: Access - Wireless
+      display: Access - Wireless
+      url: http://localhost:8042/api/ipam/roles/3/
+    comments: ''
+    site: !!python/object:annetbox.v42.models.Entity
+      id: 3
+      name: DM-Albany
+      display: DM-Albany
+      url: http://localhost:8042/api/dcim/sites/3/
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8042/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    group: null
+  - !!python/object:annetbox.v42.models.Vlan
+    id: 5
+    name: Data
+    display: Data (100)
+    url: http://localhost:8042/api/ipam/vlans/5/
+    prefix_count: 1
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    tags: []
+    custom_fields: {}
+    vid: 100
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2021-03-10 20:55:37.063000+00:00
+    role: !!python/object:annetbox.v42.models.Entity
+      id: 1
+      name: Access - Data
+      display: Access - Data
+      url: http://localhost:8042/api/ipam/roles/1/
+    comments: ''
+    site: !!python/object:annetbox.v42.models.Entity
+      id: 4
+      name: DM-Binghamton
+      display: DM-Binghamton
+      url: http://localhost:8042/api/dcim/sites/4/
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8042/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    group: null
+  - !!python/object:annetbox.v42.models.Vlan
+    id: 6
+    name: Voice
+    display: Voice (200)
+    url: http://localhost:8042/api/ipam/vlans/6/
+    prefix_count: 1
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    tags: []
+    custom_fields: {}
+    vid: 200
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2021-03-10 20:55:37.123000+00:00
+    role: !!python/object:annetbox.v42.models.Entity
+      id: 2
+      name: Access - Voice
+      display: Access - Voice
+      url: http://localhost:8042/api/ipam/roles/2/
+    comments: ''
+    site: !!python/object:annetbox.v42.models.Entity
+      id: 4
+      name: DM-Binghamton
+      display: DM-Binghamton
+      url: http://localhost:8042/api/dcim/sites/4/
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8042/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    group: null
+  - !!python/object:annetbox.v42.models.Vlan
+    id: 29
+    name: Wireless
+    display: Wireless (300)
+    url: http://localhost:8042/api/ipam/vlans/29/
+    prefix_count: 1
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    tags: []
+    custom_fields: {}
+    vid: 300
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2021-03-10 20:55:37.234000+00:00
+    role: !!python/object:annetbox.v42.models.Entity
+      id: 3
+      name: Access - Wireless
+      display: Access - Wireless
+      url: http://localhost:8042/api/ipam/roles/3/
+    comments: ''
+    site: !!python/object:annetbox.v42.models.Entity
+      id: 4
+      name: DM-Binghamton
+      display: DM-Binghamton
+      url: http://localhost:8042/api/dcim/sites/4/
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8042/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    group: null
+  - !!python/object:annetbox.v42.models.Vlan
+    id: 7
+    name: Data
+    display: Data (100)
+    url: http://localhost:8042/api/ipam/vlans/7/
+    prefix_count: 1
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    tags: []
+    custom_fields: {}
+    vid: 100
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2021-03-10 20:55:37.309000+00:00
+    role: !!python/object:annetbox.v42.models.Entity
+      id: 1
+      name: Access - Data
+      display: Access - Data
+      url: http://localhost:8042/api/ipam/roles/1/
+    comments: ''
+    site: !!python/object:annetbox.v42.models.Entity
+      id: 5
+      name: DM-Buffalo
+      display: DM-Buffalo
+      url: http://localhost:8042/api/dcim/sites/5/
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8042/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    group: null

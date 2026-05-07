@@ -1,0 +1,88 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8037/api/dcim/console-ports/?limit=5&offset=0
+  response:
+    body:
+      string: '{"count":41,"next":"http://localhost:8037/api/dcim/console-ports/?limit=5&offset=5","previous":null,"results":[{"id":1,"url":"http://localhost:8037/api/dcim/console-ports/1/","display":"con
+        0","device":{"id":1,"url":"http://localhost:8037/api/dcim/devices/1/","display":"dmi01-akron-rtr01","name":"dmi01-akron-rtr01"},"module":null,"name":"con
+        0","label":"","type":{"value":"rj-45","label":"RJ-45"},"speed":null,"description":"","mark_connected":false,"cable":null,"cable_end":"","link_peers":[],"link_peers_type":null,"connected_endpoints":null,"connected_endpoints_type":null,"connected_endpoints_reachable":null,"tags":[],"custom_fields":{},"created":"2021-04-14T00:00:00Z","last_updated":"2021-04-14T17:36:00.262000Z","_occupied":false},{"id":2,"url":"http://localhost:8037/api/dcim/console-ports/2/","display":"usb","device":{"id":1,"url":"http://localhost:8037/api/dcim/devices/1/","display":"dmi01-akron-rtr01","name":"dmi01-akron-rtr01"},"module":null,"name":"usb","label":"","type":{"value":"usb-mini-b","label":"USB
+        Mini B"},"speed":null,"description":"","mark_connected":false,"cable":null,"cable_end":"","link_peers":[],"link_peers_type":null,"connected_endpoints":null,"connected_endpoints_type":null,"connected_endpoints_reachable":null,"tags":[],"custom_fields":{},"created":"2021-04-14T00:00:00Z","last_updated":"2021-04-14T17:36:00.262000Z","_occupied":false},{"id":3,"url":"http://localhost:8037/api/dcim/console-ports/3/","display":"con
+        0","device":{"id":2,"url":"http://localhost:8037/api/dcim/devices/2/","display":"dmi01-albany-rtr01","name":"dmi01-albany-rtr01"},"module":null,"name":"con
+        0","label":"","type":{"value":"rj-45","label":"RJ-45"},"speed":null,"description":"","mark_connected":false,"cable":null,"cable_end":"","link_peers":[],"link_peers_type":null,"connected_endpoints":null,"connected_endpoints_type":null,"connected_endpoints_reachable":null,"tags":[],"custom_fields":{},"created":"2021-04-14T00:00:00Z","last_updated":"2021-04-14T17:36:00.262000Z","_occupied":false},{"id":4,"url":"http://localhost:8037/api/dcim/console-ports/4/","display":"usb","device":{"id":2,"url":"http://localhost:8037/api/dcim/devices/2/","display":"dmi01-albany-rtr01","name":"dmi01-albany-rtr01"},"module":null,"name":"usb","label":"","type":{"value":"usb-mini-b","label":"USB
+        Mini B"},"speed":null,"description":"","mark_connected":false,"cable":null,"cable_end":"","link_peers":[],"link_peers_type":null,"connected_endpoints":null,"connected_endpoints_type":null,"connected_endpoints_reachable":null,"tags":[],"custom_fields":{},"created":"2021-04-14T00:00:00Z","last_updated":"2021-04-14T17:36:00.262000Z","_occupied":false},{"id":5,"url":"http://localhost:8037/api/dcim/console-ports/5/","display":"con
+        0","device":{"id":3,"url":"http://localhost:8037/api/dcim/devices/3/","display":"dmi01-binghamton-rtr01","name":"dmi01-binghamton-rtr01"},"module":null,"name":"con
+        0","label":"","type":{"value":"rj-45","label":"RJ-45"},"speed":null,"description":"","mark_connected":false,"cable":null,"cable_end":"","link_peers":[],"link_peers_type":null,"connected_endpoints":null,"connected_endpoints_type":null,"connected_endpoints_reachable":null,"tags":[],"custom_fields":{},"created":"2021-04-14T00:00:00Z","last_updated":"2021-04-14T17:36:00.262000Z","_occupied":false}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS, TRACE
+      Content-Length:
+      - '3288'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.31.1
+      Vary:
+      - HX-Request, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8037/api/dcim/console-ports/1/
+  response:
+    body:
+      string: '{"id":1,"url":"http://localhost:8037/api/dcim/console-ports/1/","display":"con
+        0","device":{"id":1,"url":"http://localhost:8037/api/dcim/devices/1/","display":"dmi01-akron-rtr01","name":"dmi01-akron-rtr01"},"module":null,"name":"con
+        0","label":"","type":{"value":"rj-45","label":"RJ-45"},"speed":null,"description":"","mark_connected":false,"cable":null,"cable_end":"","link_peers":[],"link_peers_type":null,"connected_endpoints":null,"connected_endpoints_type":null,"connected_endpoints_reachable":null,"tags":[],"custom_fields":{},"created":"2021-04-14T00:00:00Z","last_updated":"2021-04-14T17:36:00.262000Z","_occupied":false}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS, TRACE
+      Content-Length:
+      - '629'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.31.1
+      Vary:
+      - HX-Request, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

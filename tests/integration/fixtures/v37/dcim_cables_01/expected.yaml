@@ -1,0 +1,159 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_cables_01
+  method: dcim_cables
+  args:
+    limit: 5
+call:
+  client_call: dcim_cables
+  client_call_args: []
+  client_call_kwargs:
+    limit: 5
+output: !!python/object:annetbox.base.models.PagingResponse
+  next: http://localhost:8037/api/dcim/cables/?limit=5&offset=5
+  previous: null
+  count: 108
+  results:
+  - !!python/object:annetbox.v37.models.Cable
+    id: 1
+    url: http://localhost:8037/api/dcim/cables/1/
+    display: '#1'
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2020-12-30 19:32:32.279000+00:00
+    custom_fields: {}
+    tags: []
+    type: !!python/object/apply:annetbox.v37.models.CableType
+    - smf
+    a_terminations:
+    - !!python/object:annetbox.v37.models.GenericObject
+      object_type: circuits.circuittermination
+      object_id: 15
+    b_terminations:
+    - !!python/object:annetbox.v37.models.GenericObject
+      object_type: dcim.interface
+      object_id: 157
+    status: !!python/object:annetbox.v37.models.Label
+      value: connected
+      label: Connected
+    tenant: null
+    label: ''
+    color: ffeb3b
+    length: null
+    length_unit: null
+    description: ''
+    comments: ''
+  - !!python/object:annetbox.v37.models.Cable
+    id: 2
+    url: http://localhost:8037/api/dcim/cables/2/
+    display: '#2'
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2020-12-30 19:32:32.387000+00:00
+    custom_fields: {}
+    tags: []
+    type: !!python/object/apply:annetbox.v37.models.CableType
+    - smf
+    a_terminations:
+    - !!python/object:annetbox.v37.models.GenericObject
+      object_type: circuits.circuittermination
+      object_id: 12
+    b_terminations:
+    - !!python/object:annetbox.v37.models.GenericObject
+      object_type: dcim.interface
+      object_id: 118
+    status: !!python/object:annetbox.v37.models.Label
+      value: connected
+      label: Connected
+    tenant: null
+    label: ''
+    color: ffeb3b
+    length: null
+    length_unit: null
+    description: ''
+    comments: ''
+  - !!python/object:annetbox.v37.models.Cable
+    id: 3
+    url: http://localhost:8037/api/dcim/cables/3/
+    display: '#3'
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2020-12-30 19:32:32.496000+00:00
+    custom_fields: {}
+    tags: []
+    type: !!python/object/apply:annetbox.v37.models.CableType
+    - smf
+    a_terminations:
+    - !!python/object:annetbox.v37.models.GenericObject
+      object_type: circuits.circuittermination
+      object_id: 11
+    b_terminations:
+    - !!python/object:annetbox.v37.models.GenericObject
+      object_type: dcim.interface
+      object_id: 105
+    status: !!python/object:annetbox.v37.models.Label
+      value: connected
+      label: Connected
+    tenant: null
+    label: ''
+    color: ffeb3b
+    length: null
+    length_unit: null
+    description: ''
+    comments: ''
+  - !!python/object:annetbox.v37.models.Cable
+    id: 4
+    url: http://localhost:8037/api/dcim/cables/4/
+    display: '#4'
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2020-12-30 19:32:32.641000+00:00
+    custom_fields: {}
+    tags: []
+    type: !!python/object/apply:annetbox.v37.models.CableType
+    - smf
+    a_terminations:
+    - !!python/object:annetbox.v37.models.GenericObject
+      object_type: circuits.circuittermination
+      object_id: 2
+    b_terminations:
+    - !!python/object:annetbox.v37.models.GenericObject
+      object_type: dcim.interface
+      object_id: 14
+    status: !!python/object:annetbox.v37.models.Label
+      value: connected
+      label: Connected
+    tenant: null
+    label: ''
+    color: ffeb3b
+    length: null
+    length_unit: null
+    description: ''
+    comments: ''
+  - !!python/object:annetbox.v37.models.Cable
+    id: 5
+    url: http://localhost:8037/api/dcim/cables/5/
+    display: '#5'
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2020-12-30 19:32:32.768000+00:00
+    custom_fields: {}
+    tags: []
+    type: !!python/object/apply:annetbox.v37.models.CableType
+    - smf
+    a_terminations:
+    - !!python/object:annetbox.v37.models.GenericObject
+      object_type: circuits.circuittermination
+      object_id: 5
+    b_terminations:
+    - !!python/object:annetbox.v37.models.GenericObject
+      object_type: dcim.interface
+      object_id: 53
+    status: !!python/object:annetbox.v37.models.Label
+      value: connected
+      label: Connected
+    tenant: null
+    label: ''
+    color: ffeb3b
+    length: null
+    length_unit: null
+    description: ''
+    comments: ''

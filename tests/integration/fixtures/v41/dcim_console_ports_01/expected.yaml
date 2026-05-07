@@ -1,0 +1,124 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_console_ports_01
+  method: dcim_console_ports
+  args:
+    limit: 5
+call:
+  client_call: dcim_console_ports
+  client_call_args: []
+  client_call_kwargs:
+    limit: 5
+output: !!python/object:annetbox.base.models.PagingResponse
+  next: http://localhost:8041/api/dcim/console-ports/?limit=5&offset=5
+  previous: null
+  count: 41
+  results:
+  - !!python/object:annetbox.v41.models.ConsolePort
+    id: 1
+    name: con 0
+    display: con 0
+    url: http://localhost:8041/api/dcim/console-ports/1/
+    cable: null
+    device: !!python/object:annetbox.v41.models.Entity
+      id: 1
+      name: dmi01-akron-rtr01
+      display: dmi01-akron-rtr01
+      url: http://localhost:8041/api/dcim/devices/1/
+    label: ''
+    type: !!python/object:annetbox.v41.models.InterfaceType
+      value: rj-45
+      label: RJ-45
+    description: ''
+    link_peers: []
+    link_peers_type: null
+    connected_endpoints: null
+    created: 2021-04-14 00:00:00+00:00
+    last_updated: 2021-04-14 17:36:00.262000+00:00
+  - !!python/object:annetbox.v41.models.ConsolePort
+    id: 2
+    name: usb
+    display: usb
+    url: http://localhost:8041/api/dcim/console-ports/2/
+    cable: null
+    device: !!python/object:annetbox.v41.models.Entity
+      id: 1
+      name: dmi01-akron-rtr01
+      display: dmi01-akron-rtr01
+      url: http://localhost:8041/api/dcim/devices/1/
+    label: ''
+    type: !!python/object:annetbox.v41.models.InterfaceType
+      value: usb-mini-b
+      label: USB Mini B
+    description: ''
+    link_peers: []
+    link_peers_type: null
+    connected_endpoints: null
+    created: 2021-04-14 00:00:00+00:00
+    last_updated: 2021-04-14 17:36:00.262000+00:00
+  - !!python/object:annetbox.v41.models.ConsolePort
+    id: 3
+    name: con 0
+    display: con 0
+    url: http://localhost:8041/api/dcim/console-ports/3/
+    cable: null
+    device: !!python/object:annetbox.v41.models.Entity
+      id: 2
+      name: dmi01-albany-rtr01
+      display: dmi01-albany-rtr01
+      url: http://localhost:8041/api/dcim/devices/2/
+    label: ''
+    type: !!python/object:annetbox.v41.models.InterfaceType
+      value: rj-45
+      label: RJ-45
+    description: ''
+    link_peers: []
+    link_peers_type: null
+    connected_endpoints: null
+    created: 2021-04-14 00:00:00+00:00
+    last_updated: 2021-04-14 17:36:00.262000+00:00
+  - !!python/object:annetbox.v41.models.ConsolePort
+    id: 4
+    name: usb
+    display: usb
+    url: http://localhost:8041/api/dcim/console-ports/4/
+    cable: null
+    device: !!python/object:annetbox.v41.models.Entity
+      id: 2
+      name: dmi01-albany-rtr01
+      display: dmi01-albany-rtr01
+      url: http://localhost:8041/api/dcim/devices/2/
+    label: ''
+    type: !!python/object:annetbox.v41.models.InterfaceType
+      value: usb-mini-b
+      label: USB Mini B
+    description: ''
+    link_peers: []
+    link_peers_type: null
+    connected_endpoints: null
+    created: 2021-04-14 00:00:00+00:00
+    last_updated: 2021-04-14 17:36:00.262000+00:00
+  - !!python/object:annetbox.v41.models.ConsolePort
+    id: 5
+    name: con 0
+    display: con 0
+    url: http://localhost:8041/api/dcim/console-ports/5/
+    cable: null
+    device: !!python/object:annetbox.v41.models.Entity
+      id: 3
+      name: dmi01-binghamton-rtr01
+      display: dmi01-binghamton-rtr01
+      url: http://localhost:8041/api/dcim/devices/3/
+    label: ''
+    type: !!python/object:annetbox.v41.models.InterfaceType
+      value: rj-45
+      label: RJ-45
+    description: ''
+    link_peers: []
+    link_peers_type: null
+    connected_endpoints: null
+    created: 2021-04-14 00:00:00+00:00
+    last_updated: 2021-04-14 17:36:00.262000+00:00

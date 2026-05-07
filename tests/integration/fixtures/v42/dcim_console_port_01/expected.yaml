@@ -1,0 +1,39 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_console_port_01
+  method: dcim_console_port
+  args:
+    id:
+      call: dcim_console_ports
+      args:
+        limit: 5
+      extract: results[0].id
+call:
+  client_call: dcim_console_port
+  client_call_args: []
+  client_call_kwargs:
+    id: 1
+output: !!python/object:annetbox.v42.models.ConsolePort
+  id: 1
+  name: con 0
+  display: con 0
+  url: http://localhost:8042/api/dcim/console-ports/1/
+  cable: null
+  device: !!python/object:annetbox.v42.models.Entity
+    id: 1
+    name: dmi01-akron-rtr01
+    display: dmi01-akron-rtr01
+    url: http://localhost:8042/api/dcim/devices/1/
+  label: ''
+  type: !!python/object:annetbox.v42.models.InterfaceType
+    value: rj-45
+    label: RJ-45
+  description: ''
+  link_peers: []
+  link_peers_type: null
+  connected_endpoints: null
+  created: 2021-04-14 00:00:00+00:00
+  last_updated: 2021-04-14 17:36:00.262000+00:00
