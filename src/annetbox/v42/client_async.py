@@ -20,6 +20,7 @@ from .models import (
     ItemToDelete,
     NewCable,
     Prefix,
+    TraceTuple,
     Vlan,
     Vrf,
 )
@@ -27,7 +28,12 @@ from .models import (
 
 class NetboxV42(BaseNetboxClient):
     def _init_response_body_factory(self) -> FactoryProtocol:
-        return Retort(recipe=[loader(datetime, dateutil.parser.parse)])
+        return Retort(
+            recipe=[
+                loader(datetime, dateutil.parser.parse),
+                name_mapping(TraceTuple, as_list=True),
+            ],
+        )
 
     def _init_request_body_factory(self) -> FactoryProtocol:
         return Retort(
@@ -59,6 +65,10 @@ class NetboxV42(BaseNetboxClient):
 
     @get("dcim/interfaces/{id}/")
     async def dcim_interface(self, id: int) -> Interface:
+        pass
+
+    @get("dcim/interfaces/{id}/trace/")
+    async def dcim_interface_trace(self, id: int) -> list[TraceTuple]:
         pass
 
     @get("dcim/console-ports/")

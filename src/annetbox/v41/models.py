@@ -317,3 +317,49 @@ class FHRPGroupAssignmentBrief:
     interface_type: str | None
     interface_id: int | None
     group: FHRPGroupBrief
+
+
+@dataclass
+class TraceCable:
+    id: int
+    url: str
+    type: str | None
+    status: str
+    label: str
+    color: str
+    length: float | None
+    length_unit: str | None
+    description: str
+
+
+@dataclass
+class TraceTermination:
+    # interface/<>/trace returns bunch of different objects
+    # with some common fields and some not
+
+    # all objects
+    id: int
+    url: str
+    display: str
+    description: str
+
+    # all except provider-networks
+    cable: InterfaceCable | None = None
+
+    # interfaces, front-ports, rear-ports
+    name: str | None = None
+    device: Entity | None = None
+
+    # circuit-terminations
+    term_side: str | None = None
+    circuit: Circuit | None = None
+
+
+@dataclass
+class TraceTuple:
+    # interface/<>/trace retuns this
+    # as a 3-tuple [[...], Cable, [...]]
+
+    a_terminations: list[TraceTermination]
+    cable: TraceCable | list[None]          # sometimes its an empty list
+    b_terminations: list[TraceTermination]
