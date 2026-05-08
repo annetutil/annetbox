@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8042/api/dcim/interfaces/969/trace/
+  response:
+    body:
+      string: '[[[{"id":969,"url":"http://localhost:8042/api/dcim/interfaces/969/","display":"xe-0/0/0","device":{"id":95,"url":"http://localhost:8042/api/dcim/devices/95/","display":"ncsu118-distswitch1","name":"ncsu118-distswitch1","description":""},"name":"xe-0/0/0","description":"","cable":{"id":120,"url":"http://localhost:8042/api/dcim/cables/120/","display":"#120","label":"","description":""},"_occupied":true}],{"id":120,"url":"http://localhost:8042/api/dcim/cables/120/","display_url":"http://localhost:8042/dcim/cables/120/","type":null,"status":"connected","label":"","color":"","length":null,"length_unit":null,"description":""},[{"id":1489,"url":"http://localhost:8042/api/dcim/front-ports/1489/","display":"Port
+        1","device":{"id":92,"url":"http://localhost:8042/api/dcim/devices/92/","display":"PP:MDF","name":"PP:MDF","description":""},"name":"Port
+        1","description":"","cable":{"id":120,"url":"http://localhost:8042/api/dcim/cables/120/","display":"#120","label":"","description":""},"_occupied":true}]],[[{"id":1254,"url":"http://localhost:8042/api/dcim/rear-ports/1254/","display":"Rear
+        Splice","device":{"id":92,"url":"http://localhost:8042/api/dcim/devices/92/","display":"PP:MDF","name":"PP:MDF","description":""},"name":"Rear
+        Splice","description":"","cable":{"id":92,"url":"http://localhost:8042/api/dcim/cables/92/","display":"#92","label":"","description":""},"_occupied":true}],{"id":92,"url":"http://localhost:8042/api/dcim/cables/92/","display_url":"http://localhost:8042/dcim/cables/92/","type":null,"status":"connected","label":"","color":"","length":null,"length_unit":null,"description":""},[{"id":41,"url":"http://localhost:8042/api/circuits/circuit-terminations/41/","display":"398282:
+        Termination Z","circuit":{"id":28,"url":"http://localhost:8042/api/circuits/circuits/28/","display":"398282","cid":"398282","provider":{"id":9,"url":"http://localhost:8042/api/circuits/providers/9/","display":"NCSU
+        Facilities","name":"NCSU Facilities","slug":"ncsu-facilities","description":""},"description":""},"term_side":"Z","description":"","cable":{"id":92,"url":"http://localhost:8042/api/dcim/cables/92/","display":"#92","label":"","description":""},"_occupied":true}]],[[{"id":40,"url":"http://localhost:8042/api/circuits/circuit-terminations/40/","display":"398282:
+        Termination A","circuit":{"id":28,"url":"http://localhost:8042/api/circuits/circuits/28/","display":"398282","cid":"398282","provider":{"id":9,"url":"http://localhost:8042/api/circuits/providers/9/","display":"NCSU
+        Facilities","name":"NCSU Facilities","slug":"ncsu-facilities","description":""},"description":""},"term_side":"A","description":"","cable":{"id":91,"url":"http://localhost:8042/api/dcim/cables/91/","display":"#91","label":"","description":""},"_occupied":true}],{"id":91,"url":"http://localhost:8042/api/dcim/cables/91/","display_url":"http://localhost:8042/dcim/cables/91/","type":null,"status":"connected","label":"","color":"","length":null,"length_unit":null,"description":""},[{"id":1251,"url":"http://localhost:8042/api/dcim/rear-ports/1251/","display":"Rear
+        Splice","device":{"id":89,"url":"http://localhost:8042/api/dcim/devices/89/","display":"PP:B118","name":"PP:B118","description":""},"name":"Rear
+        Splice","description":"","cable":{"id":91,"url":"http://localhost:8042/api/dcim/cables/91/","display":"#91","label":"","description":""},"_occupied":true}]],[[{"id":1345,"url":"http://localhost:8042/api/dcim/front-ports/1345/","display":"Port
+        1","device":{"id":89,"url":"http://localhost:8042/api/dcim/devices/89/","display":"PP:B118","name":"PP:B118","description":""},"name":"Port
+        1","description":"","cable":{"id":108,"url":"http://localhost:8042/api/dcim/cables/108/","display":"#108","label":"","description":""},"_occupied":true}],{"id":108,"url":"http://localhost:8042/api/dcim/cables/108/","display_url":"http://localhost:8042/dcim/cables/108/","type":null,"status":"connected","label":"","color":"","length":null,"length_unit":null,"description":""},[{"id":1020,"url":"http://localhost:8042/api/dcim/interfaces/1020/","display":"xe-0/0/2","device":{"id":96,"url":"http://localhost:8042/api/dcim/devices/96/","display":"ncsu-coreswitch1","name":"ncsu-coreswitch1","description":""},"name":"xe-0/0/2","description":"","cable":{"id":108,"url":"http://localhost:8042/api/dcim/cables/108/","display":"#108","label":"","description":""},"_occupied":true}]]]'
+    headers:
+      Allow:
+      - GET, HEAD, OPTIONS, TRACE
+      Content-Language:
+      - en
+      Content-Length:
+      - '4367'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.34.1
+      Vary:
+      - HX-Request, Accept-Language, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

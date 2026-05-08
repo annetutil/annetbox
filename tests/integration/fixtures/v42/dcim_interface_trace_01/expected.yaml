@@ -1,0 +1,64 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_interface_trace_01
+  method: dcim_interface_trace
+  args:
+    id: 28
+call:
+  client_call: dcim_interface_trace
+  client_call_args: []
+  client_call_kwargs:
+    id: 28
+output:
+- !!python/object:annetbox.v42.models.TraceTuple
+  a_terminations:
+  - !!python/object:annetbox.v42.models.TraceTermination
+    id: 28
+    url: http://localhost:8042/api/dcim/interfaces/28/
+    display: GigabitEthernet0/0/1
+    description: ''
+    cable: !!python/object:annetbox.v42.models.InterfaceCable
+      id: 23
+      label: ''
+      display: '#23'
+      url: http://localhost:8042/api/dcim/cables/23/
+    name: GigabitEthernet0/0/1
+    device: !!python/object:annetbox.v42.models.Entity
+      id: 3
+      name: dmi01-binghamton-rtr01
+      display: dmi01-binghamton-rtr01
+      url: http://localhost:8042/api/dcim/devices/3/
+    term_side: null
+    circuit: null
+  cable: !!python/object:annetbox.v42.models.TraceCable
+    id: 23
+    url: http://localhost:8042/api/dcim/cables/23/
+    type: cat5e
+    status: connected
+    label: ''
+    color: 2196f3
+    length: null
+    length_unit: null
+    description: ''
+  b_terminations:
+  - !!python/object:annetbox.v42.models.TraceTermination
+    id: 25
+    url: http://localhost:8042/api/circuits/circuit-terminations/25/
+    display: '1002841093: Termination Z'
+    description: ''
+    cable: !!python/object:annetbox.v42.models.InterfaceCable
+      id: 23
+      label: ''
+      display: '#23'
+      url: http://localhost:8042/api/dcim/cables/23/
+    name: null
+    device: null
+    term_side: Z
+    circuit: !!python/object:annetbox.v42.models.Circuit
+      id: 21
+      url: http://localhost:8042/api/circuits/circuits/21/
+      display: '1002841093'
+      cid: '1002841093'

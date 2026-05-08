@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8037/api/dcim/interfaces/157/trace/
+  response:
+    body:
+      string: '[[[{"id":157,"url":"http://localhost:8037/api/dcim/interfaces/157/","display":"GigabitEthernet0/0/0","device":{"id":13,"url":"http://localhost:8037/api/dcim/devices/13/","display":"dmi01-yonkers-rtr01","name":"dmi01-yonkers-rtr01"},"name":"GigabitEthernet0/0/0","cable":1,"_occupied":true}],{"id":1,"url":"http://localhost:8037/api/dcim/cables/1/","type":"smf","status":"connected","label":"","color":"ffeb3b","length":null,"length_unit":"","description":""},[{"id":15,"url":"http://localhost:8037/api/circuits/circuit-terminations/15/","display":"DEOW4921:
+        Termination Z","circuit":{"id":14,"url":"http://localhost:8037/api/circuits/circuits/14/","display":"DEOW4921","cid":"DEOW4921"},"term_side":"Z","cable":1,"_occupied":true}]],[[{"id":42,"url":"http://localhost:8037/api/circuits/circuit-terminations/42/","display":"DEOW4921:
+        Termination A","circuit":{"id":14,"url":"http://localhost:8037/api/circuits/circuits/14/","display":"DEOW4921","cid":"DEOW4921"},"term_side":"A","cable":null,"_occupied":false}],[],[{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"}]]]'
+    headers:
+      Allow:
+      - GET, HEAD, OPTIONS, TRACE
+      Content-Length:
+      - '1135'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.31.1
+      Vary:
+      - HX-Request, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1
