@@ -1,0 +1,249 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: ipam_ip_addresses_01
+  method: ipam_ip_addresses
+  args:
+    limit: 10
+call:
+  client_call: ipam_ip_addresses
+  client_call_args: []
+  client_call_kwargs:
+    limit: 10
+output: !!python/object:annetbox.base.models.PagingResponse
+  next: http://localhost:8037/api/ipam/ip-addresses/?limit=10&offset=10
+  previous: null
+  count: 180
+  results:
+  - !!python/object:annetbox.v37.models.IpAddress
+    id: 31
+    assigned_object_id: null
+    assigned_object: null
+    display: 172.16.0.1/24
+    family: !!python/object:annetbox.v37.models.IpFamily
+      value: 4
+      label: IPv4
+    address: 172.16.0.1/24
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    role: null
+    tags: []
+    created: 2022-04-08 00:25:21.668000+00:00
+    last_updated: 2022-04-08 00:25:21.668000+00:00
+    tenant: null
+    vrf: !!python/object:annetbox.v37.models.VrfBrief
+      id: 1
+      name: Alpha
+      display: Alpha (65000:100)
+      url: http://localhost:8037/api/ipam/vrfs/1/
+      rd: 65000:100
+  - !!python/object:annetbox.v37.models.IpAddress
+    id: 32
+    assigned_object_id: null
+    assigned_object: null
+    display: 172.16.0.2/24
+    family: !!python/object:annetbox.v37.models.IpFamily
+      value: 4
+      label: IPv4
+    address: 172.16.0.2/24
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    role: null
+    tags: []
+    created: 2022-04-08 00:25:21.772000+00:00
+    last_updated: 2022-04-08 00:25:21.772000+00:00
+    tenant: null
+    vrf: !!python/object:annetbox.v37.models.VrfBrief
+      id: 1
+      name: Alpha
+      display: Alpha (65000:100)
+      url: http://localhost:8037/api/ipam/vrfs/1/
+      rd: 65000:100
+  - !!python/object:annetbox.v37.models.IpAddress
+    id: 33
+    assigned_object_id: null
+    assigned_object: null
+    display: 172.16.0.3/24
+    family: !!python/object:annetbox.v37.models.IpFamily
+      value: 4
+      label: IPv4
+    address: 172.16.0.3/24
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    role: null
+    tags: []
+    created: 2022-04-08 00:25:21.942000+00:00
+    last_updated: 2022-04-08 00:25:21.942000+00:00
+    tenant: null
+    vrf: !!python/object:annetbox.v37.models.VrfBrief
+      id: 1
+      name: Alpha
+      display: Alpha (65000:100)
+      url: http://localhost:8037/api/ipam/vrfs/1/
+      rd: 65000:100
+  - !!python/object:annetbox.v37.models.IpAddress
+    id: 34
+    assigned_object_id: null
+    assigned_object: null
+    display: 172.16.0.4/24
+    family: !!python/object:annetbox.v37.models.IpFamily
+      value: 4
+      label: IPv4
+    address: 172.16.0.4/24
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    role: null
+    tags: []
+    created: 2022-04-08 00:25:22.056000+00:00
+    last_updated: 2022-04-08 00:25:22.056000+00:00
+    tenant: null
+    vrf: !!python/object:annetbox.v37.models.VrfBrief
+      id: 1
+      name: Alpha
+      display: Alpha (65000:100)
+      url: http://localhost:8037/api/ipam/vrfs/1/
+      rd: 65000:100
+  - !!python/object:annetbox.v37.models.IpAddress
+    id: 35
+    assigned_object_id: null
+    assigned_object: null
+    display: 172.16.0.5/24
+    family: !!python/object:annetbox.v37.models.IpFamily
+      value: 4
+      label: IPv4
+    address: 172.16.0.5/24
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    role: null
+    tags: []
+    created: 2022-04-08 00:25:22.157000+00:00
+    last_updated: 2022-04-08 00:25:22.157000+00:00
+    tenant: null
+    vrf: !!python/object:annetbox.v37.models.VrfBrief
+      id: 1
+      name: Alpha
+      display: Alpha (65000:100)
+      url: http://localhost:8037/api/ipam/vrfs/1/
+      rd: 65000:100
+  - !!python/object:annetbox.v37.models.IpAddress
+    id: 36
+    assigned_object_id: null
+    assigned_object: null
+    display: 172.16.0.6/24
+    family: !!python/object:annetbox.v37.models.IpFamily
+      value: 4
+      label: IPv4
+    address: 172.16.0.6/24
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    role: null
+    tags: []
+    created: 2022-04-08 00:25:22.245000+00:00
+    last_updated: 2022-04-08 00:25:22.245000+00:00
+    tenant: null
+    vrf: !!python/object:annetbox.v37.models.VrfBrief
+      id: 1
+      name: Alpha
+      display: Alpha (65000:100)
+      url: http://localhost:8037/api/ipam/vrfs/1/
+      rd: 65000:100
+  - !!python/object:annetbox.v37.models.IpAddress
+    id: 37
+    assigned_object_id: null
+    assigned_object: null
+    display: 172.16.0.7/24
+    family: !!python/object:annetbox.v37.models.IpFamily
+      value: 4
+      label: IPv4
+    address: 172.16.0.7/24
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    role: null
+    tags: []
+    created: 2022-04-08 00:25:22.331000+00:00
+    last_updated: 2022-04-08 00:25:22.331000+00:00
+    tenant: null
+    vrf: !!python/object:annetbox.v37.models.VrfBrief
+      id: 1
+      name: Alpha
+      display: Alpha (65000:100)
+      url: http://localhost:8037/api/ipam/vrfs/1/
+      rd: 65000:100
+  - !!python/object:annetbox.v37.models.IpAddress
+    id: 38
+    assigned_object_id: null
+    assigned_object: null
+    display: 172.16.0.8/24
+    family: !!python/object:annetbox.v37.models.IpFamily
+      value: 4
+      label: IPv4
+    address: 172.16.0.8/24
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    role: null
+    tags: []
+    created: 2022-04-08 00:25:22.416000+00:00
+    last_updated: 2022-04-08 00:25:22.416000+00:00
+    tenant: null
+    vrf: !!python/object:annetbox.v37.models.VrfBrief
+      id: 1
+      name: Alpha
+      display: Alpha (65000:100)
+      url: http://localhost:8037/api/ipam/vrfs/1/
+      rd: 65000:100
+  - !!python/object:annetbox.v37.models.IpAddress
+    id: 39
+    assigned_object_id: null
+    assigned_object: null
+    display: 172.16.0.9/24
+    family: !!python/object:annetbox.v37.models.IpFamily
+      value: 4
+      label: IPv4
+    address: 172.16.0.9/24
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    role: null
+    tags: []
+    created: 2022-04-08 00:25:22.500000+00:00
+    last_updated: 2022-04-08 00:25:22.500000+00:00
+    tenant: null
+    vrf: !!python/object:annetbox.v37.models.VrfBrief
+      id: 1
+      name: Alpha
+      display: Alpha (65000:100)
+      url: http://localhost:8037/api/ipam/vrfs/1/
+      rd: 65000:100
+  - !!python/object:annetbox.v37.models.IpAddress
+    id: 40
+    assigned_object_id: null
+    assigned_object: null
+    display: 172.16.0.10/24
+    family: !!python/object:annetbox.v37.models.IpFamily
+      value: 4
+      label: IPv4
+    address: 172.16.0.10/24
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    role: null
+    tags: []
+    created: 2022-04-08 00:25:22.586000+00:00
+    last_updated: 2022-04-08 00:25:22.586000+00:00
+    tenant: null
+    vrf: !!python/object:annetbox.v37.models.VrfBrief
+      id: 1
+      name: Alpha
+      display: Alpha (65000:100)
+      url: http://localhost:8037/api/ipam/vrfs/1/
+      rd: 65000:100

@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8037/api/ipam/ip-addresses/?limit=10&offset=0
+  response:
+    body:
+      string: '{"count":180,"next":"http://localhost:8037/api/ipam/ip-addresses/?limit=10&offset=10","previous":null,"results":[{"id":31,"url":"http://localhost:8037/api/ipam/ip-addresses/31/","display":"172.16.0.1/24","family":{"value":4,"label":"IPv4"},"address":"172.16.0.1/24","vrf":{"id":1,"url":"http://localhost:8037/api/ipam/vrfs/1/","display":"Alpha
+        (65000:100)","name":"Alpha","rd":"65000:100"},"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2022-04-08T00:25:21.668000Z","last_updated":"2022-04-08T00:25:21.668000Z"},{"id":32,"url":"http://localhost:8037/api/ipam/ip-addresses/32/","display":"172.16.0.2/24","family":{"value":4,"label":"IPv4"},"address":"172.16.0.2/24","vrf":{"id":1,"url":"http://localhost:8037/api/ipam/vrfs/1/","display":"Alpha
+        (65000:100)","name":"Alpha","rd":"65000:100"},"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2022-04-08T00:25:21.772000Z","last_updated":"2022-04-08T00:25:21.772000Z"},{"id":33,"url":"http://localhost:8037/api/ipam/ip-addresses/33/","display":"172.16.0.3/24","family":{"value":4,"label":"IPv4"},"address":"172.16.0.3/24","vrf":{"id":1,"url":"http://localhost:8037/api/ipam/vrfs/1/","display":"Alpha
+        (65000:100)","name":"Alpha","rd":"65000:100"},"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2022-04-08T00:25:21.942000Z","last_updated":"2022-04-08T00:25:21.942000Z"},{"id":34,"url":"http://localhost:8037/api/ipam/ip-addresses/34/","display":"172.16.0.4/24","family":{"value":4,"label":"IPv4"},"address":"172.16.0.4/24","vrf":{"id":1,"url":"http://localhost:8037/api/ipam/vrfs/1/","display":"Alpha
+        (65000:100)","name":"Alpha","rd":"65000:100"},"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2022-04-08T00:25:22.056000Z","last_updated":"2022-04-08T00:25:22.056000Z"},{"id":35,"url":"http://localhost:8037/api/ipam/ip-addresses/35/","display":"172.16.0.5/24","family":{"value":4,"label":"IPv4"},"address":"172.16.0.5/24","vrf":{"id":1,"url":"http://localhost:8037/api/ipam/vrfs/1/","display":"Alpha
+        (65000:100)","name":"Alpha","rd":"65000:100"},"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2022-04-08T00:25:22.157000Z","last_updated":"2022-04-08T00:25:22.157000Z"},{"id":36,"url":"http://localhost:8037/api/ipam/ip-addresses/36/","display":"172.16.0.6/24","family":{"value":4,"label":"IPv4"},"address":"172.16.0.6/24","vrf":{"id":1,"url":"http://localhost:8037/api/ipam/vrfs/1/","display":"Alpha
+        (65000:100)","name":"Alpha","rd":"65000:100"},"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2022-04-08T00:25:22.245000Z","last_updated":"2022-04-08T00:25:22.245000Z"},{"id":37,"url":"http://localhost:8037/api/ipam/ip-addresses/37/","display":"172.16.0.7/24","family":{"value":4,"label":"IPv4"},"address":"172.16.0.7/24","vrf":{"id":1,"url":"http://localhost:8037/api/ipam/vrfs/1/","display":"Alpha
+        (65000:100)","name":"Alpha","rd":"65000:100"},"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2022-04-08T00:25:22.331000Z","last_updated":"2022-04-08T00:25:22.331000Z"},{"id":38,"url":"http://localhost:8037/api/ipam/ip-addresses/38/","display":"172.16.0.8/24","family":{"value":4,"label":"IPv4"},"address":"172.16.0.8/24","vrf":{"id":1,"url":"http://localhost:8037/api/ipam/vrfs/1/","display":"Alpha
+        (65000:100)","name":"Alpha","rd":"65000:100"},"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2022-04-08T00:25:22.416000Z","last_updated":"2022-04-08T00:25:22.416000Z"},{"id":39,"url":"http://localhost:8037/api/ipam/ip-addresses/39/","display":"172.16.0.9/24","family":{"value":4,"label":"IPv4"},"address":"172.16.0.9/24","vrf":{"id":1,"url":"http://localhost:8037/api/ipam/vrfs/1/","display":"Alpha
+        (65000:100)","name":"Alpha","rd":"65000:100"},"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2022-04-08T00:25:22.500000Z","last_updated":"2022-04-08T00:25:22.500000Z"},{"id":40,"url":"http://localhost:8037/api/ipam/ip-addresses/40/","display":"172.16.0.10/24","family":{"value":4,"label":"IPv4"},"address":"172.16.0.10/24","vrf":{"id":1,"url":"http://localhost:8037/api/ipam/vrfs/1/","display":"Alpha
+        (65000:100)","name":"Alpha","rd":"65000:100"},"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2022-04-08T00:25:22.586000Z","last_updated":"2022-04-08T00:25:22.586000Z"}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '6316'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.31.1
+      Vary:
+      - HX-Request, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

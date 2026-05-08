@@ -1,0 +1,77 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_device_01
+  method: dcim_device
+  args:
+    device_id:
+      call: dcim_devices
+      args:
+        limit: 10
+      extract: results[0].id
+call:
+  client_call: dcim_device
+  client_call_args: []
+  client_call_kwargs:
+    device_id: 27
+output: !!python/object:annetbox.v42.models.Device
+  id: 27
+  name: dmi01-akron-pdu01
+  display: dmi01-akron-pdu01
+  url: http://localhost:8042/api/dcim/devices/27/
+  device_type: !!python/object:annetbox.v42.models.DeviceType
+    id: 8
+    manufacturer: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 11
+      name: APC
+      display: APC
+      url: http://localhost:8042/api/dcim/manufacturers/11/
+      slug: apc
+    model: AP7901
+    slug: ap7901
+  role: !!python/object:annetbox.v42.models.EntityWithSlug
+    id: 5
+    name: PDU
+    display: PDU
+    url: http://localhost:8042/api/dcim/device-roles/5/
+    slug: pdu
+  tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+    id: 5
+    name: Dunder-Mifflin, Inc.
+    display: Dunder-Mifflin, Inc.
+    url: http://localhost:8042/api/tenancy/tenants/5/
+    slug: dunder-mifflin
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.v42.models.EntityWithSlug
+    id: 2
+    name: DM-Akron
+    display: DM-Akron
+    url: http://localhost:8042/api/dcim/sites/2/
+    slug: dm-akron
+  rack: !!python/object:annetbox.v42.models.Entity
+    id: 1
+    name: Comms closet
+    display: Comms closet
+    url: http://localhost:8042/api/dcim/racks/1/
+  position: 1.0
+  face: !!python/object:annetbox.v42.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.v42.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2020-12-22 00:00:00+00:00
+  last_updated: 2020-12-30 19:02:55.760000+00:00
+  comments: ''
+  cluster: null
+  config_context: {}
+  config_template: null

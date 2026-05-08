@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8037/api/dcim/cables/?limit=5&offset=0
+  response:
+    body:
+      string: '{"count":108,"next":"http://localhost:8037/api/dcim/cables/?limit=5&offset=5","previous":null,"results":[{"id":1,"url":"http://localhost:8037/api/dcim/cables/1/","display":"#1","type":"smf","a_terminations":[{"object_type":"circuits.circuittermination","object_id":15,"object":{"id":15,"url":"http://localhost:8037/api/circuits/circuit-terminations/15/","display":"DEOW4921:
+        Termination Z","circuit":{"id":14,"url":"http://localhost:8037/api/circuits/circuits/14/","display":"DEOW4921","cid":"DEOW4921"},"term_side":"Z","cable":1,"_occupied":true}}],"b_terminations":[{"object_type":"dcim.interface","object_id":157,"object":{"id":157,"url":"http://localhost:8037/api/dcim/interfaces/157/","display":"GigabitEthernet0/0/0","device":{"id":13,"url":"http://localhost:8037/api/dcim/devices/13/","display":"dmi01-yonkers-rtr01","name":"dmi01-yonkers-rtr01"},"name":"GigabitEthernet0/0/0","cable":1,"_occupied":true}}],"status":{"value":"connected","label":"Connected"},"tenant":null,"label":"","color":"ffeb3b","length":null,"length_unit":null,"description":"","comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2020-12-30T19:32:32.279000Z"},{"id":2,"url":"http://localhost:8037/api/dcim/cables/2/","display":"#2","type":"smf","a_terminations":[{"object_type":"circuits.circuittermination","object_id":12,"object":{"id":12,"url":"http://localhost:8037/api/circuits/circuit-terminations/12/","display":"DJDP9577:
+        Termination Z","circuit":{"id":11,"url":"http://localhost:8037/api/circuits/circuits/11/","display":"DJDP9577","cid":"DJDP9577"},"term_side":"Z","cable":2,"_occupied":true}}],"b_terminations":[{"object_type":"dcim.interface","object_id":118,"object":{"id":118,"url":"http://localhost:8037/api/dcim/interfaces/118/","display":"GigabitEthernet0/0/0","device":{"id":10,"url":"http://localhost:8037/api/dcim/devices/10/","display":"dmi01-stamford-rtr01","name":"dmi01-stamford-rtr01"},"name":"GigabitEthernet0/0/0","cable":2,"_occupied":true}}],"status":{"value":"connected","label":"Connected"},"tenant":null,"label":"","color":"ffeb3b","length":null,"length_unit":null,"description":"","comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2020-12-30T19:32:32.387000Z"},{"id":3,"url":"http://localhost:8037/api/dcim/cables/3/","display":"#3","type":"smf","a_terminations":[{"object_type":"circuits.circuittermination","object_id":11,"object":{"id":11,"url":"http://localhost:8037/api/circuits/circuit-terminations/11/","display":"DOQHD947:
+        Termination Z","circuit":{"id":10,"url":"http://localhost:8037/api/circuits/circuits/10/","display":"DOQHD947","cid":"DOQHD947"},"term_side":"Z","cable":3,"_occupied":true}}],"b_terminations":[{"object_type":"dcim.interface","object_id":105,"object":{"id":105,"url":"http://localhost:8037/api/dcim/interfaces/105/","display":"GigabitEthernet0/0/0","device":{"id":9,"url":"http://localhost:8037/api/dcim/devices/9/","display":"dmi01-scranton-rtr01","name":"dmi01-scranton-rtr01"},"name":"GigabitEthernet0/0/0","cable":3,"_occupied":true}}],"status":{"value":"connected","label":"Connected"},"tenant":null,"label":"","color":"ffeb3b","length":null,"length_unit":null,"description":"","comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2020-12-30T19:32:32.496000Z"},{"id":4,"url":"http://localhost:8037/api/dcim/cables/4/","display":"#4","type":"smf","a_terminations":[{"object_type":"circuits.circuittermination","object_id":2,"object":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-terminations/2/","display":"JHEW3951:
+        Termination Z","circuit":{"id":2,"url":"http://localhost:8037/api/circuits/circuits/2/","display":"JHEW3951","cid":"JHEW3951"},"term_side":"Z","cable":4,"_occupied":true}}],"b_terminations":[{"object_type":"dcim.interface","object_id":14,"object":{"id":14,"url":"http://localhost:8037/api/dcim/interfaces/14/","display":"GigabitEthernet0/0/0","device":{"id":2,"url":"http://localhost:8037/api/dcim/devices/2/","display":"dmi01-albany-rtr01","name":"dmi01-albany-rtr01"},"name":"GigabitEthernet0/0/0","cable":4,"_occupied":true}}],"status":{"value":"connected","label":"Connected"},"tenant":null,"label":"","color":"ffeb3b","length":null,"length_unit":null,"description":"","comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2020-12-30T19:32:32.641000Z"},{"id":5,"url":"http://localhost:8037/api/dcim/cables/5/","display":"#5","type":"smf","a_terminations":[{"object_type":"circuits.circuittermination","object_id":5,"object":{"id":5,"url":"http://localhost:8037/api/circuits/circuit-terminations/5/","display":"KAGO3917:
+        Termination Z","circuit":{"id":5,"url":"http://localhost:8037/api/circuits/circuits/5/","display":"KAGO3917","cid":"KAGO3917"},"term_side":"Z","cable":5,"_occupied":true}}],"b_terminations":[{"object_type":"dcim.interface","object_id":53,"object":{"id":53,"url":"http://localhost:8037/api/dcim/interfaces/53/","display":"GigabitEthernet0/0/0","device":{"id":5,"url":"http://localhost:8037/api/dcim/devices/5/","display":"dmi01-camden-rtr01","name":"dmi01-camden-rtr01"},"name":"GigabitEthernet0/0/0","cable":5,"_occupied":true}}],"status":{"value":"connected","label":"Connected"},"tenant":null,"label":"","color":"ffeb3b","length":null,"length_unit":null,"description":"","comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2020-12-30T19:32:32.768000Z"}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '5454'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.31.1
+      Vary:
+      - HX-Request, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

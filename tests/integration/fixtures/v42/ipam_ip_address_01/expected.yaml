@@ -1,0 +1,42 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: ipam_ip_address_01
+  method: ipam_ip_address
+  args:
+    id:
+      call: ipam_ip_addresses
+      args:
+        limit: 10
+      extract: results[0].id
+call:
+  client_call: ipam_ip_address
+  client_call_args: []
+  client_call_kwargs:
+    id: 31
+output: !!python/object:annetbox.v42.models.IpAddress
+  id: 31
+  assigned_object_id: null
+  assigned_object: null
+  display: 172.16.0.1/24
+  family: !!python/object:annetbox.v42.models.IpFamily
+    value: 4
+    label: IPv4
+  address: 172.16.0.1/24
+  status: !!python/object:annetbox.v42.models.Label
+    value: active
+    label: Active
+  role: null
+  tags: []
+  created: 2022-04-08 00:25:21.668000+00:00
+  last_updated: 2022-04-08 00:25:21.668000+00:00
+  tenant: null
+  vrf: !!python/object:annetbox.v42.models.VrfBrief
+    id: 1
+    name: Alpha
+    display: Alpha (65000:100)
+    url: http://localhost:8042/api/ipam/vrfs/1/
+    rd: 65000:100
+    description: ''

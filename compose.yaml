@@ -1,0 +1,173 @@
+# Multi-version Netbox docker-compose
+# Pattern: vXY uses port 80XY, Redis DBs XY0/XY1, Postgres DB netbox_vXY
+#
+# To add a new version (e.g., v41):
+# 1. Copy a netbox-vXX service block, change version numbers
+# 2. Copy a netbox-init-vXX service block, change version numbers
+# 3. Add database creation to postgres init script
+
+x-netbox-common: &netbox-common
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+  env_file:
+    - compose.env
+  healthcheck:
+    test: ["CMD", "curl", "-f", "http://localhost:8080/api/"]
+    interval: 10s
+    timeout: 5s
+    retries: 30
+
+x-init-common: &init-common
+  image: postgres:16-alpine
+  restart: no
+  depends_on:
+    postgres:
+      condition: service_healthy
+  env_file:
+    - compose.env
+  volumes:
+    - ./netbox-demo-data/sql:/demo-data:ro
+  command: >
+    sh -c "
+      echo \"Checking if database $$DB_NAME exists...\" &&
+      COUNT=$$(psql -tAc \"SELECT COUNT(*) FROM pg_database WHERE datname = '$$DB_NAME'\") &&
+      if [ \"$$COUNT\" -eq \"0\" ]; then
+        echo \"Creating database $$DB_NAME...\" &&
+        psql -c \"CREATE DATABASE $$DB_NAME;\" &&
+        echo \"Created database successfully!\"
+      else
+        echo \"Database already exists, skipping...\"
+      fi
+
+      echo \"Checking if demo data needs to be loaded...\" &&
+      export PGDATABASE=$$DB_NAME &&
+      COUNT=$$(psql -tAc 'SELECT COUNT(*) FROM dcim_device' 2>/dev/null || echo 0) &&
+      if [ \"$$COUNT\" -eq \"0\" ]; then
+        echo \"Loading demo data $$DB_DUMP...\" &&
+        psql < $$DB_DUMP &&
+        echo 'Demo data loaded successfully!'
+      else
+        echo \"Demo data already loaded ($$COUNT devices found), skipping...\"
+      fi
+    "
+
+services:
+  # ==========================================================================
+  # Shared Infrastructure
+  # ==========================================================================
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=netbox
+      - POSTGRES_PASSWORD=netbox
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U netbox"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes --databases 3000
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+
+  # ==========================================================================
+  # Netbox v3.7
+  # ==========================================================================
+
+  netbox-v37:
+    <<: *netbox-common
+    image: netboxcommunity/netbox:v3.7
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      netbox-init-v37:
+        condition: service_completed_successfully
+    environment:
+      - DB_NAME=netbox_v37
+      - REDIS_DATABASE=1037
+      - REDIS_CACHE_DATABASE=2037
+    ports:
+      - "8037:8080"
+
+  netbox-init-v37:
+    <<: *init-common
+    environment:
+      DB_NAME: netbox_v37
+      DB_DUMP: /demo-data/netbox-demo-v3.7.sql
+
+
+  # ==========================================================================
+  # Netbox v4.1
+  # ==========================================================================
+
+  netbox-v41:
+    <<: *netbox-common
+    image: netboxcommunity/netbox:v4.1
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      netbox-init-v41:
+        condition: service_completed_successfully
+    environment:
+      - DB_NAME=netbox_v41
+      - REDIS_DATABASE=1041
+      - REDIS_CACHE_DATABASE=2041
+    ports:
+      - "8041:8080"
+
+  netbox-init-v41:
+    <<: *init-common
+    environment:
+      DB_NAME: netbox_v41
+      DB_DUMP: /demo-data/netbox-demo-v4.1.sql
+
+
+  # ==========================================================================
+  # Netbox v4.2
+  # ==========================================================================
+
+  netbox-v42:
+    <<: *netbox-common
+    image: netboxcommunity/netbox:v4.2
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      netbox-init-v42:
+        condition: service_completed_successfully
+    environment:
+      - DB_NAME=netbox_v42
+      - REDIS_DATABASE=1042
+      - REDIS_CACHE_DATABASE=2042
+    ports:
+      - "8042:8080"
+
+  netbox-init-v42:
+    <<: *init-common
+    environment:
+      DB_NAME: netbox_v42
+      DB_DUMP: /demo-data/netbox-demo-v4.2.sql
+
+
+volumes:
+  postgres-data:
+  redis-data:

@@ -1,0 +1,1829 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_all_devices_01
+  method: dcim_all_devices
+  args:
+    limit: 30
+call:
+  client_call: dcim_all_devices
+  client_call_args: []
+  client_call_kwargs:
+    limit: 30
+output: !!python/object:annetbox.base.models.PagingResponse
+  next: null
+  previous: null
+  count: 30
+  results:
+  - !!python/object:annetbox.v41.models.Device
+    id: 88
+    name: PP:B117
+    display: PP:B117
+    url: http://localhost:8041/api/dcim/devices/88/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 11
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 13
+        name: Generic
+        display: Generic
+        url: http://localhost:8041/api/dcim/manufacturers/13/
+        slug: generic
+      model: 48-Pair Fiber Panel
+      slug: 48-pair-fiber-panel
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 6
+      name: Patch Panel
+      display: Patch Panel
+      url: http://localhost:8041/api/dcim/device-roles/6/
+      slug: patch-panel
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 13
+      name: NC State University
+      display: NC State University
+      url: http://localhost:8041/api/tenancy/tenants/13/
+      slug: nc-state
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 21
+      name: MDF
+      display: MDF
+      url: http://localhost:8041/api/dcim/sites/21/
+      slug: ncsu-065
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 41
+      name: Plant 1
+      display: Plant 1
+      url: http://localhost:8041/api/dcim/racks/41/
+    position: 37.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2021-04-02 00:00:00+00:00
+    last_updated: 2021-04-02 17:17:28.425000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 89
+    name: PP:B118
+    display: PP:B118
+    url: http://localhost:8041/api/dcim/devices/89/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 11
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 13
+        name: Generic
+        display: Generic
+        url: http://localhost:8041/api/dcim/manufacturers/13/
+        slug: generic
+      model: 48-Pair Fiber Panel
+      slug: 48-pair-fiber-panel
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 6
+      name: Patch Panel
+      display: Patch Panel
+      url: http://localhost:8041/api/dcim/device-roles/6/
+      slug: patch-panel
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 13
+      name: NC State University
+      display: NC State University
+      url: http://localhost:8041/api/tenancy/tenants/13/
+      slug: nc-state
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 21
+      name: MDF
+      display: MDF
+      url: http://localhost:8041/api/dcim/sites/21/
+      slug: ncsu-065
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 41
+      name: Plant 1
+      display: Plant 1
+      url: http://localhost:8041/api/dcim/racks/41/
+    position: 35.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2021-04-02 00:00:00+00:00
+    last_updated: 2021-04-02 17:17:57.268000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 87
+    name: PP:B128
+    display: PP:B128
+    url: http://localhost:8041/api/dcim/devices/87/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 11
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 13
+        name: Generic
+        display: Generic
+        url: http://localhost:8041/api/dcim/manufacturers/13/
+        slug: generic
+      model: 48-Pair Fiber Panel
+      slug: 48-pair-fiber-panel
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 6
+      name: Patch Panel
+      display: Patch Panel
+      url: http://localhost:8041/api/dcim/device-roles/6/
+      slug: patch-panel
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 13
+      name: NC State University
+      display: NC State University
+      url: http://localhost:8041/api/tenancy/tenants/13/
+      slug: nc-state
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 21
+      name: MDF
+      display: MDF
+      url: http://localhost:8041/api/dcim/sites/21/
+      slug: ncsu-065
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 41
+      name: Plant 1
+      display: Plant 1
+      url: http://localhost:8041/api/dcim/racks/41/
+    position: 39.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2021-04-02 00:00:00+00:00
+    last_updated: 2021-04-02 17:16:58.069000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 90
+    name: PP:MDF
+    display: PP:MDF
+    url: http://localhost:8041/api/dcim/devices/90/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 11
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 13
+        name: Generic
+        display: Generic
+        url: http://localhost:8041/api/dcim/manufacturers/13/
+        slug: generic
+      model: 48-Pair Fiber Panel
+      slug: 48-pair-fiber-panel
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 6
+      name: Patch Panel
+      display: Patch Panel
+      url: http://localhost:8041/api/dcim/device-roles/6/
+      slug: patch-panel
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 13
+      name: NC State University
+      display: NC State University
+      url: http://localhost:8041/api/tenancy/tenants/13/
+      slug: nc-state
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 24
+      name: Butler Communications
+      display: Butler Communications
+      url: http://localhost:8041/api/dcim/sites/24/
+      slug: ncsu-128
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 39
+      name: IDF128
+      display: IDF128
+      url: http://localhost:8041/api/dcim/racks/39/
+    position: 39.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2021-04-02 00:00:00+00:00
+    last_updated: 2021-04-02 17:19:12.870000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 91
+    name: PP:MDF
+    display: PP:MDF
+    url: http://localhost:8041/api/dcim/devices/91/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 11
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 13
+        name: Generic
+        display: Generic
+        url: http://localhost:8041/api/dcim/manufacturers/13/
+        slug: generic
+      model: 48-Pair Fiber Panel
+      slug: 48-pair-fiber-panel
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 6
+      name: Patch Panel
+      display: Patch Panel
+      url: http://localhost:8041/api/dcim/device-roles/6/
+      slug: patch-panel
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 13
+      name: NC State University
+      display: NC State University
+      url: http://localhost:8041/api/tenancy/tenants/13/
+      slug: nc-state
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 22
+      name: D. S. Weaver Labs
+      display: D. S. Weaver Labs
+      url: http://localhost:8041/api/dcim/sites/22/
+      slug: ncsu-117
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 40
+      name: IDF117
+      display: IDF117
+      url: http://localhost:8041/api/dcim/racks/40/
+    position: 39.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2021-04-02 00:00:00+00:00
+    last_updated: 2021-04-02 17:19:41.498000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 92
+    name: PP:MDF
+    display: PP:MDF
+    url: http://localhost:8041/api/dcim/devices/92/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 11
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 13
+        name: Generic
+        display: Generic
+        url: http://localhost:8041/api/dcim/manufacturers/13/
+        slug: generic
+      model: 48-Pair Fiber Panel
+      slug: 48-pair-fiber-panel
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 6
+      name: Patch Panel
+      display: Patch Panel
+      url: http://localhost:8041/api/dcim/device-roles/6/
+      slug: patch-panel
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 13
+      name: NC State University
+      display: NC State University
+      url: http://localhost:8041/api/tenancy/tenants/13/
+      slug: nc-state
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 23
+      name: Grinnells Lab
+      display: Grinnells Lab
+      url: http://localhost:8041/api/dcim/sites/23/
+      slug: ncsu-118
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 38
+      name: IDF118
+      display: IDF118
+      url: http://localhost:8041/api/dcim/racks/38/
+    position: 39.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2021-04-02 00:00:00+00:00
+    last_updated: 2021-04-02 17:20:15.226000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 27
+    name: dmi01-akron-pdu01
+    display: dmi01-akron-pdu01
+    url: http://localhost:8041/api/dcim/devices/27/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 8
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 11
+        name: APC
+        display: APC
+        url: http://localhost:8041/api/dcim/manufacturers/11/
+        slug: apc
+      model: AP7901
+      slug: ap7901
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: PDU
+      display: PDU
+      url: http://localhost:8041/api/dcim/device-roles/5/
+      slug: pdu
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 2
+      name: DM-Akron
+      display: DM-Akron
+      url: http://localhost:8041/api/dcim/sites/2/
+      slug: dm-akron
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 1
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/1/
+    position: 1.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-30 19:02:55.760000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 1
+    name: dmi01-akron-rtr01
+    display: dmi01-akron-rtr01
+    url: http://localhost:8041/api/dcim/devices/1/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 6
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: ISR 1111-8P
+      slug: isr1111
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Router
+      display: Router
+      url: http://localhost:8041/api/dcim/device-roles/1/
+      slug: router
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Cisco IOS
+      display: Cisco IOS
+      url: http://localhost:8041/api/dcim/platforms/1/
+      slug: cisco-ios
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 2
+      name: DM-Akron
+      display: DM-Akron
+      url: http://localhost:8041/api/dcim/sites/2/
+      slug: dm-akron
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 1
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/1/
+    position: 4.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-20 00:00:00+00:00
+    last_updated: 2020-12-20 02:51:03.257000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 14
+    name: dmi01-akron-sw01
+    display: dmi01-akron-sw01
+    url: http://localhost:8041/api/dcim/devices/14/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 7
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: C9200-48P
+      slug: c9200-48p
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 4
+      name: Access Switch
+      display: Access Switch
+      url: http://localhost:8041/api/dcim/device-roles/4/
+      slug: access-switch
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 2
+      name: DM-Akron
+      display: DM-Akron
+      url: http://localhost:8041/api/dcim/sites/2/
+      slug: dm-akron
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 1
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/1/
+    position: 10.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-22 02:11:11.625000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 34
+    name: dmi01-albany-pdu01
+    display: dmi01-albany-pdu01
+    url: http://localhost:8041/api/dcim/devices/34/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 8
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 11
+        name: APC
+        display: APC
+        url: http://localhost:8041/api/dcim/manufacturers/11/
+        slug: apc
+      model: AP7901
+      slug: ap7901
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: PDU
+      display: PDU
+      url: http://localhost:8041/api/dcim/device-roles/5/
+      slug: pdu
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 3
+      name: DM-Albany
+      display: DM-Albany
+      url: http://localhost:8041/api/dcim/sites/3/
+      slug: dm-albany
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 2
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/2/
+    position: 1.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-30 19:02:55.909000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 2
+    name: dmi01-albany-rtr01
+    display: dmi01-albany-rtr01
+    url: http://localhost:8041/api/dcim/devices/2/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 6
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: ISR 1111-8P
+      slug: isr1111
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Router
+      display: Router
+      url: http://localhost:8041/api/dcim/device-roles/1/
+      slug: router
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Cisco IOS
+      display: Cisco IOS
+      url: http://localhost:8041/api/dcim/platforms/1/
+      slug: cisco-ios
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 3
+      name: DM-Albany
+      display: DM-Albany
+      url: http://localhost:8041/api/dcim/sites/3/
+      slug: dm-albany
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 2
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/2/
+    position: 4.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-20 00:00:00+00:00
+    last_updated: 2020-12-20 02:51:32.863000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 15
+    name: dmi01-albany-sw01
+    display: dmi01-albany-sw01
+    url: http://localhost:8041/api/dcim/devices/15/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 7
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: C9200-48P
+      slug: c9200-48p
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 4
+      name: Access Switch
+      display: Access Switch
+      url: http://localhost:8041/api/dcim/device-roles/4/
+      slug: access-switch
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 3
+      name: DM-Albany
+      display: DM-Albany
+      url: http://localhost:8041/api/dcim/sites/3/
+      slug: dm-albany
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 2
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/2/
+    position: 10.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-22 02:11:11.714000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 35
+    name: dmi01-binghamton-pdu01
+    display: dmi01-binghamton-pdu01
+    url: http://localhost:8041/api/dcim/devices/35/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 8
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 11
+        name: APC
+        display: APC
+        url: http://localhost:8041/api/dcim/manufacturers/11/
+        slug: apc
+      model: AP7901
+      slug: ap7901
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: PDU
+      display: PDU
+      url: http://localhost:8041/api/dcim/device-roles/5/
+      slug: pdu
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 4
+      name: DM-Binghamton
+      display: DM-Binghamton
+      url: http://localhost:8041/api/dcim/sites/4/
+      slug: dm-binghamton
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 3
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/3/
+    position: 1.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-30 19:02:56.038000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 3
+    name: dmi01-binghamton-rtr01
+    display: dmi01-binghamton-rtr01
+    url: http://localhost:8041/api/dcim/devices/3/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 6
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: ISR 1111-8P
+      slug: isr1111
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Router
+      display: Router
+      url: http://localhost:8041/api/dcim/device-roles/1/
+      slug: router
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Cisco IOS
+      display: Cisco IOS
+      url: http://localhost:8041/api/dcim/platforms/1/
+      slug: cisco-ios
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 4
+      name: DM-Binghamton
+      display: DM-Binghamton
+      url: http://localhost:8041/api/dcim/sites/4/
+      slug: dm-binghamton
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 3
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/3/
+    position: 4.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-20 00:00:00+00:00
+    last_updated: 2020-12-20 02:52:02.614000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 16
+    name: dmi01-binghamton-sw01
+    display: dmi01-binghamton-sw01
+    url: http://localhost:8041/api/dcim/devices/16/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 7
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: C9200-48P
+      slug: c9200-48p
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 4
+      name: Access Switch
+      display: Access Switch
+      url: http://localhost:8041/api/dcim/device-roles/4/
+      slug: access-switch
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 4
+      name: DM-Binghamton
+      display: DM-Binghamton
+      url: http://localhost:8041/api/dcim/sites/4/
+      slug: dm-binghamton
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 3
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/3/
+    position: 10.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-22 02:11:11.799000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 36
+    name: dmi01-buffalo-pdu01
+    display: dmi01-buffalo-pdu01
+    url: http://localhost:8041/api/dcim/devices/36/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 8
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 11
+        name: APC
+        display: APC
+        url: http://localhost:8041/api/dcim/manufacturers/11/
+        slug: apc
+      model: AP7901
+      slug: ap7901
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: PDU
+      display: PDU
+      url: http://localhost:8041/api/dcim/device-roles/5/
+      slug: pdu
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: DM-Buffalo
+      display: DM-Buffalo
+      url: http://localhost:8041/api/dcim/sites/5/
+      slug: dm-buffalo
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 4
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/4/
+    position: 1.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-30 19:02:56.155000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 4
+    name: dmi01-buffalo-rtr01
+    display: dmi01-buffalo-rtr01
+    url: http://localhost:8041/api/dcim/devices/4/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 6
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: ISR 1111-8P
+      slug: isr1111
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Router
+      display: Router
+      url: http://localhost:8041/api/dcim/device-roles/1/
+      slug: router
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Cisco IOS
+      display: Cisco IOS
+      url: http://localhost:8041/api/dcim/platforms/1/
+      slug: cisco-ios
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: DM-Buffalo
+      display: DM-Buffalo
+      url: http://localhost:8041/api/dcim/sites/5/
+      slug: dm-buffalo
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 4
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/4/
+    position: 4.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-20 00:00:00+00:00
+    last_updated: 2020-12-20 02:52:26.146000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 17
+    name: dmi01-buffalo-sw01
+    display: dmi01-buffalo-sw01
+    url: http://localhost:8041/api/dcim/devices/17/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 7
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: C9200-48P
+      slug: c9200-48p
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 4
+      name: Access Switch
+      display: Access Switch
+      url: http://localhost:8041/api/dcim/device-roles/4/
+      slug: access-switch
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: DM-Buffalo
+      display: DM-Buffalo
+      url: http://localhost:8041/api/dcim/sites/5/
+      slug: dm-buffalo
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 4
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/4/
+    position: 10.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-22 02:11:11.883000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 37
+    name: dmi01-camden-pdu01
+    display: dmi01-camden-pdu01
+    url: http://localhost:8041/api/dcim/devices/37/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 8
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 11
+        name: APC
+        display: APC
+        url: http://localhost:8041/api/dcim/manufacturers/11/
+        slug: apc
+      model: AP7901
+      slug: ap7901
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: PDU
+      display: PDU
+      url: http://localhost:8041/api/dcim/device-roles/5/
+      slug: pdu
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 6
+      name: DM-Camden
+      display: DM-Camden
+      url: http://localhost:8041/api/dcim/sites/6/
+      slug: dm-camden
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 5
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/5/
+    position: 1.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-30 19:02:56.256000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 5
+    name: dmi01-camden-rtr01
+    display: dmi01-camden-rtr01
+    url: http://localhost:8041/api/dcim/devices/5/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 6
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: ISR 1111-8P
+      slug: isr1111
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Router
+      display: Router
+      url: http://localhost:8041/api/dcim/device-roles/1/
+      slug: router
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Cisco IOS
+      display: Cisco IOS
+      url: http://localhost:8041/api/dcim/platforms/1/
+      slug: cisco-ios
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 6
+      name: DM-Camden
+      display: DM-Camden
+      url: http://localhost:8041/api/dcim/sites/6/
+      slug: dm-camden
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 5
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/5/
+    position: 4.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-20 00:00:00+00:00
+    last_updated: 2020-12-20 02:53:47.838000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 18
+    name: dmi01-camden-sw01
+    display: dmi01-camden-sw01
+    url: http://localhost:8041/api/dcim/devices/18/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 7
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: C9200-48P
+      slug: c9200-48p
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 4
+      name: Access Switch
+      display: Access Switch
+      url: http://localhost:8041/api/dcim/device-roles/4/
+      slug: access-switch
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 6
+      name: DM-Camden
+      display: DM-Camden
+      url: http://localhost:8041/api/dcim/sites/6/
+      slug: dm-camden
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 5
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/5/
+    position: 10.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-22 02:11:11.968000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 38
+    name: dmi01-nashua-pdu01
+    display: dmi01-nashua-pdu01
+    url: http://localhost:8041/api/dcim/devices/38/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 8
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 11
+        name: APC
+        display: APC
+        url: http://localhost:8041/api/dcim/manufacturers/11/
+        slug: apc
+      model: AP7901
+      slug: ap7901
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: PDU
+      display: PDU
+      url: http://localhost:8041/api/dcim/device-roles/5/
+      slug: pdu
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 7
+      name: DM-Nashua
+      display: DM-Nashua
+      url: http://localhost:8041/api/dcim/sites/7/
+      slug: dm-nashua
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 6
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/6/
+    position: 1.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-30 19:02:56.357000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 6
+    name: dmi01-nashua-rtr01
+    display: dmi01-nashua-rtr01
+    url: http://localhost:8041/api/dcim/devices/6/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 6
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: ISR 1111-8P
+      slug: isr1111
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Router
+      display: Router
+      url: http://localhost:8041/api/dcim/device-roles/1/
+      slug: router
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Cisco IOS
+      display: Cisco IOS
+      url: http://localhost:8041/api/dcim/platforms/1/
+      slug: cisco-ios
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 7
+      name: DM-Nashua
+      display: DM-Nashua
+      url: http://localhost:8041/api/dcim/sites/7/
+      slug: dm-nashua
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 6
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/6/
+    position: 4.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-20 00:00:00+00:00
+    last_updated: 2020-12-20 02:54:08.200000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 19
+    name: dmi01-nashua-sw01
+    display: dmi01-nashua-sw01
+    url: http://localhost:8041/api/dcim/devices/19/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 7
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: C9200-48P
+      slug: c9200-48p
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 4
+      name: Access Switch
+      display: Access Switch
+      url: http://localhost:8041/api/dcim/device-roles/4/
+      slug: access-switch
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 7
+      name: DM-Nashua
+      display: DM-Nashua
+      url: http://localhost:8041/api/dcim/sites/7/
+      slug: dm-nashua
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 6
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/6/
+    position: 10.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-22 02:11:12.071000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 39
+    name: dmi01-pittsfield-pdu01
+    display: dmi01-pittsfield-pdu01
+    url: http://localhost:8041/api/dcim/devices/39/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 8
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 11
+        name: APC
+        display: APC
+        url: http://localhost:8041/api/dcim/manufacturers/11/
+        slug: apc
+      model: AP7901
+      slug: ap7901
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: PDU
+      display: PDU
+      url: http://localhost:8041/api/dcim/device-roles/5/
+      slug: pdu
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 8
+      name: DM-Pittsfield
+      display: DM-Pittsfield
+      url: http://localhost:8041/api/dcim/sites/8/
+      slug: dm-pittsfield
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 7
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/7/
+    position: 1.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-30 19:02:56.460000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 7
+    name: dmi01-pittsfield-rtr01
+    display: dmi01-pittsfield-rtr01
+    url: http://localhost:8041/api/dcim/devices/7/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 6
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: ISR 1111-8P
+      slug: isr1111
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Router
+      display: Router
+      url: http://localhost:8041/api/dcim/device-roles/1/
+      slug: router
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Cisco IOS
+      display: Cisco IOS
+      url: http://localhost:8041/api/dcim/platforms/1/
+      slug: cisco-ios
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 8
+      name: DM-Pittsfield
+      display: DM-Pittsfield
+      url: http://localhost:8041/api/dcim/sites/8/
+      slug: dm-pittsfield
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 7
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/7/
+    position: 4.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-20 00:00:00+00:00
+    last_updated: 2020-12-20 02:55:17.095000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 20
+    name: dmi01-pittsfield-sw01
+    display: dmi01-pittsfield-sw01
+    url: http://localhost:8041/api/dcim/devices/20/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 7
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: C9200-48P
+      slug: c9200-48p
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 4
+      name: Access Switch
+      display: Access Switch
+      url: http://localhost:8041/api/dcim/device-roles/4/
+      slug: access-switch
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 8
+      name: DM-Pittsfield
+      display: DM-Pittsfield
+      url: http://localhost:8041/api/dcim/sites/8/
+      slug: dm-pittsfield
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 7
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/7/
+    position: 10.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-22 02:11:12.204000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 40
+    name: dmi01-rochester-pdu01
+    display: dmi01-rochester-pdu01
+    url: http://localhost:8041/api/dcim/devices/40/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 8
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 11
+        name: APC
+        display: APC
+        url: http://localhost:8041/api/dcim/manufacturers/11/
+        slug: apc
+      model: AP7901
+      slug: ap7901
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: PDU
+      display: PDU
+      url: http://localhost:8041/api/dcim/device-roles/5/
+      slug: pdu
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 9
+      name: DM-Rochester
+      display: DM-Rochester
+      url: http://localhost:8041/api/dcim/sites/9/
+      slug: dm-rochester
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 8
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/8/
+    position: 1.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-30 19:02:56.562000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 8
+    name: dmi01-rochester-rtr01
+    display: dmi01-rochester-rtr01
+    url: http://localhost:8041/api/dcim/devices/8/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 6
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: ISR 1111-8P
+      slug: isr1111
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Router
+      display: Router
+      url: http://localhost:8041/api/dcim/device-roles/1/
+      slug: router
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Cisco IOS
+      display: Cisco IOS
+      url: http://localhost:8041/api/dcim/platforms/1/
+      slug: cisco-ios
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 9
+      name: DM-Rochester
+      display: DM-Rochester
+      url: http://localhost:8041/api/dcim/sites/9/
+      slug: dm-rochester
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 8
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/8/
+    position: 4.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-20 00:00:00+00:00
+    last_updated: 2020-12-20 02:55:35.846000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
+  - !!python/object:annetbox.v41.models.Device
+    id: 21
+    name: dmi01-rochster-sw01
+    display: dmi01-rochster-sw01
+    url: http://localhost:8041/api/dcim/devices/21/
+    device_type: !!python/object:annetbox.v41.models.DeviceType
+      id: 7
+      manufacturer: !!python/object:annetbox.v41.models.EntityWithSlug
+        id: 3
+        name: Cisco
+        display: Cisco
+        url: http://localhost:8041/api/dcim/manufacturers/3/
+        slug: cisco
+      model: C9200-48P
+      slug: c9200-48p
+    role: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 4
+      name: Access Switch
+      display: Access Switch
+      url: http://localhost:8041/api/dcim/device-roles/4/
+      slug: access-switch
+    tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8041/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    platform: null
+    serial: ''
+    asset_tag: null
+    site: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 9
+      name: DM-Rochester
+      display: DM-Rochester
+      url: http://localhost:8041/api/dcim/sites/9/
+      slug: dm-rochester
+    rack: !!python/object:annetbox.v41.models.Entity
+      id: 8
+      name: Comms closet
+      display: Comms closet
+      url: http://localhost:8041/api/dcim/racks/8/
+    position: 10.0
+    face: !!python/object:annetbox.v41.models.Label
+      value: front
+      label: Front
+    status: !!python/object:annetbox.v41.models.Label
+      value: active
+      label: Active
+    primary_ip: null
+    primary_ip4: null
+    primary_ip6: null
+    tags: []
+    custom_fields: {}
+    created: 2020-12-22 00:00:00+00:00
+    last_updated: 2020-12-22 02:11:12.287000+00:00
+    comments: ''
+    cluster: null
+    config_context: {}
+    config_template: null
