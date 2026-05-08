@@ -8,7 +8,8 @@ venv: ## Create virtual environment
 	@echo "Virtual environment created. Activate with: source .venv/bin/activate"
 
 install: ## Install dependencies
-	python3 -m pip install '.[sync,async]' -r requirements_dev.txt
+	python3 -m pip install -e '.[sync,async]'
+	python3 -m pip install -r requirements_dev.txt
 
 test: ## Run all tests
 	pytest
