@@ -1,4 +1,4 @@
-.PHONY: help venv install test lint format fixtures docker
+.PHONY: help venv install test lint transform format fixtures docker
 
 help: ## Show available commands
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}'
@@ -18,6 +18,11 @@ lint: ## Run linter
 
 format: ## Auto-fix linting issues
 	ruff check . --fix
+
+transform:  ## Convert async client to sync
+	python transform_to_sync.py src/annetbox/v37/client_async.py > src/annetbox/v37/client_sync.py
+	python transform_to_sync.py src/annetbox/v41/client_async.py > src/annetbox/v41/client_sync.py
+	python transform_to_sync.py src/annetbox/v42/client_async.py > src/annetbox/v42/client_sync.py
 
 fixtures: ## Generate integration test fixtures
 	python -m tests.integration.generate_fixtures
