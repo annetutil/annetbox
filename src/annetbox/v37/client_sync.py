@@ -10,6 +10,7 @@ from annetbox.base.client_sync import BaseNetboxClient, collect
 from annetbox.base.models import PagingResponse
 from .models import (
     Cable,
+    Circuit,
     ConsolePort,
     Device,
     Entity,
@@ -267,3 +268,32 @@ class NetboxV37(BaseNetboxClient):
     ipam_all_fhrp_group_assignments_by_interface = collect(
         ipam_fhrp_group_assignments_brief, field="interface_id",
     )
+
+    # circuits
+    @get("circuits/circuits/")
+    def circuits(
+        self,
+        id: list[int] | None = None,
+        cid: list[str] | None = None,
+        cid__ic: list[str] | None = None,
+        status: list[str] | None = None,
+        provider: list[str] | None = None,
+        provider_id: list[int] | None = None,
+        type: list[str] | None = None,
+        type_id: list[int] | None = None,
+        tenant: list[str] | None = None,
+        site: list[str] | None = None,
+        site_id: list[int] | None = None,
+        region: list[str] | None = None,
+        tag: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Circuit]:
+        pass
+
+    circuits_all = collect(circuits)
+    circuits_all_by_id = collect(circuits, field="id")
+
+    @get("circuits/circuits/{id}/")
+    def circuit(self, id: int) -> Circuit:
+        pass

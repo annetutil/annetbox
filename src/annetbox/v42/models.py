@@ -402,3 +402,56 @@ class TraceTuple:
     a_terminations: list[TraceTermination]
     cable: TraceCable | list[None]          # sometimes its an empty list
     b_terminations: list[TraceTermination]
+
+
+@dataclass
+class CircuitTermination:
+    # In v4.2 the termination_a/z structure became polymorphic:
+    # termination_type + termination_id point to the actual object,
+    # which is exposed as the readOnly "termination" field.
+    id: int
+    url: str
+    display: str
+    description: str
+    termination_type: str | None = None
+    termination_id: int | None = None
+    termination: Entity | None = None
+    port_speed: int | None = None
+    upstream_speed: int | None = None
+    xconnect_id: str | None = None
+
+
+@dataclass
+class CircuitGroupAssignmentBrief:
+    id: int
+    url: str
+    display: str
+    group: Entity
+    priority: Label | None = None
+
+
+@dataclass
+class Circuit:
+    id: int
+    url: str
+    display: str
+    cid: str
+    provider: EntityWithSlug
+    type: EntityWithSlug
+    status: Label
+    description: str
+    comments: str
+    tags: list[EntityWithSlug]
+    custom_fields: dict[str, Any]
+    created: datetime
+    last_updated: datetime
+    provider_account: Entity | None = None
+    tenant: EntityWithSlug | None = None
+    install_date: str | None = None
+    termination_date: str | None = None
+    commit_rate: int | None = None
+    distance: float | None = None
+    distance_unit: Label | None = None
+    termination_a: CircuitTermination | None = None
+    termination_z: CircuitTermination | None = None
+    assignments: list[CircuitGroupAssignmentBrief] | None = None

@@ -359,3 +359,42 @@ class TraceTuple:
     a_terminations: list[TraceTermination]
     cable: TraceCable | list[None]          # sometimes its an empty list
     b_terminations: list[TraceTermination]
+
+
+@dataclass
+class CircuitTermination:
+    # In v3.7 termination_a/z expose typed site / provider_network.
+    # No display_url, no polymorphic termination_type (added in v4.x).
+    id: int
+    url: str
+    display: str
+    description: str
+    site: Entity | None = None
+    provider_network: Entity | None = None
+    port_speed: int | None = None
+    upstream_speed: int | None = None
+    xconnect_id: str | None = None
+
+
+@dataclass
+class Circuit:
+    id: int
+    url: str
+    display: str
+    cid: str
+    provider: EntityWithSlug
+    type: EntityWithSlug
+    status: Label
+    description: str
+    comments: str
+    tags: list[EntityWithSlug]
+    custom_fields: dict[str, Any]
+    created: datetime
+    last_updated: datetime
+    provider_account: Entity | None = None
+    tenant: EntityWithSlug | None = None
+    install_date: str | None = None
+    termination_date: str | None = None
+    commit_rate: int | None = None
+    termination_a: CircuitTermination | None = None
+    termination_z: CircuitTermination | None = None
