@@ -1,0 +1,229 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: circuits_dark_fiber_01
+  method: circuits
+  args:
+    type: &id001
+    - dark-fiber
+    limit: 20
+call:
+  client_call: circuits
+  client_call_args: []
+  client_call_kwargs:
+    type: *id001
+    limit: 20
+output: !!python/object:annetbox.base.models.PagingResponse
+  next: null
+  previous: null
+  count: 3
+  results:
+  - !!python/object:annetbox.v42.models.Circuit
+    id: 30
+    url: http://localhost:8042/api/circuits/circuits/30/
+    display: '319031'
+    cid: '319031'
+    provider: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 9
+      name: NCSU Facilities
+      display: NCSU Facilities
+      url: http://localhost:8042/api/circuits/providers/9/
+      slug: ncsu-facilities
+    type: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 4
+      name: Dark Fiber
+      display: Dark Fiber
+      url: http://localhost:8042/api/circuits/circuit-types/4/
+      slug: dark-fiber
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2021-04-02 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.482626+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 13
+      name: NC State University
+      display: NC State University
+      url: http://localhost:8042/api/tenancy/tenants/13/
+      slug: nc-state
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    distance: null
+    distance_unit: null
+    termination_a: !!python/object:annetbox.v42.models.CircuitTermination
+      id: 36
+      url: http://localhost:8042/api/circuits/circuit-terminations/36/
+      display: '319031: Termination A'
+      description: ''
+      termination_type: dcim.site
+      termination_id: 21
+      termination: !!python/object:annetbox.v42.models.Entity
+        id: 21
+        name: MDF
+        display: MDF
+        url: http://localhost:8042/api/dcim/sites/21/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v42.models.CircuitTermination
+      id: 37
+      url: http://localhost:8042/api/circuits/circuit-terminations/37/
+      display: '319031: Termination Z'
+      description: ''
+      termination_type: dcim.site
+      termination_id: 24
+      termination: !!python/object:annetbox.v42.models.Entity
+        id: 24
+        name: Butler Communications
+        display: Butler Communications
+        url: http://localhost:8042/api/dcim/sites/24/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    assignments: null
+  - !!python/object:annetbox.v42.models.Circuit
+    id: 29
+    url: http://localhost:8042/api/circuits/circuits/29/
+    display: '350927'
+    cid: '350927'
+    provider: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 9
+      name: NCSU Facilities
+      display: NCSU Facilities
+      url: http://localhost:8042/api/circuits/providers/9/
+      slug: ncsu-facilities
+    type: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 4
+      name: Dark Fiber
+      display: Dark Fiber
+      url: http://localhost:8042/api/circuits/circuit-types/4/
+      slug: dark-fiber
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2021-04-02 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.486337+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 13
+      name: NC State University
+      display: NC State University
+      url: http://localhost:8042/api/tenancy/tenants/13/
+      slug: nc-state
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    distance: null
+    distance_unit: null
+    termination_a: !!python/object:annetbox.v42.models.CircuitTermination
+      id: 38
+      url: http://localhost:8042/api/circuits/circuit-terminations/38/
+      display: '350927: Termination A'
+      description: ''
+      termination_type: dcim.site
+      termination_id: 21
+      termination: !!python/object:annetbox.v42.models.Entity
+        id: 21
+        name: MDF
+        display: MDF
+        url: http://localhost:8042/api/dcim/sites/21/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v42.models.CircuitTermination
+      id: 39
+      url: http://localhost:8042/api/circuits/circuit-terminations/39/
+      display: '350927: Termination Z'
+      description: ''
+      termination_type: dcim.site
+      termination_id: 22
+      termination: !!python/object:annetbox.v42.models.Entity
+        id: 22
+        name: D. S. Weaver Labs
+        display: D. S. Weaver Labs
+        url: http://localhost:8042/api/dcim/sites/22/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    assignments: null
+  - !!python/object:annetbox.v42.models.Circuit
+    id: 28
+    url: http://localhost:8042/api/circuits/circuits/28/
+    display: '398282'
+    cid: '398282'
+    provider: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 9
+      name: NCSU Facilities
+      display: NCSU Facilities
+      url: http://localhost:8042/api/circuits/providers/9/
+      slug: ncsu-facilities
+    type: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 4
+      name: Dark Fiber
+      display: Dark Fiber
+      url: http://localhost:8042/api/circuits/circuit-types/4/
+      slug: dark-fiber
+    status: !!python/object:annetbox.v42.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2021-04-02 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.490889+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+      id: 13
+      name: NC State University
+      display: NC State University
+      url: http://localhost:8042/api/tenancy/tenants/13/
+      slug: nc-state
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    distance: null
+    distance_unit: null
+    termination_a: !!python/object:annetbox.v42.models.CircuitTermination
+      id: 40
+      url: http://localhost:8042/api/circuits/circuit-terminations/40/
+      display: '398282: Termination A'
+      description: ''
+      termination_type: dcim.site
+      termination_id: 21
+      termination: !!python/object:annetbox.v42.models.Entity
+        id: 21
+        name: MDF
+        display: MDF
+        url: http://localhost:8042/api/dcim/sites/21/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v42.models.CircuitTermination
+      id: 41
+      url: http://localhost:8042/api/circuits/circuit-terminations/41/
+      display: '398282: Termination Z'
+      description: ''
+      termination_type: dcim.site
+      termination_id: 23
+      termination: !!python/object:annetbox.v42.models.Entity
+        id: 23
+        name: Grinnells Lab
+        display: Grinnells Lab
+        url: http://localhost:8042/api/dcim/sites/23/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    assignments: null

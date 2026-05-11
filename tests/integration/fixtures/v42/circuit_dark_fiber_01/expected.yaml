@@ -1,0 +1,89 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: circuit_dark_fiber_01
+  method: circuit
+  args:
+    id:
+      call: circuits
+      args:
+        type:
+        - dark-fiber
+        limit: 1
+      extract: results[0].id
+call:
+  client_call: circuit
+  client_call_args: []
+  client_call_kwargs:
+    id: 30
+output: !!python/object:annetbox.v42.models.Circuit
+  id: 30
+  url: http://localhost:8042/api/circuits/circuits/30/
+  display: '319031'
+  cid: '319031'
+  provider: !!python/object:annetbox.v42.models.EntityWithSlug
+    id: 9
+    name: NCSU Facilities
+    display: NCSU Facilities
+    url: http://localhost:8042/api/circuits/providers/9/
+    slug: ncsu-facilities
+  type: !!python/object:annetbox.v42.models.EntityWithSlug
+    id: 4
+    name: Dark Fiber
+    display: Dark Fiber
+    url: http://localhost:8042/api/circuits/circuit-types/4/
+    slug: dark-fiber
+  status: !!python/object:annetbox.v42.models.Label
+    value: active
+    label: Active
+  description: ''
+  comments: ''
+  tags: []
+  custom_fields: {}
+  created: 2021-04-02 00:00:00+00:00
+  last_updated: 2023-12-29 15:45:04.482626+00:00
+  provider_account: null
+  tenant: !!python/object:annetbox.v42.models.EntityWithSlug
+    id: 13
+    name: NC State University
+    display: NC State University
+    url: http://localhost:8042/api/tenancy/tenants/13/
+    slug: nc-state
+  install_date: null
+  termination_date: null
+  commit_rate: null
+  distance: null
+  distance_unit: null
+  termination_a: !!python/object:annetbox.v42.models.CircuitTermination
+    id: 36
+    url: http://localhost:8042/api/circuits/circuit-terminations/36/
+    display: '319031: Termination A'
+    description: ''
+    termination_type: dcim.site
+    termination_id: 21
+    termination: !!python/object:annetbox.v42.models.Entity
+      id: 21
+      name: MDF
+      display: MDF
+      url: http://localhost:8042/api/dcim/sites/21/
+    port_speed: null
+    upstream_speed: null
+    xconnect_id: ''
+  termination_z: !!python/object:annetbox.v42.models.CircuitTermination
+    id: 37
+    url: http://localhost:8042/api/circuits/circuit-terminations/37/
+    display: '319031: Termination Z'
+    description: ''
+    termination_type: dcim.site
+    termination_id: 24
+    termination: !!python/object:annetbox.v42.models.Entity
+      id: 24
+      name: Butler Communications
+      display: Butler Communications
+      url: http://localhost:8042/api/dcim/sites/24/
+    port_speed: null
+    upstream_speed: null
+    xconnect_id: ''
+  assignments: null

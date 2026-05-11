@@ -1,0 +1,685 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: circuits_internet_01
+  method: circuits
+  args:
+    type: &id001
+    - internet
+    limit: 20
+call:
+  client_call: circuits
+  client_call_args: []
+  client_call_kwargs:
+    type: *id001
+    limit: 20
+output: !!python/object:annetbox.base.models.PagingResponse
+  next: null
+  previous: null
+  count: 13
+  results:
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 19
+    url: http://localhost:8037/api/circuits/circuits/19/
+    display: '1002840283'
+    cid: '1002840283'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.456697+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 23
+      url: http://localhost:8037/api/circuits/circuit-terminations/23/
+      display: '1002840283: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 2
+        name: DM-Akron
+        display: DM-Akron
+        url: http://localhost:8037/api/dcim/sites/2/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 20
+    url: http://localhost:8037/api/circuits/circuits/20/
+    display: '1002840457'
+    cid: '1002840457'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.458533+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 24
+      url: http://localhost:8037/api/circuits/circuit-terminations/24/
+      display: '1002840457: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 3
+        name: DM-Albany
+        display: DM-Albany
+        url: http://localhost:8037/api/dcim/sites/3/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 21
+    url: http://localhost:8037/api/circuits/circuits/21/
+    display: '1002841093'
+    cid: '1002841093'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.460391+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 25
+      url: http://localhost:8037/api/circuits/circuit-terminations/25/
+      display: '1002841093: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 4
+        name: DM-Binghamton
+        display: DM-Binghamton
+        url: http://localhost:8037/api/dcim/sites/4/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 17
+    url: http://localhost:8037/api/circuits/circuits/17/
+    display: '1002842917'
+    cid: '1002842917'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.462225+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 26
+      url: http://localhost:8037/api/circuits/circuit-terminations/26/
+      display: '1002842917: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 5
+        name: DM-Buffalo
+        display: DM-Buffalo
+        url: http://localhost:8037/api/dcim/sites/5/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 24
+    url: http://localhost:8037/api/circuits/circuits/24/
+    display: '1002843016'
+    cid: '1002843016'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.464076+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 27
+      url: http://localhost:8037/api/circuits/circuit-terminations/27/
+      display: '1002843016: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 6
+        name: DM-Camden
+        display: DM-Camden
+        url: http://localhost:8037/api/dcim/sites/6/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 18
+    url: http://localhost:8037/api/circuits/circuits/18/
+    display: '1002843350'
+    cid: '1002843350'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.465969+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 28
+      url: http://localhost:8037/api/circuits/circuit-terminations/28/
+      display: '1002843350: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 7
+        name: DM-Nashua
+        display: DM-Nashua
+        url: http://localhost:8037/api/dcim/sites/7/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 23
+    url: http://localhost:8037/api/circuits/circuits/23/
+    display: '1002843428'
+    cid: '1002843428'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.467833+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 29
+      url: http://localhost:8037/api/circuits/circuit-terminations/29/
+      display: '1002843428: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 8
+        name: DM-Pittsfield
+        display: DM-Pittsfield
+        url: http://localhost:8037/api/dcim/sites/8/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 27
+    url: http://localhost:8037/api/circuits/circuits/27/
+    display: '1002843688'
+    cid: '1002843688'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.469628+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 30
+      url: http://localhost:8037/api/circuits/circuit-terminations/30/
+      display: '1002843688: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 9
+        name: DM-Rochester
+        display: DM-Rochester
+        url: http://localhost:8037/api/dcim/sites/9/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 26
+    url: http://localhost:8037/api/circuits/circuits/26/
+    display: '1002844901'
+    cid: '1002844901'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.471508+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 31
+      url: http://localhost:8037/api/circuits/circuit-terminations/31/
+      display: '1002844901: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 10
+        name: DM-Scranton
+        display: DM-Scranton
+        url: http://localhost:8037/api/dcim/sites/10/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 25
+    url: http://localhost:8037/api/circuits/circuits/25/
+    display: '1002844927'
+    cid: '1002844927'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.473352+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 32
+      url: http://localhost:8037/api/circuits/circuit-terminations/32/
+      display: '1002844927: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 11
+        name: DM-Stamford
+        display: DM-Stamford
+        url: http://localhost:8037/api/dcim/sites/11/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 22
+    url: http://localhost:8037/api/circuits/circuits/22/
+    display: '1002844978'
+    cid: '1002844978'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.475184+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 33
+      url: http://localhost:8037/api/circuits/circuit-terminations/33/
+      display: '1002844978: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 12
+        name: DM-Syracuse
+        display: DM-Syracuse
+        url: http://localhost:8037/api/dcim/sites/12/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 16
+    url: http://localhost:8037/api/circuits/circuits/16/
+    display: '1002845894'
+    cid: '1002845894'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.477023+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 34
+      url: http://localhost:8037/api/circuits/circuit-terminations/34/
+      display: '1002845894: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 13
+        name: DM-Utica
+        display: DM-Utica
+        url: http://localhost:8037/api/dcim/sites/13/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 15
+    url: http://localhost:8037/api/circuits/circuits/15/
+    display: '1002847289'
+    cid: '1002847289'
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: CenturyLink
+      display: CenturyLink
+      url: http://localhost:8037/api/circuits/providers/2/
+      slug: centurylink
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 1
+      name: Internet Access
+      display: Internet Access
+      url: http://localhost:8037/api/circuits/circuit-types/1/
+      slug: internet
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.478886+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: null
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 35
+      url: http://localhost:8037/api/circuits/circuit-terminations/35/
+      display: '1002847289: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 14
+        name: DM-Yonkers
+        display: DM-Yonkers
+        url: http://localhost:8037/api/dcim/sites/14/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''

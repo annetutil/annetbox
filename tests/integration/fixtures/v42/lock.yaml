@@ -3,6 +3,42 @@
 # Regenerate: python -m tests.integration.generate_fixtures
 
 test_cases:
+- test_case: circuit_dark_fiber_01
+  files:
+  - path: cassette.yaml
+    sha256: 2c301daa0a78b7d4623a20a532dabd67cef01946e409fd221b5698126b8dd4f0
+  - path: expected.yaml
+    sha256: 709bb1375f1e0d59c19c34eff077b4c73feaca26f2a093f0c2212851d1713894
+- test_case: circuit_internet_01
+  files:
+  - path: cassette.yaml
+    sha256: 1bcd71fad615bd81ca0b43d91a775f3f0e6a937079d0f9d4aabacacbd419804d
+  - path: expected.yaml
+    sha256: 6b89f4ae6890d4194d92fb297c4d056c0e3ddb9b2ec178c47f56908408c878c0
+- test_case: circuit_mpls_01
+  files:
+  - path: cassette.yaml
+    sha256: 3ab63e54b52cafe9350e1058a8d4ec67a99a5656456c3549ce2ec07ceb72204f
+  - path: expected.yaml
+    sha256: de81ed1cd1b0b085a7447f1d52a6d71351489cb4151aa7ba0e1ef7daed8fc897
+- test_case: circuits_dark_fiber_01
+  files:
+  - path: cassette.yaml
+    sha256: b721ea4dbce76ffc0d5ebe4dd934c4fd54509581021c79b20b7552ee7a9da7eb
+  - path: expected.yaml
+    sha256: 89f03f09604793a21c13cd1aca5fa0ae69c304b1b873188878a9e57db9065759
+- test_case: circuits_internet_01
+  files:
+  - path: cassette.yaml
+    sha256: 98524220eaf704bb6e92c759b32cf0f1fe1ab9e752bcdc705609cc119f04d88d
+  - path: expected.yaml
+    sha256: 6e1a6fa8680c5286fa6590dd1fccf182f5d5c6ef748b62ddcce643357801be6c
+- test_case: circuits_mpls_01
+  files:
+  - path: cassette.yaml
+    sha256: 8871f47b5f05c1a7a0139e11b9b181c4765ce53fcdfa404ddd1526fb315e7f91
+  - path: expected.yaml
+    sha256: 02808f42f871157ed235d84ee60fcb4c179298cbb300df5a37c1f8328a8bf79b
 - test_case: dcim_all_devices_01
   files:
   - path: cassette.yaml
@@ -87,4 +123,4 @@ test_cases:
     sha256: af34f1f6d64d1eac75e9aa6ebf0777214af261846a691ac5b147989077cb790d
   - path: expected.yaml
     sha256: 880e42c46cd1dff42ec6f389ad6c0b128b380d18371d11bf7e5e1871e1a44237
-sha256: df2fb25b87618bceff42238547d70a78045aeeb7ed6f8ce5aeead00a86ccf9f1
+sha256: 165abd23a25fce1f07dcc8bcbcbf2f8bb746a6434fbdcace683b11bce1772cfd

@@ -1,0 +1,92 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8041/api/circuits/circuits/?limit=1&offset=0&type=mpls
+  response:
+    body:
+      string: '{"count":13,"next":"http://localhost:8041/api/circuits/circuits/?limit=1&offset=1&type=mpls","previous":null,"results":[{"id":14,"url":"http://localhost:8041/api/circuits/circuits/14/","display_url":"http://localhost:8041/circuits/circuits/14/","display":"DEOW4921","cid":"DEOW4921","provider":{"id":5,"url":"http://localhost:8041/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3","description":""},"provider_account":null,"type":{"id":2,"url":"http://localhost:8041/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls","description":""},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8041/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin","description":""},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":42,"url":"http://localhost:8041/api/circuits/circuit-terminations/42/","display_url":"http://localhost:8041/circuits/circuit-terminations/42/","display":"DEOW4921:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8041/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS","description":""},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":15,"url":"http://localhost:8041/api/circuits/circuit-terminations/15/","display_url":"http://localhost:8041/circuits/circuit-terminations/15/","display":"DEOW4921:
+        Termination Z","site":{"id":14,"url":"http://localhost:8041/api/dcim/sites/14/","display":"DM-Yonkers","name":"DM-Yonkers","slug":"dm-yonkers","description":""},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.492742Z","assignments":[]}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - en
+      Content-Length:
+      - '1920'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.33.0
+      Vary:
+      - HX-Request, Accept-Language, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8041/api/circuits/circuits/14/
+  response:
+    body:
+      string: '{"id":14,"url":"http://localhost:8041/api/circuits/circuits/14/","display_url":"http://localhost:8041/circuits/circuits/14/","display":"DEOW4921","cid":"DEOW4921","provider":{"id":5,"url":"http://localhost:8041/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3","description":""},"provider_account":null,"type":{"id":2,"url":"http://localhost:8041/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls","description":""},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8041/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin","description":""},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":42,"url":"http://localhost:8041/api/circuits/circuit-terminations/42/","display_url":"http://localhost:8041/circuits/circuit-terminations/42/","display":"DEOW4921:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8041/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS","description":""},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":15,"url":"http://localhost:8041/api/circuits/circuit-terminations/15/","display_url":"http://localhost:8041/circuits/circuit-terminations/15/","display":"DEOW4921:
+        Termination Z","site":{"id":14,"url":"http://localhost:8041/api/dcim/sites/14/","display":"DM-Yonkers","name":"DM-Yonkers","slug":"dm-yonkers","description":""},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.492742Z","assignments":[]}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - en
+      Content-Length:
+      - '1798'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.33.0
+      Vary:
+      - HX-Request, Accept-Language, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

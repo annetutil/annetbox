@@ -1,0 +1,854 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: circuits_mpls_01
+  method: circuits
+  args:
+    type: &id001
+    - mpls
+    limit: 20
+call:
+  client_call: circuits
+  client_call_args: []
+  client_call_kwargs:
+    type: *id001
+    limit: 20
+output: !!python/object:annetbox.base.models.PagingResponse
+  next: null
+  previous: null
+  count: 13
+  results:
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 14
+    url: http://localhost:8037/api/circuits/circuits/14/
+    display: DEOW4921
+    cid: DEOW4921
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.492742+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 42
+      url: http://localhost:8037/api/circuits/circuit-terminations/42/
+      display: 'DEOW4921: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 15
+      url: http://localhost:8037/api/circuits/circuit-terminations/15/
+      display: 'DEOW4921: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 14
+        name: DM-Yonkers
+        display: DM-Yonkers
+        url: http://localhost:8037/api/dcim/sites/14/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 11
+    url: http://localhost:8037/api/circuits/circuits/11/
+    display: DJDP9577
+    cid: DJDP9577
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.494621+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 43
+      url: http://localhost:8037/api/circuits/circuit-terminations/43/
+      display: 'DJDP9577: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 12
+      url: http://localhost:8037/api/circuits/circuit-terminations/12/
+      display: 'DJDP9577: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 11
+        name: DM-Stamford
+        display: DM-Stamford
+        url: http://localhost:8037/api/dcim/sites/11/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 10
+    url: http://localhost:8037/api/circuits/circuits/10/
+    display: DOQHD947
+    cid: DOQHD947
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.496504+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 44
+      url: http://localhost:8037/api/circuits/circuit-terminations/44/
+      display: 'DOQHD947: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 11
+      url: http://localhost:8037/api/circuits/circuit-terminations/11/
+      display: 'DOQHD947: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 10
+        name: DM-Scranton
+        display: DM-Scranton
+        url: http://localhost:8037/api/dcim/sites/10/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 2
+    url: http://localhost:8037/api/circuits/circuits/2/
+    display: JHEW3951
+    cid: JHEW3951
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.498351+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 45
+      url: http://localhost:8037/api/circuits/circuit-terminations/45/
+      display: 'JHEW3951: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 2
+      url: http://localhost:8037/api/circuits/circuit-terminations/2/
+      display: 'JHEW3951: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 3
+        name: DM-Albany
+        display: DM-Albany
+        url: http://localhost:8037/api/dcim/sites/3/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 5
+    url: http://localhost:8037/api/circuits/circuits/5/
+    display: KAGO3917
+    cid: KAGO3917
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.500365+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 46
+      url: http://localhost:8037/api/circuits/circuit-terminations/46/
+      display: 'KAGO3917: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 5
+      url: http://localhost:8037/api/circuits/circuit-terminations/5/
+      display: 'KAGO3917: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 6
+        name: DM-Camden
+        display: DM-Camden
+        url: http://localhost:8037/api/dcim/sites/6/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 12
+    url: http://localhost:8037/api/circuits/circuits/12/
+    display: KDPO0597
+    cid: KDPO0597
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.502302+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 47
+      url: http://localhost:8037/api/circuits/circuit-terminations/47/
+      display: 'KDPO0597: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 13
+      url: http://localhost:8037/api/circuits/circuit-terminations/13/
+      display: 'KDPO0597: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 12
+        name: DM-Syracuse
+        display: DM-Syracuse
+        url: http://localhost:8037/api/dcim/sites/12/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 1
+    url: http://localhost:8037/api/circuits/circuits/1/
+    display: KKDG4923
+    cid: KKDG4923
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.504207+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 48
+      url: http://localhost:8037/api/circuits/circuit-terminations/48/
+      display: 'KKDG4923: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 1
+      url: http://localhost:8037/api/circuits/circuit-terminations/1/
+      display: 'KKDG4923: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 2
+        name: DM-Akron
+        display: DM-Akron
+        url: http://localhost:8037/api/dcim/sites/2/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 6
+    url: http://localhost:8037/api/circuits/circuits/6/
+    display: KLQU4018
+    cid: KLQU4018
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.506066+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 49
+      url: http://localhost:8037/api/circuits/circuit-terminations/49/
+      display: 'KLQU4018: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 6
+      url: http://localhost:8037/api/circuits/circuit-terminations/6/
+      display: 'KLQU4018: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 7
+        name: DM-Nashua
+        display: DM-Nashua
+        url: http://localhost:8037/api/dcim/sites/7/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 9
+    url: http://localhost:8037/api/circuits/circuits/9/
+    display: KSIR0381
+    cid: KSIR0381
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.508354+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 50
+      url: http://localhost:8037/api/circuits/circuit-terminations/50/
+      display: 'KSIR0381: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 10
+      url: http://localhost:8037/api/circuits/circuit-terminations/10/
+      display: 'KSIR0381: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 9
+        name: DM-Rochester
+        display: DM-Rochester
+        url: http://localhost:8037/api/dcim/sites/9/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 7
+    url: http://localhost:8037/api/circuits/circuits/7/
+    display: LQRT4981
+    cid: LQRT4981
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.510293+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 51
+      url: http://localhost:8037/api/circuits/circuit-terminations/51/
+      display: 'LQRT4981: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 8
+      url: http://localhost:8037/api/circuits/circuit-terminations/8/
+      display: 'LQRT4981: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 8
+        name: DM-Pittsfield
+        display: DM-Pittsfield
+        url: http://localhost:8037/api/dcim/sites/8/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 3
+    url: http://localhost:8037/api/circuits/circuits/3/
+    display: PPJQ5091
+    cid: PPJQ5091
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.512180+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 52
+      url: http://localhost:8037/api/circuits/circuit-terminations/52/
+      display: 'PPJQ5091: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 3
+      url: http://localhost:8037/api/circuits/circuit-terminations/3/
+      display: 'PPJQ5091: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 4
+        name: DM-Binghamton
+        display: DM-Binghamton
+        url: http://localhost:8037/api/dcim/sites/4/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 13
+    url: http://localhost:8037/api/circuits/circuits/13/
+    display: QMKD2436
+    cid: QMKD2436
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.514064+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 53
+      url: http://localhost:8037/api/circuits/circuit-terminations/53/
+      display: 'QMKD2436: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 14
+      url: http://localhost:8037/api/circuits/circuit-terminations/14/
+      display: 'QMKD2436: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 13
+        name: DM-Utica
+        display: DM-Utica
+        url: http://localhost:8037/api/dcim/sites/13/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+  - !!python/object:annetbox.v37.models.Circuit
+    id: 4
+    url: http://localhost:8037/api/circuits/circuits/4/
+    display: QPMA5027
+    cid: QPMA5027
+    provider: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Level 3
+      display: Level 3
+      url: http://localhost:8037/api/circuits/providers/5/
+      slug: level-3
+    type: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 2
+      name: MPLS
+      display: MPLS
+      url: http://localhost:8037/api/circuits/circuit-types/2/
+      slug: mpls
+    status: !!python/object:annetbox.v37.models.Label
+      value: active
+      label: Active
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields: {}
+    created: 2020-12-30 00:00:00+00:00
+    last_updated: 2023-12-29 15:45:04.515934+00:00
+    provider_account: null
+    tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Dunder-Mifflin, Inc.
+      display: Dunder-Mifflin, Inc.
+      url: http://localhost:8037/api/tenancy/tenants/5/
+      slug: dunder-mifflin
+    install_date: null
+    termination_date: null
+    commit_rate: null
+    termination_a: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 54
+      url: http://localhost:8037/api/circuits/circuit-terminations/54/
+      display: 'QPMA5027: Termination A'
+      description: ''
+      site: null
+      provider_network: !!python/object:annetbox.v37.models.Entity
+        id: 1
+        name: Level3 MPLS
+        display: Level3 MPLS
+        url: http://localhost:8037/api/circuits/provider-networks/1/
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''
+    termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+      id: 4
+      url: http://localhost:8037/api/circuits/circuit-terminations/4/
+      display: 'QPMA5027: Termination Z'
+      description: ''
+      site: !!python/object:annetbox.v37.models.Entity
+        id: 5
+        name: DM-Buffalo
+        display: DM-Buffalo
+        url: http://localhost:8037/api/dcim/sites/5/
+      provider_network: null
+      port_speed: null
+      upstream_speed: null
+      xconnect_id: ''

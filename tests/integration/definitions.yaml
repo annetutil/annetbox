@@ -92,6 +92,54 @@ tests:
     args:
       id: 969
 
+  - id: circuits_internet_01
+    method: circuits
+    versions: ["v37", "v41", "v42"]
+    args:
+      type: ["internet"]
+      limit: 20
+
+  - id: circuits_mpls_01
+    method: circuits
+    versions: ["v37", "v41", "v42"]
+    args:
+      type: ["mpls"]
+      limit: 20
+
+  - id: circuits_dark_fiber_01
+    method: circuits
+    versions: ["v37", "v41", "v42"]
+    args:
+      type: ["dark-fiber"]
+      limit: 20
+
+  - id: circuit_internet_01
+    method: circuit
+    versions: ["v37", "v41", "v42"]
+    args:
+      id: !from_call
+        call: circuits
+        args: {type: ["internet"], limit: 1}
+        extract: results[0].id
+
+  - id: circuit_mpls_01
+    method: circuit
+    versions: ["v37", "v41", "v42"]
+    args:
+      id: !from_call
+        call: circuits
+        args: {type: ["mpls"], limit: 1}
+        extract: results[0].id
+
+  - id: circuit_dark_fiber_01
+    method: circuit
+    versions: ["v37", "v41", "v42"]
+    args:
+      id: !from_call
+        call: circuits
+        args: {type: ["dark-fiber"], limit: 1}
+        extract: results[0].id
+
   ####
   #### Versions: v42
   ####
