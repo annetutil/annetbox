@@ -57,7 +57,7 @@ output:
     name: null
     device: null
     term_side: Z
-    circuit: !!python/object:annetbox.v42.models.Circuit
+    circuit: !!python/object:annetbox.v42.models.CircuitBrief
       id: 14
       url: http://localhost:8042/api/circuits/circuits/14/
       display: DEOW4921
@@ -73,7 +73,7 @@ output:
     name: null
     device: null
     term_side: A
-    circuit: !!python/object:annetbox.v42.models.Circuit
+    circuit: !!python/object:annetbox.v42.models.CircuitBrief
       id: 14
       url: http://localhost:8042/api/circuits/circuits/14/
       display: DEOW4921

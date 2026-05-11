@@ -57,7 +57,7 @@ output:
     name: null
     device: null
     term_side: Z
-    circuit: !!python/object:annetbox.v42.models.Circuit
+    circuit: !!python/object:annetbox.v42.models.CircuitBrief
       id: 21
       url: http://localhost:8042/api/circuits/circuits/21/
       display: '1002841093'

@@ -46,7 +46,7 @@ class DeviceIp:
 
 
 @dataclass
-class Circuit:
+class CircuitBrief:
     id: int
     url: str
     display: str
@@ -69,7 +69,7 @@ class LinkPeer:
     cable: InterfaceCable
     device: Entity | None = None
     term_side: str | None = None
-    circuit: Circuit | None = None
+    circuit: CircuitBrief | None = None
 
 
 @dataclass
@@ -352,7 +352,7 @@ class TraceTermination:
 
     # circuit-terminations
     term_side: str | None = None
-    circuit: Circuit | None = None
+    circuit: CircuitBrief | None = None
 
 
 @dataclass

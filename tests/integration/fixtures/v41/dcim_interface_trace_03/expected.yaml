@@ -106,7 +106,7 @@ output:
     name: null
     device: null
     term_side: Z
-    circuit: !!python/object:annetbox.v41.models.Circuit
+    circuit: !!python/object:annetbox.v41.models.CircuitBrief
       id: 28
       url: http://localhost:8041/api/circuits/circuits/28/
       display: '398282'
@@ -126,7 +126,7 @@ output:
     name: null
     device: null
     term_side: A
-    circuit: !!python/object:annetbox.v41.models.Circuit
+    circuit: !!python/object:annetbox.v41.models.CircuitBrief
       id: 28
       url: http://localhost:8041/api/circuits/circuits/28/
       display: '398282'
