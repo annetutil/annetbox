@@ -172,13 +172,15 @@ def validate_lock_file(version_dir: Path) -> tuple[bool, list[str]]:
 # Version discovery utilities
 # ============================================================================
 
-def discover_client_class(version: str):
+def discover_client_class(version: str, *, is_async: bool = False):
     """
     Dynamically discover and import client class for a version.
 
     Example: v42 -> annetbox.v42.client_sync.NetboxV42
+             v42 (is_async=True) -> annetbox.v42.client_async.NetboxV42
     """
-    module_name = f"annetbox.{version}.client_sync"
+    suffix = "client_async" if is_async else "client_sync"
+    module_name = f"annetbox.{version}.{suffix}"
     class_name = f"Netbox{version.upper()}"  # v42 -> NetboxV42
 
     try:

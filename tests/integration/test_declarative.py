@@ -63,12 +63,23 @@ test_cases = load_test_cases()
 test_ids = [tc["test_id"] for tc in test_cases]
 
 
-@pytest.mark.parametrize("test_case", test_cases, ids=test_ids)
-def test_api_call(test_case):
-    """
-    Generic test for any Netbox version.
+def _build_vcr() -> vcr.VCR:
+    """Build the VCR instance shared by sync and async tests."""
+    return vcr.VCR(
+        record_mode="none",
+        match_on=["method", "scheme", "host", "port", "path", "query"],
+        filter_headers=[("authorization", "DUMMY")],
+        decode_compressed_response=True,
+        serializer="yaml",
+    )
 
-    Dynamically imports the client class, uses the test's cassette,
+
+@pytest.mark.parametrize("test_case", test_cases, ids=test_ids)
+def test_sync_api_call(test_case):
+    """
+    Generic sync test for any Netbox version.
+
+    Dynamically imports the sync client class, uses the test's cassette,
     calls the method, and validates the response.
     """
     version = test_case["version"]
@@ -78,29 +89,46 @@ def test_api_call(test_case):
     expected_response = test_case["expected_response"]
     cassette_path = Path(test_case["cassette_dir"]) / "cassette.yaml"
 
-    # Dynamically get client class and URL for this version
     client_class = discover_client_class(version)
     netbox_url = get_netbox_url(version)
 
-    # Create VCR instance
-    my_vcr = vcr.VCR(
-        record_mode="none",
-        match_on=["method", "scheme", "host", "port", "path", "query"],
-        filter_headers=[("authorization", "DUMMY")],
-        decode_compressed_response=True,
-        serializer="yaml",
-    )
-
-    # Use the test case's cassette
-    with my_vcr.use_cassette(str(cassette_path)):
-        # Create client and call method
+    with _build_vcr().use_cassette(str(cassette_path)):
         client = client_class(url=netbox_url)
         method = getattr(client, client_call)
-
-        # Call with args and kwargs
         actual_result = method(*call_args, **call_kwargs)
 
-    # Compare dataclasses directly (preserves type checking)
+    assert actual_result == expected_response, (
+        f"Response mismatch for {client_call}\n"
+        f"Test: {test_case['test_id']}"
+    )
+
+
+@pytest.mark.parametrize("test_case", test_cases, ids=test_ids)
+async def test_async_api_call(test_case):
+    """
+    Generic async test for any Netbox version.
+
+    Mirrors test_sync_api_call but uses the async client; reuses the same
+    cassette to ensure both flavors issue equivalent HTTP requests.
+    """
+    version = test_case["version"]
+    client_call = test_case["client_call"]
+    call_args = test_case["client_call_args"]
+    call_kwargs = test_case["client_call_kwargs"]
+    expected_response = test_case["expected_response"]
+    cassette_path = Path(test_case["cassette_dir"]) / "cassette.yaml"
+
+    client_class = discover_client_class(version, is_async=True)
+    netbox_url = get_netbox_url(version)
+
+    with _build_vcr().use_cassette(str(cassette_path)):
+        client = client_class(url=netbox_url)
+        try:
+            method = getattr(client, client_call)
+            actual_result = await method(*call_args, **call_kwargs)
+        finally:
+            await client.close()
+
     assert actual_result == expected_response, (
         f"Response mismatch for {client_call}\n"
         f"Test: {test_case['test_id']}"
