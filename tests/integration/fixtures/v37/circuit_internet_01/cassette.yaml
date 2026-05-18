@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8037/api/circuits/circuits/?limit=1&offset=0&type=internet
+  response:
+    body:
+      string: '{"count":13,"next":"http://localhost:8037/api/circuits/circuits/?limit=1&offset=1&type=internet","previous":null,"results":[{"id":19,"url":"http://localhost:8037/api/circuits/circuits/19/","display":"1002840283","cid":"1002840283","provider":{"id":2,"url":"http://localhost:8037/api/circuits/providers/2/","display":"CenturyLink","name":"CenturyLink","slug":"centurylink"},"provider_account":null,"type":{"id":1,"url":"http://localhost:8037/api/circuits/circuit-types/1/","display":"Internet
+        Access","name":"Internet Access","slug":"internet"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":null,"termination_z":{"id":23,"url":"http://localhost:8037/api/circuits/circuit-terminations/23/","display":"1002840283:
+        Termination Z","site":{"id":2,"url":"http://localhost:8037/api/dcim/sites/2/","display":"DM-Akron","name":"DM-Akron","slug":"dm-akron"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.456697Z"}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '1322'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.31.1
+      Vary:
+      - HX-Request, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8037/api/circuits/circuits/19/
+  response:
+    body:
+      string: '{"id":19,"url":"http://localhost:8037/api/circuits/circuits/19/","display":"1002840283","cid":"1002840283","provider":{"id":2,"url":"http://localhost:8037/api/circuits/providers/2/","display":"CenturyLink","name":"CenturyLink","slug":"centurylink"},"provider_account":null,"type":{"id":1,"url":"http://localhost:8037/api/circuits/circuit-types/1/","display":"Internet
+        Access","name":"Internet Access","slug":"internet"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":null,"termination_z":{"id":23,"url":"http://localhost:8037/api/circuits/circuit-terminations/23/","display":"1002840283:
+        Termination Z","site":{"id":2,"url":"http://localhost:8037/api/dcim/sites/2/","display":"DM-Akron","name":"DM-Akron","slug":"dm-akron"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.456697Z"}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '1196'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.31.1
+      Vary:
+      - HX-Request, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

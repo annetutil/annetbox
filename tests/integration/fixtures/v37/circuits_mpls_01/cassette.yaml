@@ -1,0 +1,105 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8037/api/circuits/circuits/?limit=20&offset=0&type=mpls
+  response:
+    body:
+      string: '{"count":13,"next":null,"previous":null,"results":[{"id":14,"url":"http://localhost:8037/api/circuits/circuits/14/","display":"DEOW4921","cid":"DEOW4921","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":42,"url":"http://localhost:8037/api/circuits/circuit-terminations/42/","display":"DEOW4921:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":15,"url":"http://localhost:8037/api/circuits/circuit-terminations/15/","display":"DEOW4921:
+        Termination Z","site":{"id":14,"url":"http://localhost:8037/api/dcim/sites/14/","display":"DM-Yonkers","name":"DM-Yonkers","slug":"dm-yonkers"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.492742Z"},{"id":11,"url":"http://localhost:8037/api/circuits/circuits/11/","display":"DJDP9577","cid":"DJDP9577","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":43,"url":"http://localhost:8037/api/circuits/circuit-terminations/43/","display":"DJDP9577:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":12,"url":"http://localhost:8037/api/circuits/circuit-terminations/12/","display":"DJDP9577:
+        Termination Z","site":{"id":11,"url":"http://localhost:8037/api/dcim/sites/11/","display":"DM-Stamford","name":"DM-Stamford","slug":"dm-stamford"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.494621Z"},{"id":10,"url":"http://localhost:8037/api/circuits/circuits/10/","display":"DOQHD947","cid":"DOQHD947","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":44,"url":"http://localhost:8037/api/circuits/circuit-terminations/44/","display":"DOQHD947:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":11,"url":"http://localhost:8037/api/circuits/circuit-terminations/11/","display":"DOQHD947:
+        Termination Z","site":{"id":10,"url":"http://localhost:8037/api/dcim/sites/10/","display":"DM-Scranton","name":"DM-Scranton","slug":"dm-scranton"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.496504Z"},{"id":2,"url":"http://localhost:8037/api/circuits/circuits/2/","display":"JHEW3951","cid":"JHEW3951","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":45,"url":"http://localhost:8037/api/circuits/circuit-terminations/45/","display":"JHEW3951:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-terminations/2/","display":"JHEW3951:
+        Termination Z","site":{"id":3,"url":"http://localhost:8037/api/dcim/sites/3/","display":"DM-Albany","name":"DM-Albany","slug":"dm-albany"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.498351Z"},{"id":5,"url":"http://localhost:8037/api/circuits/circuits/5/","display":"KAGO3917","cid":"KAGO3917","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":46,"url":"http://localhost:8037/api/circuits/circuit-terminations/46/","display":"KAGO3917:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":5,"url":"http://localhost:8037/api/circuits/circuit-terminations/5/","display":"KAGO3917:
+        Termination Z","site":{"id":6,"url":"http://localhost:8037/api/dcim/sites/6/","display":"DM-Camden","name":"DM-Camden","slug":"dm-camden"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.500365Z"},{"id":12,"url":"http://localhost:8037/api/circuits/circuits/12/","display":"KDPO0597","cid":"KDPO0597","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":47,"url":"http://localhost:8037/api/circuits/circuit-terminations/47/","display":"KDPO0597:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":13,"url":"http://localhost:8037/api/circuits/circuit-terminations/13/","display":"KDPO0597:
+        Termination Z","site":{"id":12,"url":"http://localhost:8037/api/dcim/sites/12/","display":"DM-Syracuse","name":"DM-Syracuse","slug":"dm-syracuse"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.502302Z"},{"id":1,"url":"http://localhost:8037/api/circuits/circuits/1/","display":"KKDG4923","cid":"KKDG4923","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":48,"url":"http://localhost:8037/api/circuits/circuit-terminations/48/","display":"KKDG4923:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":1,"url":"http://localhost:8037/api/circuits/circuit-terminations/1/","display":"KKDG4923:
+        Termination Z","site":{"id":2,"url":"http://localhost:8037/api/dcim/sites/2/","display":"DM-Akron","name":"DM-Akron","slug":"dm-akron"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.504207Z"},{"id":6,"url":"http://localhost:8037/api/circuits/circuits/6/","display":"KLQU4018","cid":"KLQU4018","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":49,"url":"http://localhost:8037/api/circuits/circuit-terminations/49/","display":"KLQU4018:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":6,"url":"http://localhost:8037/api/circuits/circuit-terminations/6/","display":"KLQU4018:
+        Termination Z","site":{"id":7,"url":"http://localhost:8037/api/dcim/sites/7/","display":"DM-Nashua","name":"DM-Nashua","slug":"dm-nashua"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.506066Z"},{"id":9,"url":"http://localhost:8037/api/circuits/circuits/9/","display":"KSIR0381","cid":"KSIR0381","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":50,"url":"http://localhost:8037/api/circuits/circuit-terminations/50/","display":"KSIR0381:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":10,"url":"http://localhost:8037/api/circuits/circuit-terminations/10/","display":"KSIR0381:
+        Termination Z","site":{"id":9,"url":"http://localhost:8037/api/dcim/sites/9/","display":"DM-Rochester","name":"DM-Rochester","slug":"dm-rochester"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.508354Z"},{"id":7,"url":"http://localhost:8037/api/circuits/circuits/7/","display":"LQRT4981","cid":"LQRT4981","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":51,"url":"http://localhost:8037/api/circuits/circuit-terminations/51/","display":"LQRT4981:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":8,"url":"http://localhost:8037/api/circuits/circuit-terminations/8/","display":"LQRT4981:
+        Termination Z","site":{"id":8,"url":"http://localhost:8037/api/dcim/sites/8/","display":"DM-Pittsfield","name":"DM-Pittsfield","slug":"dm-pittsfield"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.510293Z"},{"id":3,"url":"http://localhost:8037/api/circuits/circuits/3/","display":"PPJQ5091","cid":"PPJQ5091","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":52,"url":"http://localhost:8037/api/circuits/circuit-terminations/52/","display":"PPJQ5091:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":3,"url":"http://localhost:8037/api/circuits/circuit-terminations/3/","display":"PPJQ5091:
+        Termination Z","site":{"id":4,"url":"http://localhost:8037/api/dcim/sites/4/","display":"DM-Binghamton","name":"DM-Binghamton","slug":"dm-binghamton"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.512180Z"},{"id":13,"url":"http://localhost:8037/api/circuits/circuits/13/","display":"QMKD2436","cid":"QMKD2436","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":53,"url":"http://localhost:8037/api/circuits/circuit-terminations/53/","display":"QMKD2436:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":14,"url":"http://localhost:8037/api/circuits/circuit-terminations/14/","display":"QMKD2436:
+        Termination Z","site":{"id":13,"url":"http://localhost:8037/api/dcim/sites/13/","display":"DM-Utica","name":"DM-Utica","slug":"dm-utica"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.514064Z"},{"id":4,"url":"http://localhost:8037/api/circuits/circuits/4/","display":"QPMA5027","cid":"QPMA5027","provider":{"id":5,"url":"http://localhost:8037/api/circuits/providers/5/","display":"Level
+        3","name":"Level 3","slug":"level-3"},"provider_account":null,"type":{"id":2,"url":"http://localhost:8037/api/circuits/circuit-types/2/","display":"MPLS","name":"MPLS","slug":"mpls"},"status":{"value":"active","label":"Active"},"tenant":{"id":5,"url":"http://localhost:8037/api/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin"},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","termination_a":{"id":54,"url":"http://localhost:8037/api/circuits/circuit-terminations/54/","display":"QPMA5027:
+        Termination A","site":null,"provider_network":{"id":1,"url":"http://localhost:8037/api/circuits/provider-networks/1/","display":"Level3
+        MPLS","name":"Level3 MPLS"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":4,"url":"http://localhost:8037/api/circuits/circuit-terminations/4/","display":"QPMA5027:
+        Termination Z","site":{"id":5,"url":"http://localhost:8037/api/dcim/sites/5/","display":"DM-Buffalo","name":"DM-Buffalo","slug":"dm-buffalo"},"provider_network":null,"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2020-12-30T00:00:00Z","last_updated":"2023-12-29T15:45:04.515934Z"}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '19427'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.31.1
+      Vary:
+      - HX-Request, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,85 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: circuit_mpls_01
+  method: circuit
+  args:
+    id:
+      call: circuits
+      args:
+        type:
+        - mpls
+        limit: 1
+      extract: results[0].id
+call:
+  client_call: circuit
+  client_call_args: []
+  client_call_kwargs:
+    id: 14
+output: !!python/object:annetbox.v41.models.Circuit
+  id: 14
+  url: http://localhost:8041/api/circuits/circuits/14/
+  display: DEOW4921
+  cid: DEOW4921
+  provider: !!python/object:annetbox.v41.models.EntityWithSlug
+    id: 5
+    name: Level 3
+    display: Level 3
+    url: http://localhost:8041/api/circuits/providers/5/
+    slug: level-3
+  type: !!python/object:annetbox.v41.models.EntityWithSlug
+    id: 2
+    name: MPLS
+    display: MPLS
+    url: http://localhost:8041/api/circuits/circuit-types/2/
+    slug: mpls
+  status: !!python/object:annetbox.v41.models.Label
+    value: active
+    label: Active
+  description: ''
+  comments: ''
+  tags: []
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2023-12-29 15:45:04.492742+00:00
+  provider_account: null
+  tenant: !!python/object:annetbox.v41.models.EntityWithSlug
+    id: 5
+    name: Dunder-Mifflin, Inc.
+    display: Dunder-Mifflin, Inc.
+    url: http://localhost:8041/api/tenancy/tenants/5/
+    slug: dunder-mifflin
+  install_date: null
+  termination_date: null
+  commit_rate: null
+  termination_a: !!python/object:annetbox.v41.models.CircuitTermination
+    id: 42
+    url: http://localhost:8041/api/circuits/circuit-terminations/42/
+    display: 'DEOW4921: Termination A'
+    description: ''
+    site: null
+    provider_network: !!python/object:annetbox.v41.models.Entity
+      id: 1
+      name: Level3 MPLS
+      display: Level3 MPLS
+      url: http://localhost:8041/api/circuits/provider-networks/1/
+    port_speed: null
+    upstream_speed: null
+    xconnect_id: ''
+  termination_z: !!python/object:annetbox.v41.models.CircuitTermination
+    id: 15
+    url: http://localhost:8041/api/circuits/circuit-terminations/15/
+    display: 'DEOW4921: Termination Z'
+    description: ''
+    site: !!python/object:annetbox.v41.models.Entity
+      id: 14
+      name: DM-Yonkers
+      display: DM-Yonkers
+      url: http://localhost:8041/api/dcim/sites/14/
+    provider_network: null
+    port_speed: null
+    upstream_speed: null
+    xconnect_id: ''
+  assignments: []

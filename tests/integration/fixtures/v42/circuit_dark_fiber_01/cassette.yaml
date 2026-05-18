@@ -1,0 +1,96 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8042/api/circuits/circuits/?limit=1&offset=0&type=dark-fiber
+  response:
+    body:
+      string: '{"count":3,"next":"http://localhost:8042/api/circuits/circuits/?limit=1&offset=1&type=dark-fiber","previous":null,"results":[{"id":30,"url":"http://localhost:8042/api/circuits/circuits/30/","display_url":"http://localhost:8042/circuits/circuits/30/","display":"319031","cid":"319031","provider":{"id":9,"url":"http://localhost:8042/api/circuits/providers/9/","display":"NCSU
+        Facilities","name":"NCSU Facilities","slug":"ncsu-facilities","description":""},"provider_account":null,"type":{"id":4,"url":"http://localhost:8042/api/circuits/circuit-types/4/","display":"Dark
+        Fiber","name":"Dark Fiber","slug":"dark-fiber","description":""},"status":{"value":"active","label":"Active"},"tenant":{"id":13,"url":"http://localhost:8042/api/tenancy/tenants/13/","display":"NC
+        State University","name":"NC State University","slug":"nc-state","description":""},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","distance":null,"distance_unit":null,"termination_a":{"id":36,"url":"http://localhost:8042/api/circuits/circuit-terminations/36/","display_url":"http://localhost:8042/circuits/circuit-terminations/36/","display":"319031:
+        Termination A","termination_type":"dcim.site","termination_id":21,"termination":{"id":21,"url":"http://localhost:8042/api/dcim/sites/21/","display":"MDF","name":"MDF","slug":"ncsu-065","description":"Main
+        Distribution Frame"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":37,"url":"http://localhost:8042/api/circuits/circuit-terminations/37/","display_url":"http://localhost:8042/circuits/circuit-terminations/37/","display":"319031:
+        Termination Z","termination_type":"dcim.site","termination_id":24,"termination":{"id":24,"url":"http://localhost:8042/api/dcim/sites/24/","display":"Butler
+        Communications","name":"Butler Communications","slug":"ncsu-128","description":""},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2021-04-02T00:00:00Z","last_updated":"2023-12-29T15:45:04.482626Z"}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - en
+      Content-Length:
+      - '2072'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.34.1
+      Vary:
+      - HX-Request, Accept-Language, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8042/api/circuits/circuits/30/
+  response:
+    body:
+      string: '{"id":30,"url":"http://localhost:8042/api/circuits/circuits/30/","display_url":"http://localhost:8042/circuits/circuits/30/","display":"319031","cid":"319031","provider":{"id":9,"url":"http://localhost:8042/api/circuits/providers/9/","display":"NCSU
+        Facilities","name":"NCSU Facilities","slug":"ncsu-facilities","description":""},"provider_account":null,"type":{"id":4,"url":"http://localhost:8042/api/circuits/circuit-types/4/","display":"Dark
+        Fiber","name":"Dark Fiber","slug":"dark-fiber","description":""},"status":{"value":"active","label":"Active"},"tenant":{"id":13,"url":"http://localhost:8042/api/tenancy/tenants/13/","display":"NC
+        State University","name":"NC State University","slug":"nc-state","description":""},"install_date":null,"termination_date":null,"commit_rate":null,"description":"","distance":null,"distance_unit":null,"termination_a":{"id":36,"url":"http://localhost:8042/api/circuits/circuit-terminations/36/","display_url":"http://localhost:8042/circuits/circuit-terminations/36/","display":"319031:
+        Termination A","termination_type":"dcim.site","termination_id":21,"termination":{"id":21,"url":"http://localhost:8042/api/dcim/sites/21/","display":"MDF","name":"MDF","slug":"ncsu-065","description":"Main
+        Distribution Frame"},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"termination_z":{"id":37,"url":"http://localhost:8042/api/circuits/circuit-terminations/37/","display_url":"http://localhost:8042/circuits/circuit-terminations/37/","display":"319031:
+        Termination Z","termination_type":"dcim.site","termination_id":24,"termination":{"id":24,"url":"http://localhost:8042/api/dcim/sites/24/","display":"Butler
+        Communications","name":"Butler Communications","slug":"ncsu-128","description":""},"port_speed":null,"upstream_speed":null,"xconnect_id":"","description":""},"comments":"","tags":[],"custom_fields":{},"created":"2021-04-02T00:00:00Z","last_updated":"2023-12-29T15:45:04.482626Z"}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - en
+      Content-Length:
+      - '1945'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.34.1
+      Vary:
+      - HX-Request, Accept-Language, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -10,6 +10,7 @@ from annetbox.base.client_async import BaseNetboxClient, collect
 from annetbox.base.models import PagingResponse
 from .models import (
     Cable,
+    Circuit,
     ConsolePort,
     Device,
     Entity,
@@ -20,6 +21,7 @@ from .models import (
     ItemToDelete,
     NewCable,
     Prefix,
+    TraceTuple,
     Vlan,
     Vrf,
 )
@@ -27,7 +29,12 @@ from .models import (
 
 class NetboxV42(BaseNetboxClient):
     def _init_response_body_factory(self) -> FactoryProtocol:
-        return Retort(recipe=[loader(datetime, dateutil.parser.parse)])
+        return Retort(
+            recipe=[
+                loader(datetime, dateutil.parser.parse),
+                name_mapping(TraceTuple, as_list=True),
+            ],
+        )
 
     def _init_request_body_factory(self) -> FactoryProtocol:
         return Retort(
@@ -59,6 +66,10 @@ class NetboxV42(BaseNetboxClient):
 
     @get("dcim/interfaces/{id}/")
     async def dcim_interface(self, id: int) -> Interface:
+        pass
+
+    @get("dcim/interfaces/{id}/trace/")
+    async def dcim_interface_trace(self, id: int) -> list[TraceTuple]:
         pass
 
     @get("dcim/console-ports/")
@@ -296,3 +307,32 @@ class NetboxV42(BaseNetboxClient):
     ipam_all_fhrp_group_assignments_by_interface = collect(
         ipam_fhrp_group_assignments_brief, field="interface_id",
     )
+
+    # circuits
+    @get("circuits/circuits/")
+    async def circuits(
+        self,
+        id: list[int] | None = None,
+        cid: list[str] | None = None,
+        cid__ic: list[str] | None = None,
+        status: list[str] | None = None,
+        provider: list[str] | None = None,
+        provider_id: list[int] | None = None,
+        type: list[str] | None = None,
+        type_id: list[int] | None = None,
+        tenant: list[str] | None = None,
+        site: list[str] | None = None,
+        site_id: list[int] | None = None,
+        region: list[str] | None = None,
+        tag: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Circuit]:
+        pass
+
+    circuits_all = collect(circuits)
+    circuits_all_by_id = collect(circuits, field="id")
+
+    @get("circuits/circuits/{id}/")
+    async def circuit(self, id: int) -> Circuit:
+        pass

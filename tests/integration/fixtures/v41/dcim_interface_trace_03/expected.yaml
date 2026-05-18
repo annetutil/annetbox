@@ -1,0 +1,211 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_interface_trace_03
+  method: dcim_interface_trace
+  args:
+    id: 969
+call:
+  client_call: dcim_interface_trace
+  client_call_args: []
+  client_call_kwargs:
+    id: 969
+output:
+- !!python/object:annetbox.v41.models.TraceTuple
+  a_terminations:
+  - !!python/object:annetbox.v41.models.TraceTermination
+    id: 969
+    url: http://localhost:8041/api/dcim/interfaces/969/
+    display: xe-0/0/0
+    description: ''
+    cable: !!python/object:annetbox.v41.models.InterfaceCable
+      id: 120
+      label: ''
+      display: '#120'
+      url: http://localhost:8041/api/dcim/cables/120/
+    name: xe-0/0/0
+    device: !!python/object:annetbox.v41.models.Entity
+      id: 95
+      name: ncsu118-distswitch1
+      display: ncsu118-distswitch1
+      url: http://localhost:8041/api/dcim/devices/95/
+    term_side: null
+    circuit: null
+  cable: !!python/object:annetbox.v41.models.TraceCable
+    id: 120
+    url: http://localhost:8041/api/dcim/cables/120/
+    type: ''
+    status: connected
+    label: ''
+    color: ''
+    length: null
+    length_unit: ''
+    description: ''
+  b_terminations:
+  - !!python/object:annetbox.v41.models.TraceTermination
+    id: 1489
+    url: http://localhost:8041/api/dcim/front-ports/1489/
+    display: Port 1
+    description: ''
+    cable: !!python/object:annetbox.v41.models.InterfaceCable
+      id: 120
+      label: ''
+      display: '#120'
+      url: http://localhost:8041/api/dcim/cables/120/
+    name: Port 1
+    device: !!python/object:annetbox.v41.models.Entity
+      id: 92
+      name: PP:MDF
+      display: PP:MDF
+      url: http://localhost:8041/api/dcim/devices/92/
+    term_side: null
+    circuit: null
+- !!python/object:annetbox.v41.models.TraceTuple
+  a_terminations:
+  - !!python/object:annetbox.v41.models.TraceTermination
+    id: 1254
+    url: http://localhost:8041/api/dcim/rear-ports/1254/
+    display: Rear Splice
+    description: ''
+    cable: !!python/object:annetbox.v41.models.InterfaceCable
+      id: 92
+      label: ''
+      display: '#92'
+      url: http://localhost:8041/api/dcim/cables/92/
+    name: Rear Splice
+    device: !!python/object:annetbox.v41.models.Entity
+      id: 92
+      name: PP:MDF
+      display: PP:MDF
+      url: http://localhost:8041/api/dcim/devices/92/
+    term_side: null
+    circuit: null
+  cable: !!python/object:annetbox.v41.models.TraceCable
+    id: 92
+    url: http://localhost:8041/api/dcim/cables/92/
+    type: ''
+    status: connected
+    label: ''
+    color: ''
+    length: null
+    length_unit: ''
+    description: ''
+  b_terminations:
+  - !!python/object:annetbox.v41.models.TraceTermination
+    id: 41
+    url: http://localhost:8041/api/circuits/circuit-terminations/41/
+    display: '398282: Termination Z'
+    description: ''
+    cable: !!python/object:annetbox.v41.models.InterfaceCable
+      id: 92
+      label: ''
+      display: '#92'
+      url: http://localhost:8041/api/dcim/cables/92/
+    name: null
+    device: null
+    term_side: Z
+    circuit: !!python/object:annetbox.v41.models.CircuitBrief
+      id: 28
+      url: http://localhost:8041/api/circuits/circuits/28/
+      display: '398282'
+      cid: '398282'
+- !!python/object:annetbox.v41.models.TraceTuple
+  a_terminations:
+  - !!python/object:annetbox.v41.models.TraceTermination
+    id: 40
+    url: http://localhost:8041/api/circuits/circuit-terminations/40/
+    display: '398282: Termination A'
+    description: ''
+    cable: !!python/object:annetbox.v41.models.InterfaceCable
+      id: 91
+      label: ''
+      display: '#91'
+      url: http://localhost:8041/api/dcim/cables/91/
+    name: null
+    device: null
+    term_side: A
+    circuit: !!python/object:annetbox.v41.models.CircuitBrief
+      id: 28
+      url: http://localhost:8041/api/circuits/circuits/28/
+      display: '398282'
+      cid: '398282'
+  cable: !!python/object:annetbox.v41.models.TraceCable
+    id: 91
+    url: http://localhost:8041/api/dcim/cables/91/
+    type: ''
+    status: connected
+    label: ''
+    color: ''
+    length: null
+    length_unit: ''
+    description: ''
+  b_terminations:
+  - !!python/object:annetbox.v41.models.TraceTermination
+    id: 1251
+    url: http://localhost:8041/api/dcim/rear-ports/1251/
+    display: Rear Splice
+    description: ''
+    cable: !!python/object:annetbox.v41.models.InterfaceCable
+      id: 91
+      label: ''
+      display: '#91'
+      url: http://localhost:8041/api/dcim/cables/91/
+    name: Rear Splice
+    device: !!python/object:annetbox.v41.models.Entity
+      id: 89
+      name: PP:B118
+      display: PP:B118
+      url: http://localhost:8041/api/dcim/devices/89/
+    term_side: null
+    circuit: null
+- !!python/object:annetbox.v41.models.TraceTuple
+  a_terminations:
+  - !!python/object:annetbox.v41.models.TraceTermination
+    id: 1345
+    url: http://localhost:8041/api/dcim/front-ports/1345/
+    display: Port 1
+    description: ''
+    cable: !!python/object:annetbox.v41.models.InterfaceCable
+      id: 108
+      label: ''
+      display: '#108'
+      url: http://localhost:8041/api/dcim/cables/108/
+    name: Port 1
+    device: !!python/object:annetbox.v41.models.Entity
+      id: 89
+      name: PP:B118
+      display: PP:B118
+      url: http://localhost:8041/api/dcim/devices/89/
+    term_side: null
+    circuit: null
+  cable: !!python/object:annetbox.v41.models.TraceCable
+    id: 108
+    url: http://localhost:8041/api/dcim/cables/108/
+    type: ''
+    status: connected
+    label: ''
+    color: ''
+    length: null
+    length_unit: ''
+    description: ''
+  b_terminations:
+  - !!python/object:annetbox.v41.models.TraceTermination
+    id: 1020
+    url: http://localhost:8041/api/dcim/interfaces/1020/
+    display: xe-0/0/2
+    description: ''
+    cable: !!python/object:annetbox.v41.models.InterfaceCable
+      id: 108
+      label: ''
+      display: '#108'
+      url: http://localhost:8041/api/dcim/cables/108/
+    name: xe-0/0/2
+    device: !!python/object:annetbox.v41.models.Entity
+      id: 96
+      name: ncsu-coreswitch1
+      display: ncsu-coreswitch1
+      url: http://localhost:8041/api/dcim/devices/96/
+    term_side: null
+    circuit: null

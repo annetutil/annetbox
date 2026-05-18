@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: http://localhost:8037/api/dcim/interfaces/28/trace/
+  response:
+    body:
+      string: '[[[{"id":28,"url":"http://localhost:8037/api/dcim/interfaces/28/","display":"GigabitEthernet0/0/1","device":{"id":3,"url":"http://localhost:8037/api/dcim/devices/3/","display":"dmi01-binghamton-rtr01","name":"dmi01-binghamton-rtr01"},"name":"GigabitEthernet0/0/1","cable":23,"_occupied":true}],{"id":23,"url":"http://localhost:8037/api/dcim/cables/23/","type":"cat5e","status":"connected","label":"","color":"2196f3","length":null,"length_unit":"","description":""},[{"id":25,"url":"http://localhost:8037/api/circuits/circuit-terminations/25/","display":"1002841093:
+        Termination Z","circuit":{"id":21,"url":"http://localhost:8037/api/circuits/circuits/21/","display":"1002841093","cid":"1002841093"},"term_side":"Z","cable":23,"_occupied":true}]]]'
+    headers:
+      Allow:
+      - GET, HEAD, OPTIONS, TRACE
+      Content-Length:
+      - '747'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.31.1
+      Vary:
+      - HX-Request, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

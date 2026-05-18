@@ -1,0 +1,80 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_interface_trace_02
+  method: dcim_interface_trace
+  args:
+    id: 157
+call:
+  client_call: dcim_interface_trace
+  client_call_args: []
+  client_call_kwargs:
+    id: 157
+output:
+- !!python/object:annetbox.v37.models.TraceTuple
+  a_terminations:
+  - !!python/object:annetbox.v37.models.TraceTermination
+    id: 157
+    url: http://localhost:8037/api/dcim/interfaces/157/
+    display: GigabitEthernet0/0/0
+    cable: 1
+    name: GigabitEthernet0/0/0
+    device: !!python/object:annetbox.v37.models.Entity
+      id: 13
+      name: dmi01-yonkers-rtr01
+      display: dmi01-yonkers-rtr01
+      url: http://localhost:8037/api/dcim/devices/13/
+    term_side: null
+    circuit: null
+  cable: !!python/object:annetbox.v37.models.TraceCable
+    id: 1
+    url: http://localhost:8037/api/dcim/cables/1/
+    type: smf
+    status: connected
+    label: ''
+    color: ffeb3b
+    length: null
+    length_unit: ''
+    description: ''
+  b_terminations:
+  - !!python/object:annetbox.v37.models.TraceTermination
+    id: 15
+    url: http://localhost:8037/api/circuits/circuit-terminations/15/
+    display: 'DEOW4921: Termination Z'
+    cable: 1
+    name: null
+    device: null
+    term_side: Z
+    circuit: !!python/object:annetbox.v37.models.CircuitBrief
+      id: 14
+      url: http://localhost:8037/api/circuits/circuits/14/
+      display: DEOW4921
+      cid: DEOW4921
+- !!python/object:annetbox.v37.models.TraceTuple
+  a_terminations:
+  - !!python/object:annetbox.v37.models.TraceTermination
+    id: 42
+    url: http://localhost:8037/api/circuits/circuit-terminations/42/
+    display: 'DEOW4921: Termination A'
+    cable: null
+    name: null
+    device: null
+    term_side: A
+    circuit: !!python/object:annetbox.v37.models.CircuitBrief
+      id: 14
+      url: http://localhost:8037/api/circuits/circuits/14/
+      display: DEOW4921
+      cid: DEOW4921
+  cable: []
+  b_terminations:
+  - !!python/object:annetbox.v37.models.TraceTermination
+    id: 1
+    url: http://localhost:8037/api/circuits/provider-networks/1/
+    display: Level3 MPLS
+    cable: null
+    name: Level3 MPLS
+    device: null
+    term_side: null
+    circuit: null

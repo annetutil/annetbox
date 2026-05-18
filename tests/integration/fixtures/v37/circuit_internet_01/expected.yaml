@@ -1,0 +1,71 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: circuit_internet_01
+  method: circuit
+  args:
+    id:
+      call: circuits
+      args:
+        type:
+        - internet
+        limit: 1
+      extract: results[0].id
+call:
+  client_call: circuit
+  client_call_args: []
+  client_call_kwargs:
+    id: 19
+output: !!python/object:annetbox.v37.models.Circuit
+  id: 19
+  url: http://localhost:8037/api/circuits/circuits/19/
+  display: '1002840283'
+  cid: '1002840283'
+  provider: !!python/object:annetbox.v37.models.EntityWithSlug
+    id: 2
+    name: CenturyLink
+    display: CenturyLink
+    url: http://localhost:8037/api/circuits/providers/2/
+    slug: centurylink
+  type: !!python/object:annetbox.v37.models.EntityWithSlug
+    id: 1
+    name: Internet Access
+    display: Internet Access
+    url: http://localhost:8037/api/circuits/circuit-types/1/
+    slug: internet
+  status: !!python/object:annetbox.v37.models.Label
+    value: active
+    label: Active
+  description: ''
+  comments: ''
+  tags: []
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2023-12-29 15:45:04.456697+00:00
+  provider_account: null
+  tenant: !!python/object:annetbox.v37.models.EntityWithSlug
+    id: 5
+    name: Dunder-Mifflin, Inc.
+    display: Dunder-Mifflin, Inc.
+    url: http://localhost:8037/api/tenancy/tenants/5/
+    slug: dunder-mifflin
+  install_date: null
+  termination_date: null
+  commit_rate: null
+  termination_a: null
+  termination_z: !!python/object:annetbox.v37.models.CircuitTermination
+    id: 23
+    url: http://localhost:8037/api/circuits/circuit-terminations/23/
+    display: '1002840283: Termination Z'
+    description: ''
+    site: !!python/object:annetbox.v37.models.Entity
+      id: 2
+      name: DM-Akron
+      display: DM-Akron
+      url: http://localhost:8037/api/dcim/sites/2/
+    provider_network: null
+    port_speed: null
+    upstream_speed: null
+    xconnect_id: ''

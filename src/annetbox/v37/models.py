@@ -40,7 +40,7 @@ class DeviceIp:
 
 
 @dataclass
-class Circuit:
+class CircuitBrief:
     id: int
     url: str
     display: str
@@ -55,7 +55,7 @@ class LinkPeer:
     cable: int
     device: Entity | None = None
     term_side: str | None = None
-    circuit: Circuit | None = None
+    circuit: CircuitBrief | None = None
 
 
 @dataclass
@@ -317,3 +317,84 @@ class FHRPGroupAssignmentBrief:
     interface_type: str | None
     interface_id: int | None
     group: FHRPGroupBrief
+
+
+@dataclass
+class TraceCable:
+    id: int
+    url: str
+    type: str | None
+    status: str
+    label: str
+    color: str
+    length: float | None
+    length_unit: str | None
+    description: str
+
+
+@dataclass
+class TraceTermination:
+    # all objects
+    id: int
+    url: str
+    display: str
+
+    # all except provider-networks
+    cable: int | None = None
+
+    # interfaces, front-ports, rear-ports
+    name: str | None = None
+    device: Entity | None = None
+
+    # circuit-terminations
+    term_side: str | None = None
+    circuit: CircuitBrief | None = None
+
+
+@dataclass
+class TraceTuple:
+    # interface/<>/trace retuns this
+    # as a 3-tuple [[...], Cable, [...]]
+
+    a_terminations: list[TraceTermination]
+    cable: TraceCable | list[None]          # sometimes its an empty list
+    b_terminations: list[TraceTermination]
+
+
+@dataclass
+class CircuitTermination:
+    # In v3.7 termination_a/z expose typed site / provider_network.
+    # No display_url, no polymorphic termination_type (added in v4.x).
+    id: int
+    url: str
+    display: str
+    description: str
+    site: Entity | None = None
+    provider_network: Entity | None = None
+    port_speed: int | None = None
+    upstream_speed: int | None = None
+    xconnect_id: str | None = None
+
+
+@dataclass
+class Circuit:
+    id: int
+    url: str
+    display: str
+    cid: str
+    provider: EntityWithSlug
+    type: EntityWithSlug
+    status: Label
+    description: str
+    comments: str
+    tags: list[EntityWithSlug]
+    custom_fields: dict[str, Any]
+    created: datetime
+    last_updated: datetime
+    provider_account: Entity | None = None
+    tenant: EntityWithSlug | None = None
+    install_date: str | None = None
+    termination_date: str | None = None
+    commit_rate: int | None = None
+    termination_a: CircuitTermination | None = None
+    termination_z: CircuitTermination | None = None

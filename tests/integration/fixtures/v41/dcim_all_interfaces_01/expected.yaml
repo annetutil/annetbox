@@ -59,7 +59,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/7/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 1
         url: http://localhost:8041/api/circuits/circuits/1/
         display: KKDG4923
@@ -121,7 +121,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/21/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 19
         url: http://localhost:8041/api/circuits/circuits/19/
         display: '1002840283'
@@ -674,7 +674,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/4/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 2
         url: http://localhost:8041/api/circuits/circuits/2/
         display: JHEW3951
@@ -736,7 +736,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/22/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 20
         url: http://localhost:8041/api/circuits/circuits/20/
         display: '1002840457'
@@ -1289,7 +1289,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/12/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 3
         url: http://localhost:8041/api/circuits/circuits/3/
         display: PPJQ5091
@@ -1351,7 +1351,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/23/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 21
         url: http://localhost:8041/api/circuits/circuits/21/
         display: '1002841093'
@@ -1904,7 +1904,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/14/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 4
         url: http://localhost:8041/api/circuits/circuits/4/
         display: QPMA5027
@@ -1966,7 +1966,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/24/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 17
         url: http://localhost:8041/api/circuits/circuits/17/
         display: '1002842917'
@@ -2519,7 +2519,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/5/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 5
         url: http://localhost:8041/api/circuits/circuits/5/
         display: KAGO3917
@@ -2581,7 +2581,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/25/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 24
         url: http://localhost:8041/api/circuits/circuits/24/
         display: '1002843016'
@@ -3134,7 +3134,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/8/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 6
         url: http://localhost:8041/api/circuits/circuits/6/
         display: KLQU4018
@@ -3196,7 +3196,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/26/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 18
         url: http://localhost:8041/api/circuits/circuits/18/
         display: '1002843350'
@@ -3749,7 +3749,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/10/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 7
         url: http://localhost:8041/api/circuits/circuits/7/
         display: LQRT4981
@@ -3811,7 +3811,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/27/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 23
         url: http://localhost:8041/api/circuits/circuits/23/
         display: '1002843428'
@@ -4364,7 +4364,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/9/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 9
         url: http://localhost:8041/api/circuits/circuits/9/
         display: KSIR0381
@@ -4426,7 +4426,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/28/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 27
         url: http://localhost:8041/api/circuits/circuits/27/
         display: '1002843688'
@@ -4979,7 +4979,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/3/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 10
         url: http://localhost:8041/api/circuits/circuits/10/
         display: DOQHD947
@@ -5041,7 +5041,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/29/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 26
         url: http://localhost:8041/api/circuits/circuits/26/
         display: '1002844901'
@@ -5594,7 +5594,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/2/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 11
         url: http://localhost:8041/api/circuits/circuits/11/
         display: DJDP9577
@@ -5656,7 +5656,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/30/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 25
         url: http://localhost:8041/api/circuits/circuits/25/
         display: '1002844927'
@@ -6209,7 +6209,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/6/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 12
         url: http://localhost:8041/api/circuits/circuits/12/
         display: KDPO0597
@@ -6271,7 +6271,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/31/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 22
         url: http://localhost:8041/api/circuits/circuits/22/
         display: '1002844978'
@@ -6824,7 +6824,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/13/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 13
         url: http://localhost:8041/api/circuits/circuits/13/
         display: QMKD2436
@@ -6886,7 +6886,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/32/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 16
         url: http://localhost:8041/api/circuits/circuits/16/
         display: '1002845894'
@@ -7439,7 +7439,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/1/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 14
         url: http://localhost:8041/api/circuits/circuits/14/
         display: DEOW4921
@@ -7501,7 +7501,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
         url: http://localhost:8041/api/dcim/cables/33/
       device: null
       term_side: Z
-      circuit: !!python/object:annetbox.v41.models.Circuit
+      circuit: !!python/object:annetbox.v41.models.CircuitBrief
         id: 15
         url: http://localhost:8041/api/circuits/circuits/15/
         display: '1002847289'
