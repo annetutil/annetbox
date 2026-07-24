@@ -8,8 +8,6 @@ interactions:
       - gzip, deflate, zstd
       Connection:
       - keep-alive
-      User-Agent:
-      - python-requests/2.33.1
     method: GET
     uri: http://localhost:8042/api/dcim/interfaces/28/trace/
   response:

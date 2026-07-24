@@ -117,7 +117,7 @@ def generate_test_case(
         cassette_library_dir=str(test_dir),
         record_mode="all",  # Always re-record
         match_on=["method", "scheme", "host", "port", "path", "query"],
-        filter_headers=[("authorization", "DUMMY")],
+        filter_headers=[("authorization", "DUMMY"), "User-Agent"],
         decode_compressed_response=True,
         serializer="yaml",
         before_record_response=filter_response_headers,

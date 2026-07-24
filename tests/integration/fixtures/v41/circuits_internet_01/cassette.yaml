@@ -8,8 +8,6 @@ interactions:
       - gzip, deflate, zstd
       Connection:
       - keep-alive
-      User-Agent:
-      - python-requests/2.33.1
     method: GET
     uri: http://localhost:8041/api/circuits/circuits/?limit=20&offset=0&type=internet
   response:

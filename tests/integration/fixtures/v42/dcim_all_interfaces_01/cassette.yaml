@@ -8,8 +8,6 @@ interactions:
       - gzip, deflate, zstd
       Connection:
       - keep-alive
-      User-Agent:
-      - python-requests/2.33.1
     method: GET
     uri: http://localhost:8042/api/dcim/interfaces/?device_id=1&device_id=2&device_id=3&device_id=4&device_id=5&device_id=6&device_id=7&device_id=8&device_id=9&device_id=10&limit=100&offset=0
   response:
@@ -173,8 +171,6 @@ interactions:
       - gzip, deflate, zstd
       Connection:
       - keep-alive
-      User-Agent:
-      - python-requests/2.33.1
     method: GET
     uri: http://localhost:8042/api/dcim/interfaces/?device_id=1&device_id=2&device_id=3&device_id=4&device_id=5&device_id=6&device_id=7&device_id=8&device_id=9&device_id=10&limit=100&offset=100
   response:
@@ -258,8 +254,6 @@ interactions:
       - gzip, deflate, zstd
       Connection:
       - keep-alive
-      User-Agent:
-      - python-requests/2.33.1
     method: GET
     uri: http://localhost:8042/api/dcim/interfaces/?device_id=11&device_id=12&device_id=13&limit=100&offset=0
   response:
