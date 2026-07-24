@@ -1,0 +1,30 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: tenancy_tenant_groups_01
+  method: tenancy_tenant_groups
+  args:
+    limit: 5
+call:
+  client_call: tenancy_tenant_groups
+  client_call_args: []
+  client_call_kwargs:
+    limit: 5
+output: !!python/object:annetbox.base.models.PagingResponse
+  next: null
+  previous: null
+  count: 1
+  results:
+  - !!python/object:annetbox.v37.models.TenantGroup
+    id: 1
+    name: Customers
+    display: Customers
+    url: http://localhost:8037/api/tenancy/tenant-groups/1/
+    slug: customers
+    description: ''
+    custom_fields: {}
+    created: 2020-12-19 00:00:00+00:00
+    last_updated: 2020-12-19 02:43:53.309000+00:00
+    parent: null

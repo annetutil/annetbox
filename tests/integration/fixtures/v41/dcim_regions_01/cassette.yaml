@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+    method: GET
+    uri: http://localhost:8041/api/dcim/regions/?limit=5&offset=0
+  response:
+    body:
+      string: '{"count":67,"next":"http://localhost:8041/api/dcim/regions/?limit=5&offset=5","previous":null,"results":[{"id":4,"url":"http://localhost:8041/api/dcim/regions/4/","display_url":"http://localhost:8041/dcim/regions/4/","display":"Africa","name":"Africa","slug":"africa","parent":null,"description":"","tags":[],"custom_fields":{},"created":"2020-12-18T00:00:00Z","last_updated":"2020-12-18T02:10:30.332000Z","site_count":0,"_depth":0},{"id":5,"url":"http://localhost:8041/api/dcim/regions/5/","display_url":"http://localhost:8041/dcim/regions/5/","display":"Asia","name":"Asia","slug":"asia","parent":null,"description":"","tags":[],"custom_fields":{},"created":"2020-12-18T00:00:00Z","last_updated":"2020-12-18T02:10:30.367000Z","site_count":0,"_depth":0},{"id":15,"url":"http://localhost:8041/api/dcim/regions/15/","display_url":"http://localhost:8041/dcim/regions/15/","display":"China","name":"China","slug":"cn","parent":{"id":5,"url":"http://localhost:8041/api/dcim/regions/5/","display_url":"http://localhost:8041/dcim/regions/5/","display":"Asia","name":"Asia","slug":"asia","_depth":0},"description":"","tags":[],"custom_fields":{},"created":"2020-12-18T00:00:00Z","last_updated":"2020-12-18T02:17:11.368000Z","site_count":0,"_depth":1},{"id":16,"url":"http://localhost:8041/api/dcim/regions/16/","display_url":"http://localhost:8041/dcim/regions/16/","display":"India","name":"India","slug":"in","parent":{"id":5,"url":"http://localhost:8041/api/dcim/regions/5/","display_url":"http://localhost:8041/dcim/regions/5/","display":"Asia","name":"Asia","slug":"asia","_depth":0},"description":"","tags":[],"custom_fields":{},"created":"2020-12-18T00:00:00Z","last_updated":"2020-12-18T02:17:11.423000Z","site_count":0,"_depth":1},{"id":14,"url":"http://localhost:8041/api/dcim/regions/14/","display_url":"http://localhost:8041/dcim/regions/14/","display":"Singapore","name":"Singapore","slug":"sg","parent":{"id":5,"url":"http://localhost:8041/api/dcim/regions/5/","display_url":"http://localhost:8041/dcim/regions/5/","display":"Asia","name":"Asia","slug":"asia","_depth":0},"description":"","tags":[],"custom_fields":{},"created":"2020-12-18T00:00:00Z","last_updated":"2020-12-18T02:17:11.318000Z","site_count":0,"_depth":1}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - en
+      Content-Length:
+      - '2231'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.33.0
+      Vary:
+      - HX-Request, Accept-Language, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

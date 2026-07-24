@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+    method: GET
+    uri: http://localhost:8041/api/tenancy/tenant-groups/?limit=5&offset=0
+  response:
+    body:
+      string: '{"count":1,"next":null,"previous":null,"results":[{"id":1,"url":"http://localhost:8041/api/tenancy/tenant-groups/1/","display_url":"http://localhost:8041/tenancy/tenant-groups/1/","display":"Customers","name":"Customers","slug":"customers","parent":null,"description":"","tags":[],"custom_fields":{},"created":"2020-12-19T00:00:00Z","last_updated":"2020-12-19T02:43:53.309000Z","tenant_count":11,"_depth":0}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - en
+      Content-Length:
+      - '409'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.33.0
+      Vary:
+      - HX-Request, Accept-Language, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

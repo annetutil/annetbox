@@ -155,6 +155,66 @@ tests:
         args: {type: ["dark-fiber"], limit: 1}
         extract: results[0].id
 
+  - id: dcim_regions_01
+    method: dcim_regions
+    versions: ["v37", "v41", "v42"]
+    args:
+      limit: 5
+
+  - id: dcim_region_01
+    method: dcim_region
+    versions: ["v37", "v41", "v42"]
+    args:
+      region_id: !from_call
+        call: dcim_regions
+        args: {limit: 5}
+        extract: results[0].id
+
+  - id: dcim_site_groups_01
+    method: dcim_site_groups
+    versions: ["v37", "v41", "v42"]
+    args:
+      limit: 5
+
+  - id: dcim_site_group_01
+    method: dcim_site_group
+    versions: ["v37", "v41", "v42"]
+    args:
+      site_group_id: !from_call
+        call: dcim_site_groups
+        args: {limit: 5}
+        extract: results[0].id
+
+  - id: dcim_locations_01
+    method: dcim_locations
+    versions: ["v37", "v41", "v42"]
+    args:
+      limit: 5
+
+  - id: dcim_location_01
+    method: dcim_location
+    versions: ["v37", "v41", "v42"]
+    args:
+      location_id: !from_call
+        call: dcim_locations
+        args: {limit: 5}
+        extract: results[0].id
+
+  - id: tenancy_tenant_groups_01
+    method: tenancy_tenant_groups
+    versions: ["v37", "v41", "v42"]
+    args:
+      limit: 5
+
+  - id: tenancy_tenant_group_01
+    method: tenancy_tenant_group
+    versions: ["v37", "v41", "v42"]
+    args:
+      tenant_group_id: !from_call
+        call: tenancy_tenant_groups
+        args: {limit: 5}
+        extract: results[0].id
+
   ####
   #### Versions: v42
   ####

@@ -99,12 +99,48 @@ test_cases:
     sha256: c28f9be996e207661e052078f82985d51b56b5f0307e35541f9ffbd3c0fc6deb
   - path: expected.yaml
     sha256: cb15c821321b0959d45f0e30d2ec16e776d02ea0e45f30cea99827aa5cebefba
+- test_case: dcim_location_01
+  files:
+  - path: cassette.yaml
+    sha256: 66e4ea1c77b0e0afc121bd4fc19b3d719d40f55992d71212310668708d014711
+  - path: expected.yaml
+    sha256: d61e90bb1de00091778c1ec7d417394e233d4044aa4394ca476ba7c612a15da8
+- test_case: dcim_locations_01
+  files:
+  - path: cassette.yaml
+    sha256: 7237d5f594cba4802d59cd22965dcfe0f3d61c5722c90db405950a929939e95b
+  - path: expected.yaml
+    sha256: 904da23548fafd90d0a9501c77726f262a76cc851266c9c14fa836daceae53b2
+- test_case: dcim_region_01
+  files:
+  - path: cassette.yaml
+    sha256: e3634b4dccfac93492535516eb212dc0e7a5c83eb2df4e891226ae75292ad4d2
+  - path: expected.yaml
+    sha256: 0dcbaba10140bdafcf49ec85aa74ad455f429e43ae35db0ae394e3c9f23a6a57
+- test_case: dcim_regions_01
+  files:
+  - path: cassette.yaml
+    sha256: ce9e67ec7de1a3fdd763e3d3b08d4a44e65c4e35388ec9578e0d9e5138ad8076
+  - path: expected.yaml
+    sha256: af7c4d6995d773605815b0d0e117001052e7f961a9efe1b7df5587b8cbcb21e6
 - test_case: dcim_site_01
   files:
   - path: cassette.yaml
     sha256: 56f849722861fb5a0f68c6b58d156e5e103f8beb084a369baf0873ad4346abe7
   - path: expected.yaml
     sha256: e957cb14ca8051ecd5562183fad1c114fe1dbbf2d07a2c62a7975552096fa7af
+- test_case: dcim_site_group_01
+  files:
+  - path: cassette.yaml
+    sha256: f380d5b23482f446bb1c23fb3e111fe46187883bc20fc1273eb67f0776f4aa7e
+  - path: expected.yaml
+    sha256: d75b164fb0a446b74303e40f74ec5c2922cb09739bbe5ece1d75c62407629d0e
+- test_case: dcim_site_groups_01
+  files:
+  - path: cassette.yaml
+    sha256: 4c610078473f98858e5f84646d5a309b3aa8b66dd7fa04fdd115dd70b14b56b5
+  - path: expected.yaml
+    sha256: 0cd773264a6e050a776121de3e4aad4a5ed4338595d25df5602b0df864b905f6
 - test_case: dcim_sites_01
   files:
   - path: cassette.yaml
@@ -135,4 +171,16 @@ test_cases:
     sha256: 66a794a37df3589c8fa252b0d0c29640c7903808eab8e95f79ab242a3764e8ec
   - path: expected.yaml
     sha256: 880e42c46cd1dff42ec6f389ad6c0b128b380d18371d11bf7e5e1871e1a44237
-sha256: 18959dfd38689bdbea80707969e7c387032a3f7214013a35a20be984008ee9d6
+- test_case: tenancy_tenant_group_01
+  files:
+  - path: cassette.yaml
+    sha256: 32ba6812709a794d51c9f5471f49443184a2e506c5d9dfdecef2572bf1b71bfd
+  - path: expected.yaml
+    sha256: 0c65dcae63ae90ae7252624be89209c8d99878decbdc87f9315d6aae3e734250
+- test_case: tenancy_tenant_groups_01
+  files:
+  - path: cassette.yaml
+    sha256: 8c691185c3df807b97db5cc77f11f457200250049c3261f331eb3740f62486bf
+  - path: expected.yaml
+    sha256: d73e31531eca5854ebae166b3b62c0d54353e02fe004fc107d5e3f4cd21e5957
+sha256: fb689874984d3a6e39f2a246596b61703c007be2cb0244502060f891600158da
