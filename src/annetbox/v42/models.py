@@ -192,6 +192,17 @@ class TenantGroup(EntityWithSlug):
 
 
 @dataclass
+class Tenant(EntityWithSlug):
+    description: str
+    comments: str
+    tags: list[EntityWithSlug]
+    custom_fields: dict[str, Any]
+    created: datetime
+    last_updated: datetime
+    group: EntityWithSlug | None = None
+
+
+@dataclass
 class Device(Entity):
     url: str
     display: str  # renamed in 3.x from display_name

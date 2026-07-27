@@ -1,0 +1,37 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: tenancy_tenant_01
+  method: tenancy_tenant
+  args:
+    tenant_id:
+      call: tenancy_tenants
+      args:
+        limit: 5
+      extract: results[0].id
+call:
+  client_call: tenancy_tenant
+  client_call_args: []
+  client_call_kwargs:
+    tenant_id: 7
+output: !!python/object:annetbox.v42.models.Tenant
+  id: 7
+  name: Cyberdyne Systems
+  display: Cyberdyne Systems
+  url: http://localhost:8042/api/tenancy/tenants/7/
+  slug: cyberdyne
+  description: ''
+  comments: ''
+  tags: []
+  custom_fields:
+    cust_id: CYB01
+  created: 2020-12-19 00:00:00+00:00
+  last_updated: 2020-12-30 18:43:27.449000+00:00
+  group: !!python/object:annetbox.v42.models.EntityWithSlug
+    id: 1
+    name: Customers
+    display: Customers
+    url: http://localhost:8042/api/tenancy/tenant-groups/1/
+    slug: customers

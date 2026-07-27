@@ -25,6 +25,7 @@ from .models import (
     Region,
     Site,
     SiteGroup,
+    Tenant,
     TenantGroup,
     TraceTuple,
 )
@@ -310,6 +311,29 @@ class NetboxV41(BaseNetboxClient):
 
     @get("tenancy/tenant-groups/{tenant_group_id}/")
     def tenancy_tenant_group(self, tenant_group_id: int) -> TenantGroup:
+        pass
+
+    @get("tenancy/tenants/")
+    def tenancy_tenants(
+        self,
+        id: list[int] | None = None,
+        name: list[str] | None = None,
+        slug: list[str] | None = None,
+        group: list[str] | None = None,
+        group_id: list[int] | None = None,
+        tag: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Tenant]:
+        pass
+
+    tenancy_all_tenants = collect(tenancy_tenants)
+    tenancy_all_tenants_by_id = collect(
+        tenancy_tenants, field="id",
+    )
+
+    @get("tenancy/tenants/{tenant_id}/")
+    def tenancy_tenant(self, tenant_id: int) -> Tenant:
         pass
 
     # ipam
