@@ -153,6 +153,46 @@ class Site(Entity):
 
 
 @dataclass
+class Region(EntityWithSlug):
+    description: str
+    custom_fields: dict[str, Any]
+    created: datetime
+    last_updated: datetime
+    parent: EntityWithSlug | None = None
+
+
+@dataclass
+class SiteGroup(EntityWithSlug):
+    description: str
+    custom_fields: dict[str, Any]
+    created: datetime
+    last_updated: datetime
+    parent: EntityWithSlug | None = None
+
+
+@dataclass
+class Location(EntityWithSlug):
+    site: Entity
+    status: Label
+    description: str
+    custom_fields: dict[str, Any]
+    created: datetime
+    last_updated: datetime
+    parent: EntityWithSlug | None = None
+    tenant: EntityWithSlug | None = None
+    facility: str = ""
+
+
+@dataclass
+class TenantGroup(EntityWithSlug):
+    description: str
+    custom_fields: dict[str, Any]
+    created: datetime
+    last_updated: datetime
+    parent: EntityWithSlug | None = None
+
+
+@dataclass
 class Device(Entity):
     url: str
     display: str  # renamed in 3.x from display_name

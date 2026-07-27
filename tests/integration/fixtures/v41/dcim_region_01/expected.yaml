@@ -1,0 +1,29 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_region_01
+  method: dcim_region
+  args:
+    region_id:
+      call: dcim_regions
+      args:
+        limit: 5
+      extract: results[0].id
+call:
+  client_call: dcim_region
+  client_call_args: []
+  client_call_kwargs:
+    region_id: 4
+output: !!python/object:annetbox.v41.models.Region
+  id: 4
+  name: Africa
+  display: Africa
+  url: http://localhost:8041/api/dcim/regions/4/
+  slug: africa
+  description: ''
+  custom_fields: {}
+  created: 2020-12-18 00:00:00+00:00
+  last_updated: 2020-12-18 02:10:30.332000+00:00
+  parent: null

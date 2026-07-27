@@ -19,9 +19,13 @@ from .models import (
     Interface,
     IpAddress,
     ItemToDelete,
+    Location,
     NewCable,
     Prefix,
+    Region,
     Site,
+    SiteGroup,
+    TenantGroup,
     TraceTuple,
 )
 
@@ -222,6 +226,90 @@ class NetboxV41(BaseNetboxClient):
 
     @get("dcim/sites/{site_id}/")
     async def dcim_site(self, site_id: int) -> Site:
+        pass
+
+    @get("dcim/regions/")
+    async def dcim_regions(
+        self,
+        id: list[int] | None = None,
+        name: list[str] | None = None,
+        slug: list[str] | None = None,
+        tag: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Region]:
+        pass
+
+    dcim_all_regions = collect(dcim_regions)
+    dcim_all_regions_by_id = collect(dcim_regions, field="id")
+
+    @get("dcim/regions/{region_id}/")
+    async def dcim_region(self, region_id: int) -> Region:
+        pass
+
+    @get("dcim/site-groups/")
+    async def dcim_site_groups(
+        self,
+        id: list[int] | None = None,
+        name: list[str] | None = None,
+        slug: list[str] | None = None,
+        tag: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[SiteGroup]:
+        pass
+
+    dcim_all_site_groups = collect(dcim_site_groups)
+    dcim_all_site_groups_by_id = collect(dcim_site_groups, field="id")
+
+    @get("dcim/site-groups/{site_group_id}/")
+    async def dcim_site_group(self, site_group_id: int) -> SiteGroup:
+        pass
+
+    @get("dcim/locations/")
+    async def dcim_locations(
+        self,
+        id: list[int] | None = None,
+        name: list[str] | None = None,
+        slug: list[str] | None = None,
+        site: list[str] | None = None,
+        site_id: list[int] | None = None,
+        parent: list[str] | None = None,
+        parent_id: list[int] | None = None,
+        status: list[str] | None = None,
+        tenant: list[str] | None = None,
+        tag: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[Location]:
+        pass
+
+    dcim_all_locations = collect(dcim_locations)
+    dcim_all_locations_by_id = collect(dcim_locations, field="id")
+
+    @get("dcim/locations/{location_id}/")
+    async def dcim_location(self, location_id: int) -> Location:
+        pass
+
+    @get("tenancy/tenant-groups/")
+    async def tenancy_tenant_groups(
+        self,
+        id: list[int] | None = None,
+        name: list[str] | None = None,
+        slug: list[str] | None = None,
+        tag: list[str] | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> PagingResponse[TenantGroup]:
+        pass
+
+    tenancy_all_tenant_groups = collect(tenancy_tenant_groups)
+    tenancy_all_tenant_groups_by_id = collect(
+        tenancy_tenant_groups, field="id",
+    )
+
+    @get("tenancy/tenant-groups/{tenant_group_id}/")
+    async def tenancy_tenant_group(self, tenant_group_id: int) -> TenantGroup:
         pass
 
     # ipam

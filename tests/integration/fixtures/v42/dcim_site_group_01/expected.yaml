@@ -1,0 +1,29 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_site_group_01
+  method: dcim_site_group
+  args:
+    site_group_id:
+      call: dcim_site_groups
+      args:
+        limit: 5
+      extract: results[0].id
+call:
+  client_call: dcim_site_group
+  client_call_args: []
+  client_call_kwargs:
+    site_group_id: 1
+output: !!python/object:annetbox.v42.models.SiteGroup
+  id: 1
+  name: Customer Sites
+  display: Customer Sites
+  url: http://localhost:8042/api/dcim/site-groups/1/
+  slug: customer-sites
+  description: ''
+  custom_fields: {}
+  created: 2021-12-30 00:00:00+00:00
+  last_updated: 2021-12-30 15:41:01.816000+00:00
+  parent: null

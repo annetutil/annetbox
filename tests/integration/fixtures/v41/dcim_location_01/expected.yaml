@@ -1,0 +1,39 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_location_01
+  method: dcim_location
+  args:
+    location_id:
+      call: dcim_locations
+      args:
+        limit: 5
+      extract: results[0].id
+call:
+  client_call: dcim_location
+  client_call_args: []
+  client_call_kwargs:
+    location_id: 1
+output: !!python/object:annetbox.v41.models.Location
+  id: 1
+  name: Row 1
+  display: Row 1
+  url: http://localhost:8041/api/dcim/locations/1/
+  slug: row-1
+  site: !!python/object:annetbox.v41.models.Entity
+    id: 21
+    name: MDF
+    display: MDF
+    url: http://localhost:8041/api/dcim/sites/21/
+  status: !!python/object:annetbox.v41.models.Label
+    value: active
+    label: Active
+  description: ''
+  custom_fields: {}
+  created: 2021-04-02 00:00:00+00:00
+  last_updated: 2021-04-02 16:57:17.398000+00:00
+  parent: null
+  tenant: null
+  facility: ''

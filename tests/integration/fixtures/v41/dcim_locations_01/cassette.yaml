@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+    method: GET
+    uri: http://localhost:8041/api/dcim/locations/?limit=5&offset=0
+  response:
+    body:
+      string: '{"count":4,"next":null,"previous":null,"results":[{"id":1,"url":"http://localhost:8041/api/dcim/locations/1/","display_url":"http://localhost:8041/dcim/locations/1/","display":"Row
+        1","name":"Row 1","slug":"row-1","site":{"id":21,"url":"http://localhost:8041/api/dcim/sites/21/","display":"MDF","name":"MDF","slug":"ncsu-065","description":"Main
+        Distribution Frame"},"parent":null,"status":{"value":"active","label":"Active"},"tenant":null,"facility":"","description":"","tags":[],"custom_fields":{},"created":"2021-04-02T00:00:00Z","last_updated":"2021-04-02T16:57:17.398000Z","rack_count":8,"device_count":10,"_depth":0},{"id":2,"url":"http://localhost:8041/api/dcim/locations/2/","display_url":"http://localhost:8041/dcim/locations/2/","display":"Row
+        2","name":"Row 2","slug":"row-2","site":{"id":21,"url":"http://localhost:8041/api/dcim/sites/21/","display":"MDF","name":"MDF","slug":"ncsu-065","description":"Main
+        Distribution Frame"},"parent":null,"status":{"value":"active","label":"Active"},"tenant":null,"facility":"","description":"","tags":[],"custom_fields":{},"created":"2021-04-02T00:00:00Z","last_updated":"2021-04-02T16:57:24.629000Z","rack_count":8,"device_count":1,"_depth":0},{"id":3,"url":"http://localhost:8041/api/dcim/locations/3/","display_url":"http://localhost:8041/dcim/locations/3/","display":"Row
+        3","name":"Row 3","slug":"row-3","site":{"id":21,"url":"http://localhost:8041/api/dcim/sites/21/","display":"MDF","name":"MDF","slug":"ncsu-065","description":"Main
+        Distribution Frame"},"parent":null,"status":{"value":"active","label":"Active"},"tenant":null,"facility":"","description":"","tags":[],"custom_fields":{},"created":"2021-04-02T00:00:00Z","last_updated":"2021-04-02T16:57:31.713000Z","rack_count":8,"device_count":0,"_depth":0},{"id":4,"url":"http://localhost:8041/api/dcim/locations/4/","display_url":"http://localhost:8041/dcim/locations/4/","display":"Row
+        4","name":"Row 4","slug":"row-4","site":{"id":21,"url":"http://localhost:8041/api/dcim/sites/21/","display":"MDF","name":"MDF","slug":"ncsu-065","description":"Main
+        Distribution Frame"},"parent":null,"status":{"value":"active","label":"Active"},"tenant":null,"facility":"","description":"","tags":[],"custom_fields":{},"created":"2021-04-02T00:00:00Z","last_updated":"2021-04-02T16:57:37.732000Z","rack_count":0,"device_count":0,"_depth":0}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - en
+      Content-Length:
+      - '2340'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.33.0
+      Vary:
+      - HX-Request, Accept-Language, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

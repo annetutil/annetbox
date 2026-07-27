@@ -1,0 +1,89 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: dcim_regions_01
+  method: dcim_regions
+  args:
+    limit: 5
+call:
+  client_call: dcim_regions
+  client_call_args: []
+  client_call_kwargs:
+    limit: 5
+output: !!python/object:annetbox.base.models.PagingResponse
+  next: http://localhost:8037/api/dcim/regions/?limit=5&offset=5
+  previous: null
+  count: 67
+  results:
+  - !!python/object:annetbox.v37.models.Region
+    id: 4
+    name: Africa
+    display: Africa
+    url: http://localhost:8037/api/dcim/regions/4/
+    slug: africa
+    description: ''
+    custom_fields: {}
+    created: 2020-12-18 00:00:00+00:00
+    last_updated: 2020-12-18 02:10:30.332000+00:00
+    parent: null
+  - !!python/object:annetbox.v37.models.Region
+    id: 5
+    name: Asia
+    display: Asia
+    url: http://localhost:8037/api/dcim/regions/5/
+    slug: asia
+    description: ''
+    custom_fields: {}
+    created: 2020-12-18 00:00:00+00:00
+    last_updated: 2020-12-18 02:10:30.367000+00:00
+    parent: null
+  - !!python/object:annetbox.v37.models.Region
+    id: 15
+    name: China
+    display: China
+    url: http://localhost:8037/api/dcim/regions/15/
+    slug: cn
+    description: ''
+    custom_fields: {}
+    created: 2020-12-18 00:00:00+00:00
+    last_updated: 2020-12-18 02:17:11.368000+00:00
+    parent: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Asia
+      display: Asia
+      url: http://localhost:8037/api/dcim/regions/5/
+      slug: asia
+  - !!python/object:annetbox.v37.models.Region
+    id: 16
+    name: India
+    display: India
+    url: http://localhost:8037/api/dcim/regions/16/
+    slug: in
+    description: ''
+    custom_fields: {}
+    created: 2020-12-18 00:00:00+00:00
+    last_updated: 2020-12-18 02:17:11.423000+00:00
+    parent: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Asia
+      display: Asia
+      url: http://localhost:8037/api/dcim/regions/5/
+      slug: asia
+  - !!python/object:annetbox.v37.models.Region
+    id: 14
+    name: Singapore
+    display: Singapore
+    url: http://localhost:8037/api/dcim/regions/14/
+    slug: sg
+    description: ''
+    custom_fields: {}
+    created: 2020-12-18 00:00:00+00:00
+    last_updated: 2020-12-18 02:17:11.318000+00:00
+    parent: !!python/object:annetbox.v37.models.EntityWithSlug
+      id: 5
+      name: Asia
+      display: Asia
+      url: http://localhost:8037/api/dcim/regions/5/
+      slug: asia
