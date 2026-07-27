@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+    method: GET
+    uri: http://localhost:8041/api/tenancy/tenants/?limit=5&offset=0
+  response:
+    body:
+      string: '{"count":11,"next":"http://localhost:8041/api/tenancy/tenants/?limit=5&offset=5","previous":null,"results":[{"id":7,"url":"http://localhost:8041/api/tenancy/tenants/7/","display_url":"http://localhost:8041/tenancy/tenants/7/","display":"Cyberdyne
+        Systems","name":"Cyberdyne Systems","slug":"cyberdyne","group":{"id":1,"url":"http://localhost:8041/api/tenancy/tenant-groups/1/","display":"Customers","name":"Customers","slug":"customers","description":"","tenant_count":0,"_depth":0},"description":"","comments":"","tags":[],"custom_fields":{"cust_id":"CYB01"},"created":"2020-12-19T00:00:00Z","last_updated":"2020-12-30T18:43:27.449000Z","circuit_count":0,"device_count":0,"ipaddress_count":0,"prefix_count":0,"rack_count":0,"site_count":0,"virtualmachine_count":0,"vlan_count":0,"vrf_count":0,"cluster_count":0},{"id":5,"url":"http://localhost:8041/api/tenancy/tenants/5/","display_url":"http://localhost:8041/tenancy/tenants/5/","display":"Dunder-Mifflin,
+        Inc.","name":"Dunder-Mifflin, Inc.","slug":"dunder-mifflin","group":{"id":1,"url":"http://localhost:8041/api/tenancy/tenant-groups/1/","display":"Customers","name":"Customers","slug":"customers","description":"","tenant_count":0,"_depth":0},"description":"","comments":"","tags":[],"custom_fields":{"cust_id":"DMI01"},"created":"2020-12-19T00:00:00Z","last_updated":"2020-12-30T18:43:27.515000Z","circuit_count":26,"device_count":39,"ipaddress_count":0,"prefix_count":68,"rack_count":13,"site_count":14,"virtualmachine_count":0,"vlan_count":39,"vrf_count":0,"cluster_count":0},{"id":1,"url":"http://localhost:8041/api/tenancy/tenants/1/","display_url":"http://localhost:8041/tenancy/tenants/1/","display":"Initech","name":"Initech","slug":"initech","group":{"id":1,"url":"http://localhost:8041/api/tenancy/tenant-groups/1/","display":"Customers","name":"Customers","slug":"customers","description":"","tenant_count":0,"_depth":0},"description":"","comments":"","tags":[],"custom_fields":{"cust_id":"INI04"},"created":"2020-12-19T00:00:00Z","last_updated":"2020-12-30T18:43:27.571000Z","circuit_count":0,"device_count":0,"ipaddress_count":0,"prefix_count":0,"rack_count":0,"site_count":0,"virtualmachine_count":0,"vlan_count":0,"vrf_count":0,"cluster_count":0},{"id":10,"url":"http://localhost:8041/api/tenancy/tenants/10/","display_url":"http://localhost:8041/tenancy/tenants/10/","display":"Jimbob''s
+        Banking & Trust","name":"Jimbob''s Banking & Trust","slug":"jimbobs-banking-trust","group":{"id":1,"url":"http://localhost:8041/api/tenancy/tenant-groups/1/","display":"Customers","name":"Customers","slug":"customers","description":"","tenant_count":0,"_depth":0},"description":"","comments":"","tags":[],"custom_fields":{"cust_id":""},"created":"2021-03-10T00:00:00Z","last_updated":"2021-03-10T20:44:16.078000Z","circuit_count":0,"device_count":0,"ipaddress_count":0,"prefix_count":0,"rack_count":0,"site_count":6,"virtualmachine_count":0,"vlan_count":24,"vrf_count":0,"cluster_count":0},{"id":13,"url":"http://localhost:8041/api/tenancy/tenants/13/","display_url":"http://localhost:8041/tenancy/tenants/13/","display":"NC
+        State University","name":"NC State University","slug":"nc-state","group":{"id":1,"url":"http://localhost:8041/api/tenancy/tenant-groups/1/","display":"Customers","name":"Customers","slug":"customers","description":"","tenant_count":0,"_depth":0},"description":"","comments":"","tags":[],"custom_fields":{"cust_id":""},"created":"2021-04-02T00:00:00Z","last_updated":"2021-04-02T16:46:50.851000Z","circuit_count":3,"device_count":19,"ipaddress_count":0,"prefix_count":0,"rack_count":29,"site_count":4,"virtualmachine_count":0,"vlan_count":0,"vrf_count":0,"cluster_count":0}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - en
+      Content-Length:
+      - '3657'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.33.0
+      Vary:
+      - HX-Request, Accept-Language, Cookie, origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

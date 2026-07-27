@@ -1,0 +1,114 @@
+# AUTO-GENERATED - DO NOT EDIT
+# This file is generated from definitions.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+definition:
+  id: tenancy_tenants_01
+  method: tenancy_tenants
+  args:
+    limit: 5
+call:
+  client_call: tenancy_tenants
+  client_call_args: []
+  client_call_kwargs:
+    limit: 5
+output: !!python/object:annetbox.base.models.PagingResponse
+  next: http://localhost:8041/api/tenancy/tenants/?limit=5&offset=5
+  previous: null
+  count: 11
+  results:
+  - !!python/object:annetbox.v41.models.Tenant
+    id: 7
+    name: Cyberdyne Systems
+    display: Cyberdyne Systems
+    url: http://localhost:8041/api/tenancy/tenants/7/
+    slug: cyberdyne
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields:
+      cust_id: CYB01
+    created: 2020-12-19 00:00:00+00:00
+    last_updated: 2020-12-30 18:43:27.449000+00:00
+    group: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Customers
+      display: Customers
+      url: http://localhost:8041/api/tenancy/tenant-groups/1/
+      slug: customers
+  - !!python/object:annetbox.v41.models.Tenant
+    id: 5
+    name: Dunder-Mifflin, Inc.
+    display: Dunder-Mifflin, Inc.
+    url: http://localhost:8041/api/tenancy/tenants/5/
+    slug: dunder-mifflin
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields:
+      cust_id: DMI01
+    created: 2020-12-19 00:00:00+00:00
+    last_updated: 2020-12-30 18:43:27.515000+00:00
+    group: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Customers
+      display: Customers
+      url: http://localhost:8041/api/tenancy/tenant-groups/1/
+      slug: customers
+  - !!python/object:annetbox.v41.models.Tenant
+    id: 1
+    name: Initech
+    display: Initech
+    url: http://localhost:8041/api/tenancy/tenants/1/
+    slug: initech
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields:
+      cust_id: INI04
+    created: 2020-12-19 00:00:00+00:00
+    last_updated: 2020-12-30 18:43:27.571000+00:00
+    group: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Customers
+      display: Customers
+      url: http://localhost:8041/api/tenancy/tenant-groups/1/
+      slug: customers
+  - !!python/object:annetbox.v41.models.Tenant
+    id: 10
+    name: Jimbob's Banking & Trust
+    display: Jimbob's Banking & Trust
+    url: http://localhost:8041/api/tenancy/tenants/10/
+    slug: jimbobs-banking-trust
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields:
+      cust_id: ''
+    created: 2021-03-10 00:00:00+00:00
+    last_updated: 2021-03-10 20:44:16.078000+00:00
+    group: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Customers
+      display: Customers
+      url: http://localhost:8041/api/tenancy/tenant-groups/1/
+      slug: customers
+  - !!python/object:annetbox.v41.models.Tenant
+    id: 13
+    name: NC State University
+    display: NC State University
+    url: http://localhost:8041/api/tenancy/tenants/13/
+    slug: nc-state
+    description: ''
+    comments: ''
+    tags: []
+    custom_fields:
+      cust_id: ''
+    created: 2021-04-02 00:00:00+00:00
+    last_updated: 2021-04-02 16:46:50.851000+00:00
+    group: !!python/object:annetbox.v41.models.EntityWithSlug
+      id: 1
+      name: Customers
+      display: Customers
+      url: http://localhost:8041/api/tenancy/tenant-groups/1/
+      slug: customers

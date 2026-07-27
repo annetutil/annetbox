@@ -215,6 +215,21 @@ tests:
         args: {limit: 5}
         extract: results[0].id
 
+  - id: tenancy_tenants_01
+    method: tenancy_tenants
+    versions: ["v37", "v41", "v42"]
+    args:
+      limit: 5
+
+  - id: tenancy_tenant_01
+    method: tenancy_tenant
+    versions: ["v37", "v41", "v42"]
+    args:
+      tenant_id: !from_call
+        call: tenancy_tenants
+        args: {limit: 5}
+        extract: results[0].id
+
   ####
   #### Versions: v42
   ####
