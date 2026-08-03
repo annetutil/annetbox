@@ -29,9 +29,10 @@ output: !!python/object:annetbox.v41.models.Tenant
     cust_id: CYB01
   created: 2020-12-19 00:00:00+00:00
   last_updated: 2020-12-30 18:43:27.449000+00:00
-  group: !!python/object:annetbox.v41.models.EntityWithSlug
+  group: !!python/object:annetbox.v41.models.TenantGroupBrief
     id: 1
     name: Customers
     display: Customers
     url: http://localhost:8041/api/tenancy/tenant-groups/1/
     slug: customers
+    description: ''

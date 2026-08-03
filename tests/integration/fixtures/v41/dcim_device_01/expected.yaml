@@ -52,6 +52,7 @@ output: !!python/object:annetbox.v41.models.Device
     display: MDF
     url: http://localhost:8041/api/dcim/sites/21/
     slug: ncsu-065
+  location: null
   rack: !!python/object:annetbox.v41.models.Entity
     id: 41
     name: Plant 1

@@ -52,6 +52,7 @@ output: !!python/object:annetbox.v42.models.Device
     display: DM-Akron
     url: http://localhost:8042/api/dcim/sites/2/
     slug: dm-akron
+  location: null
   rack: !!python/object:annetbox.v42.models.Entity
     id: 1
     name: Comms closet
