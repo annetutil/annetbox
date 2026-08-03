@@ -53,6 +53,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       display: MDF
       url: http://localhost:8041/api/dcim/sites/21/
       slug: ncsu-065
+    location: null
     rack: !!python/object:annetbox.v41.models.Entity
       id: 41
       name: Plant 1
@@ -112,6 +113,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       display: MDF
       url: http://localhost:8041/api/dcim/sites/21/
       slug: ncsu-065
+    location: null
     rack: !!python/object:annetbox.v41.models.Entity
       id: 41
       name: Plant 1
@@ -171,6 +173,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       display: MDF
       url: http://localhost:8041/api/dcim/sites/21/
       slug: ncsu-065
+    location: null
     rack: !!python/object:annetbox.v41.models.Entity
       id: 41
       name: Plant 1
@@ -230,6 +233,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       display: Butler Communications
       url: http://localhost:8041/api/dcim/sites/24/
       slug: ncsu-128
+    location: null
     rack: !!python/object:annetbox.v41.models.Entity
       id: 39
       name: IDF128
@@ -289,6 +293,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       display: D. S. Weaver Labs
       url: http://localhost:8041/api/dcim/sites/22/
       slug: ncsu-117
+    location: null
     rack: !!python/object:annetbox.v41.models.Entity
       id: 40
       name: IDF117
@@ -348,6 +353,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       display: Grinnells Lab
       url: http://localhost:8041/api/dcim/sites/23/
       slug: ncsu-118
+    location: null
     rack: !!python/object:annetbox.v41.models.Entity
       id: 38
       name: IDF118
@@ -407,6 +413,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       display: DM-Akron
       url: http://localhost:8041/api/dcim/sites/2/
       slug: dm-akron
+    location: null
     rack: !!python/object:annetbox.v41.models.Entity
       id: 1
       name: Comms closet
@@ -471,6 +478,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       display: DM-Akron
       url: http://localhost:8041/api/dcim/sites/2/
       slug: dm-akron
+    location: null
     rack: !!python/object:annetbox.v41.models.Entity
       id: 1
       name: Comms closet
@@ -530,6 +538,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       display: DM-Akron
       url: http://localhost:8041/api/dcim/sites/2/
       slug: dm-akron
+    location: null
     rack: !!python/object:annetbox.v41.models.Entity
       id: 1
       name: Comms closet
@@ -589,6 +598,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       display: DM-Albany
       url: http://localhost:8041/api/dcim/sites/3/
       slug: dm-albany
+    location: null
     rack: !!python/object:annetbox.v41.models.Entity
       id: 2
       name: Comms closet

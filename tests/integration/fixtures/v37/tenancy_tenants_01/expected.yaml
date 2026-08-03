@@ -30,7 +30,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       cust_id: CYB01
     created: 2020-12-19 00:00:00+00:00
     last_updated: 2020-12-30 18:43:27.449000+00:00
-    group: !!python/object:annetbox.v37.models.EntityWithSlug
+    group: !!python/object:annetbox.v37.models.TenantGroupBrief
       id: 1
       name: Customers
       display: Customers
@@ -49,7 +49,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       cust_id: DMI01
     created: 2020-12-19 00:00:00+00:00
     last_updated: 2020-12-30 18:43:27.515000+00:00
-    group: !!python/object:annetbox.v37.models.EntityWithSlug
+    group: !!python/object:annetbox.v37.models.TenantGroupBrief
       id: 1
       name: Customers
       display: Customers
@@ -68,7 +68,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       cust_id: INI04
     created: 2020-12-19 00:00:00+00:00
     last_updated: 2020-12-30 18:43:27.571000+00:00
-    group: !!python/object:annetbox.v37.models.EntityWithSlug
+    group: !!python/object:annetbox.v37.models.TenantGroupBrief
       id: 1
       name: Customers
       display: Customers
@@ -87,7 +87,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       cust_id: ''
     created: 2021-03-10 00:00:00+00:00
     last_updated: 2021-03-10 20:44:16.078000+00:00
-    group: !!python/object:annetbox.v37.models.EntityWithSlug
+    group: !!python/object:annetbox.v37.models.TenantGroupBrief
       id: 1
       name: Customers
       display: Customers
@@ -106,7 +106,7 @@ output: !!python/object:annetbox.base.models.PagingResponse
       cust_id: ''
     created: 2021-04-02 00:00:00+00:00
     last_updated: 2021-04-02 16:46:50.851000+00:00
-    group: !!python/object:annetbox.v37.models.EntityWithSlug
+    group: !!python/object:annetbox.v37.models.TenantGroupBrief
       id: 1
       name: Customers
       display: Customers

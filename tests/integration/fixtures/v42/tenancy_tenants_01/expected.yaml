@@ -30,12 +30,13 @@ output: !!python/object:annetbox.base.models.PagingResponse
       cust_id: CYB01
     created: 2020-12-19 00:00:00+00:00
     last_updated: 2020-12-30 18:43:27.449000+00:00
-    group: !!python/object:annetbox.v42.models.EntityWithSlug
+    group: !!python/object:annetbox.v42.models.TenantGroupBrief
       id: 1
       name: Customers
       display: Customers
       url: http://localhost:8042/api/tenancy/tenant-groups/1/
       slug: customers
+      description: ''
   - !!python/object:annetbox.v42.models.Tenant
     id: 5
     name: Dunder-Mifflin, Inc.
@@ -49,12 +50,13 @@ output: !!python/object:annetbox.base.models.PagingResponse
       cust_id: DMI01
     created: 2020-12-19 00:00:00+00:00
     last_updated: 2020-12-30 18:43:27.515000+00:00
-    group: !!python/object:annetbox.v42.models.EntityWithSlug
+    group: !!python/object:annetbox.v42.models.TenantGroupBrief
       id: 1
       name: Customers
       display: Customers
       url: http://localhost:8042/api/tenancy/tenant-groups/1/
       slug: customers
+      description: ''
   - !!python/object:annetbox.v42.models.Tenant
     id: 1
     name: Initech
@@ -68,12 +70,13 @@ output: !!python/object:annetbox.base.models.PagingResponse
       cust_id: INI04
     created: 2020-12-19 00:00:00+00:00
     last_updated: 2020-12-30 18:43:27.571000+00:00
-    group: !!python/object:annetbox.v42.models.EntityWithSlug
+    group: !!python/object:annetbox.v42.models.TenantGroupBrief
       id: 1
       name: Customers
       display: Customers
       url: http://localhost:8042/api/tenancy/tenant-groups/1/
       slug: customers
+      description: ''
   - !!python/object:annetbox.v42.models.Tenant
     id: 10
     name: Jimbob's Banking & Trust
@@ -87,12 +90,13 @@ output: !!python/object:annetbox.base.models.PagingResponse
       cust_id: ''
     created: 2021-03-10 00:00:00+00:00
     last_updated: 2021-03-10 20:44:16.078000+00:00
-    group: !!python/object:annetbox.v42.models.EntityWithSlug
+    group: !!python/object:annetbox.v42.models.TenantGroupBrief
       id: 1
       name: Customers
       display: Customers
       url: http://localhost:8042/api/tenancy/tenant-groups/1/
       slug: customers
+      description: ''
   - !!python/object:annetbox.v42.models.Tenant
     id: 9
     name: Nakatomi Corportation
@@ -106,9 +110,10 @@ output: !!python/object:annetbox.base.models.PagingResponse
       cust_id: YKY01
     created: 2020-12-19 00:00:00+00:00
     last_updated: 2020-12-30 18:43:27.631000+00:00
-    group: !!python/object:annetbox.v42.models.EntityWithSlug
+    group: !!python/object:annetbox.v42.models.TenantGroupBrief
       id: 1
       name: Customers
       display: Customers
       url: http://localhost:8042/api/tenancy/tenant-groups/1/
       slug: customers
+      description: ''

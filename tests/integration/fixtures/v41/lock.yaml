@@ -44,7 +44,7 @@ test_cases:
   - path: cassette.yaml
     sha256: bfc4daec83b2529210f73a3e7632975d664e305e612bea61ec6a9574eb051765
   - path: expected.yaml
-    sha256: 5fe6dc67fdd80959f88c3dc30c5fc2a817403aecf708a4ecfe86861438822ea7
+    sha256: 47769867ef6f9931150ac71ec3fa3d88d2d7434c8547bf2e105ccfcc93b3a442
 - test_case: dcim_all_interfaces_01
   files:
   - path: cassette.yaml
@@ -74,13 +74,13 @@ test_cases:
   - path: cassette.yaml
     sha256: 147719c1874fd4672e2e91a52b6d73c41a4e48d5691ffa5d844a793cc607e947
   - path: expected.yaml
-    sha256: 6fd72e505838001cb3113e8727e03aed804e9883e83fc6c1778481d9a7a4032d
+    sha256: d5cf08e051cc4d8b6a6796779bf891275dd20ac5b5a6490e294440c731b43977
 - test_case: dcim_devices_01
   files:
   - path: cassette.yaml
     sha256: 836310f1f247925279af57b6ce36dd2cc99e8695abb2292289c3ef23b1eff43f
   - path: expected.yaml
-    sha256: c654fb9f2516c7575e768ed31275a2ce9dd9aff7e64f50a47f59d40ac5926b62
+    sha256: 48a3745344a71692c9b5880221cdd1cba29a980a85db06f74c39996fe9b6785e
 - test_case: dcim_interface_trace_01
   files:
   - path: cassette.yaml
@@ -128,7 +128,7 @@ test_cases:
   - path: cassette.yaml
     sha256: 51c43e3c157baaf0639a06246de96ab25913f5c03bb2943239cada93321d0c87
   - path: expected.yaml
-    sha256: 87d71ec80096618164ebe4de1bcbc39d416fd091aae7de1bf6839e9e4fec5ae9
+    sha256: ede92eaf8bd1f357be4585ed51278e74d8e2acd7c83493faa040b4ea16a6e078
 - test_case: dcim_site_group_01
   files:
   - path: cassette.yaml
@@ -146,7 +146,7 @@ test_cases:
   - path: cassette.yaml
     sha256: 4a703352b015b9ebc01e55a0b77a47ac9f247e687f9d9a613c25e6a26b3b0d18
   - path: expected.yaml
-    sha256: f7a77a2eb82d1a489c659ee7338b374add3075edf95d3944145f2e04fcf167f6
+    sha256: 4baac8958551439b64fa1de9d72ac2b35796025f50b16d6870e7eb07b8133c8a
 - test_case: ipam_all_ip_addresses_01
   files:
   - path: cassette.yaml
@@ -170,7 +170,7 @@ test_cases:
   - path: cassette.yaml
     sha256: 6961907794714f7748ec6b38c35e6079d7448ad41706a83c745677719cc7bf6a
   - path: expected.yaml
-    sha256: a04742b52578a646f4a13eaf9fcc7a97d9fb5bd909685ed4445e1ff16eed361c
+    sha256: 4e8a51acc004bda62420ebf1e0afd58347c865b6d611db8157f6f32d78bd7d02
 - test_case: tenancy_tenant_group_01
   files:
   - path: cassette.yaml
@@ -188,5 +188,5 @@ test_cases:
   - path: cassette.yaml
     sha256: d5f3808b3bd12a2239751c9db7e15163ba0c44a524520b6b9651b66f947cc623
   - path: expected.yaml
-    sha256: 1ddfc9839fed1a895896598b0cb8338b3c04b3db172a955dfce90204a4628187
-sha256: 8d14c5496fd80fe88cade66572cd091f5726e244e0cb54dfa639125c0ce8d9d9
+    sha256: d904cf9e74e3f25967466befae59a7fddbfc07623f3e6340fca62c8eb53b5009
+sha256: 02eed562a418b325269595efc0166d2cb21b51927af0723f790ecbaa3331d22a
