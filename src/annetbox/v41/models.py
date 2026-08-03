@@ -144,13 +144,8 @@ class ConsolePort(Entity):
 
 
 @dataclass
-class Site(Entity):
-    slug: str
-    status: Label
-    custom_fields: dict[str, Any]
-    created: datetime
-    last_updated: datetime
-
+class RegionBrief(EntityWithSlug):
+    description: str
 
 @dataclass
 class Region(EntityWithSlug):
@@ -162,12 +157,22 @@ class Region(EntityWithSlug):
 
 
 @dataclass
+class SiteGroupBrief(EntityWithSlug):
+    description: str
+
+
+@dataclass
 class SiteGroup(EntityWithSlug):
     description: str
     custom_fields: dict[str, Any]
     created: datetime
     last_updated: datetime
     parent: EntityWithSlug | None = None
+
+
+@dataclass
+class LocationBrief(EntityWithSlug):
+    description: str
 
 
 @dataclass
@@ -184,12 +189,22 @@ class Location(EntityWithSlug):
 
 
 @dataclass
+class TenantGroupBrief(EntityWithSlug):
+    description: str
+
+
+@dataclass
 class TenantGroup(EntityWithSlug):
     description: str
     custom_fields: dict[str, Any]
     created: datetime
     last_updated: datetime
     parent: EntityWithSlug | None = None
+
+
+@dataclass
+class TenantBrief(EntityWithSlug):
+    description: str
 
 
 @dataclass
@@ -200,7 +215,19 @@ class Tenant(EntityWithSlug):
     custom_fields: dict[str, Any]
     created: datetime
     last_updated: datetime
-    group: EntityWithSlug | None = None
+    group: TenantGroupBrief | None = None
+
+
+@dataclass
+class Site(Entity):
+    slug: str
+    status: Label
+    custom_fields: dict[str, Any]
+    created: datetime
+    last_updated: datetime
+    region: RegionBrief | None = None
+    group: SiteGroupBrief | None = None
+    tenant: TenantBrief | None = None
 
 
 @dataclass
@@ -214,6 +241,7 @@ class Device(Entity):
     serial: str
     asset_tag: str | None
     site: EntityWithSlug
+    location: LocationBrief | None
     rack: Entity | None
     position: float | None
     face: Label | None
