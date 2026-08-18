@@ -367,6 +367,7 @@ class Prefix:
     tenant: Entity | None
     vlan: Entity | None
     role: Entity | None
+    tags: list[EntityWithSlug]
     status: Label
     is_pool: bool
     custom_fields: dict[str, Any]
