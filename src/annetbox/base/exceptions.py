@@ -1,4 +1,16 @@
-from dataclass_rest.exceptions import ClientError, ServerError
+from dataclass_rest.exceptions import (
+    ClientError,
+    ClientLibraryError,
+    ServerError,
+)
+
+__all__ = [
+    "ClientError",
+    "ClientLibraryError",
+    "ClientWithBodyError",
+    "ServerError",
+    "ServerWithBodyError",
+]
 
 
 class ErrorWithBody:
