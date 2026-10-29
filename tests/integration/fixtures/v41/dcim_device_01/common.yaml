@@ -1,0 +1,50 @@
+# AUTO-GENERATED - DO NOT EDIT
+# Common data model made from expected.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+converter: annetbox.v41.views.convert_device
+output: !!python/object:annetbox.v41.views.NetboxDeviceV41
+  id: 88
+  name: PP:B117
+  url: http://localhost:8041/api/dcim/devices/88/
+  display: PP:B117
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 11
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 13
+      name: Generic
+    model: 48-Pair Fiber Panel
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 13
+    name: NC State University
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 21
+    name: MDF
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 41
+    name: Plant 1
+  position: 37.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2021-04-02 00:00:00+00:00
+  last_updated: 2021-04-02 17:17:28.425000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 6
+    name: Patch Panel
+    slug: patch-panel

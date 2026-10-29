@@ -1,0 +1,50 @@
+# AUTO-GENERATED - DO NOT EDIT
+# Common data model made from expected.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+converter: annetbox.v42.views.convert_device
+output: !!python/object:annetbox.v42.views.NetboxDeviceV42
+  id: 27
+  name: dmi01-akron-pdu01
+  url: http://localhost:8042/api/dcim/devices/27/
+  display: dmi01-akron-pdu01
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 8
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 11
+      name: APC
+    model: AP7901
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: DM-Akron
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 1
+    name: Comms closet
+  position: 1.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2020-12-22 00:00:00+00:00
+  last_updated: 2020-12-30 19:02:55.760000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 5
+    name: PDU
+    slug: pdu

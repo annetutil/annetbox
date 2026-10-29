@@ -1,0 +1,458 @@
+# AUTO-GENERATED - DO NOT EDIT
+# Common data model made from expected.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+converter: annetbox.v42.views.convert_prefixes
+output:
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 1
+  prefix: 10.112.0.0/15
+  vrf: null
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: container
+    label: Container
+  is_pool: false
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2020-12-30 20:00:17.126000+00:00
+  description: ''
+  tags: []
+  scope: null
+  scope_type: null
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 2
+  prefix: 10.112.0.0/17
+  vrf: null
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: container
+    label: Container
+  is_pool: false
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2020-12-30 20:00:02.450000+00:00
+  description: DM HQ
+  tags: []
+  scope: null
+  scope_type: null
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 3
+  prefix: 10.112.128.0/17
+  vrf: null
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: container
+    label: Container
+  is_pool: false
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2020-12-30 20:01:26.618000+00:00
+  description: DM branch offices
+  tags: []
+  scope: null
+  scope_type: null
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 60
+  prefix: 10.112.128.0/22
+  vrf: null
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: container
+    label: Container
+  is_pool: false
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2020-12-30 20:19:10.958000+00:00
+  description: ''
+  tags: []
+  scope: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: DM-Akron
+  scope_type: dcim.site
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 7
+  prefix: 10.112.128.0/28
+  vrf: null
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  vlan: null
+  role: !!python/object:annetbox.common.models.Entity
+    id: 4
+    name: Management
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2020-12-30 20:13:41.316000+00:00
+  description: ''
+  tags: []
+  scope: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: DM-Akron
+  scope_type: dcim.site
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 8
+  prefix: 10.112.129.0/24
+  vrf: null
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  vlan: !!python/object:annetbox.common.models.Entity
+    id: 1
+    name: Data
+  role: !!python/object:annetbox.common.models.Entity
+    id: 1
+    name: Access - Data
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2020-12-30 20:13:41.429000+00:00
+  description: ''
+  tags: []
+  scope: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: DM-Akron
+  scope_type: dcim.site
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 9
+  prefix: 10.112.130.0/24
+  vrf: null
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  vlan: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: Voice
+  role: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: Access - Voice
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2020-12-30 20:13:41.551000+00:00
+  description: ''
+  tags: []
+  scope: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: DM-Akron
+  scope_type: dcim.site
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 10
+  prefix: 10.112.131.0/24
+  vrf: null
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  vlan: !!python/object:annetbox.common.models.Entity
+    id: 27
+    name: Wireless
+  role: !!python/object:annetbox.common.models.Entity
+    id: 3
+    name: Access - Wireless
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2020-12-30 20:13:41.639000+00:00
+  description: ''
+  tags: []
+  scope: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: DM-Akron
+  scope_type: dcim.site
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 61
+  prefix: 10.112.132.0/22
+  vrf: null
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: container
+    label: Container
+  is_pool: false
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2020-12-30 20:19:11.024000+00:00
+  description: ''
+  tags: []
+  scope: !!python/object:annetbox.common.models.Entity
+    id: 3
+    name: DM-Albany
+  scope_type: dcim.site
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 11
+  prefix: 10.112.132.0/28
+  vrf: null
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  vlan: null
+  role: !!python/object:annetbox.common.models.Entity
+    id: 4
+    name: Management
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2020-12-30 20:13:41.714000+00:00
+  description: ''
+  tags: []
+  scope: !!python/object:annetbox.common.models.Entity
+    id: 3
+    name: DM-Albany
+  scope_type: dcim.site
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 12
+  prefix: 10.112.133.0/24
+  vrf: null
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  vlan: !!python/object:annetbox.common.models.Entity
+    id: 3
+    name: Data
+  role: !!python/object:annetbox.common.models.Entity
+    id: 1
+    name: Access - Data
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2020-12-30 00:00:00+00:00
+  last_updated: 2020-12-30 20:13:41.801000+00:00
+  description: ''
+  tags: []
+  scope: !!python/object:annetbox.common.models.Entity
+    id: 3
+    name: DM-Albany
+  scope_type: dcim.site
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 73
+  prefix: 192.168.0.0/22
+  vrf: null
+  tenant: null
+  vlan: null
+  role: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Testing
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2021-12-30 00:00:00+00:00
+  last_updated: 2021-12-30 16:35:35.870000+00:00
+  description: ''
+  tags: []
+  scope: null
+  scope_type: null
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 75
+  prefix: 172.16.0.0/16
+  vrf: !!python/object:annetbox.common.models.Vrf
+    id: 1
+    name: Alpha
+    rd: 65000:100
+    description: ''
+  tenant: null
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: container
+    label: Container
+  is_pool: false
+  custom_fields: {}
+  created: 2022-04-08 00:15:15.728000+00:00
+  last_updated: 2022-04-08 00:15:15.728000+00:00
+  description: ''
+  tags: []
+  scope: null
+  scope_type: null
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 80
+  prefix: 172.16.0.0/24
+  vrf: !!python/object:annetbox.common.models.Vrf
+    id: 1
+    name: Alpha
+    rd: 65000:100
+    description: ''
+  tenant: null
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2022-04-08 00:17:07.305000+00:00
+  last_updated: 2022-04-08 00:17:07.305000+00:00
+  description: ''
+  tags: []
+  scope: null
+  scope_type: null
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 81
+  prefix: 172.16.1.0/24
+  vrf: !!python/object:annetbox.common.models.Vrf
+    id: 1
+    name: Alpha
+    rd: 65000:100
+    description: ''
+  tenant: null
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2022-04-08 00:17:07.480000+00:00
+  last_updated: 2022-04-08 00:17:07.480000+00:00
+  description: ''
+  tags: []
+  scope: null
+  scope_type: null
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 82
+  prefix: 172.16.2.0/24
+  vrf: !!python/object:annetbox.common.models.Vrf
+    id: 1
+    name: Alpha
+    rd: 65000:100
+    description: ''
+  tenant: null
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2022-04-08 00:17:07.610000+00:00
+  last_updated: 2022-04-08 00:17:07.610000+00:00
+  description: ''
+  tags: []
+  scope: null
+  scope_type: null
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 76
+  prefix: 172.17.0.0/16
+  vrf: !!python/object:annetbox.common.models.Vrf
+    id: 2
+    name: Bravo
+    rd: 65000:200
+    description: ''
+  tenant: null
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: container
+    label: Container
+  is_pool: false
+  custom_fields: {}
+  created: 2022-04-08 00:15:15.858000+00:00
+  last_updated: 2022-04-08 00:15:15.858000+00:00
+  description: ''
+  tags: []
+  scope: null
+  scope_type: null
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 83
+  prefix: 172.17.0.0/24
+  vrf: !!python/object:annetbox.common.models.Vrf
+    id: 2
+    name: Bravo
+    rd: 65000:200
+    description: ''
+  tenant: null
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2022-04-08 00:17:07.740000+00:00
+  last_updated: 2022-04-08 00:17:07.740000+00:00
+  description: ''
+  tags: []
+  scope: null
+  scope_type: null
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 84
+  prefix: 172.17.1.0/24
+  vrf: !!python/object:annetbox.common.models.Vrf
+    id: 2
+    name: Bravo
+    rd: 65000:200
+    description: ''
+  tenant: null
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2022-04-08 00:17:07.871000+00:00
+  last_updated: 2022-04-08 00:17:07.871000+00:00
+  description: ''
+  tags: []
+  scope: null
+  scope_type: null
+- !!python/object:annetbox.v42.views.PrefixV42
+  id: 85
+  prefix: 172.17.2.0/24
+  vrf: !!python/object:annetbox.common.models.Vrf
+    id: 2
+    name: Bravo
+    rd: 65000:200
+    description: ''
+  tenant: null
+  vlan: null
+  role: null
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  is_pool: false
+  custom_fields: {}
+  created: 2022-04-08 00:17:08.002000+00:00
+  last_updated: 2022-04-08 00:17:08.002000+00:00
+  description: ''
+  tags: []
+  scope: null
+  scope_type: null

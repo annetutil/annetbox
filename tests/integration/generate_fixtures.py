@@ -20,7 +20,12 @@ from typing import Any
 import vcr
 import yaml
 
-from .helpers import discover_client_class, get_netbox_url, save_lock_file
+from .helpers import (
+    discover_client_class,
+    get_netbox_url,
+    save_common_golden,
+    save_lock_file,
+)
 
 # Configuration
 BASE_DIR = Path(__file__).parent
@@ -165,6 +170,7 @@ def generate_test_case(
                 sort_keys=False,
             )
 
+        save_common_golden(version, method, test_dir, result)
 
 
 def process_version(

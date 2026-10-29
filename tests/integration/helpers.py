@@ -169,6 +169,73 @@ def validate_lock_file(version_dir: Path) -> tuple[bool, list[str]]:
 
 
 # ============================================================================
+# Common data model utilities
+# ============================================================================
+
+# Client method -> converter in annetbox.<version>.views that turns the
+# method's output into the common data model. A converter takes either
+# a list of objects or, for a device, a single object.
+COMMON_CONVERTERS = {
+    "ipam_ip_addresses": "convert_ip_addresses",
+    "ipam_all_ip_addresses": "convert_ip_addresses",
+    "ipam_ip_address": "convert_ip_addresses",
+    "prefixes": "convert_prefixes",
+    "ipam_all_prefixes": "convert_prefixes",
+    "dcim_devices": "convert_device",
+    "dcim_all_devices": "convert_device",
+    "dcim_device": "convert_device",
+    "dcim_all_interfaces": "convert_interfaces",
+}
+SINGLE_OBJECT_CONVERTERS = {"convert_device"}
+
+
+def convert_to_common(version: str, method: str, output: Any) -> Any:
+    """
+    Convert a recorded API output to the common data model.
+
+    A paged response becomes the list of its results, a single object stays
+    a single object.
+    """
+    views = importlib.import_module(f"annetbox.{version}.views")
+    name = COMMON_CONVERTERS[method]
+    converter = getattr(views, name)
+    if name in SINGLE_OBJECT_CONVERTERS:
+        if hasattr(output, "results"):
+            return [converter(o) for o in output.results]
+        return converter(output)
+    if hasattr(output, "results"):
+        return converter(output.results)
+    if isinstance(output, list):
+        return converter(output)
+    return converter([output])[0]
+
+
+def save_common_golden(version: str, method: str, test_dir: Path, output: Any):
+    """Save the golden of the common data model for a recorded output."""
+    if method not in COMMON_CONVERTERS:
+        return
+
+    data = {
+        "converter": f"annetbox.{version}.views.{COMMON_CONVERTERS[method]}",
+        "output": convert_to_common(version, method, output),
+    }
+    with (test_dir / "common.yaml").open("w") as f:
+        f.write("# AUTO-GENERATED - DO NOT EDIT\n")
+        f.write("# Common data model made from expected.yaml\n")
+        f.write(
+            "# To regenerate: python -m tests.integration.generate_fixtures\n",
+        )
+        f.write("\n")
+        yaml.dump(
+            data,
+            f,
+            Dumper=yaml.Dumper,
+            default_flow_style=False,
+            sort_keys=False,
+        )
+
+
+# ============================================================================
 # Version discovery utilities
 # ============================================================================
 

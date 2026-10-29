@@ -43,12 +43,16 @@ test_cases:
   files:
   - path: cassette.yaml
     sha256: bfc4daec83b2529210f73a3e7632975d664e305e612bea61ec6a9574eb051765
+  - path: common.yaml
+    sha256: 436b221c40befc888dabad77bc322687262064d7ebf5a39bf9fe4ebec3728e9b
   - path: expected.yaml
     sha256: 47769867ef6f9931150ac71ec3fa3d88d2d7434c8547bf2e105ccfcc93b3a442
 - test_case: dcim_all_interfaces_01
   files:
   - path: cassette.yaml
     sha256: 7c7b65f1c10e04c29a1ff6a0f77ca9b713e98ffa091dc80b0b9a94e4f4b2432e
+  - path: common.yaml
+    sha256: cdb7954e0d01bdeed9e3dda456473b73568311c407e088911d5017be747bdd32
   - path: expected.yaml
     sha256: c9c5f4856f803b149e8df92d6662b70c75c2aa40d1924168a567a7c5f216234d
 - test_case: dcim_cables_01
@@ -73,12 +77,16 @@ test_cases:
   files:
   - path: cassette.yaml
     sha256: 147719c1874fd4672e2e91a52b6d73c41a4e48d5691ffa5d844a793cc607e947
+  - path: common.yaml
+    sha256: 7e02b3689ef9f66a225d5343e18bb4e82a51d310d6fc165524af1e0d0fa32a59
   - path: expected.yaml
     sha256: d5cf08e051cc4d8b6a6796779bf891275dd20ac5b5a6490e294440c731b43977
 - test_case: dcim_devices_01
   files:
   - path: cassette.yaml
     sha256: 836310f1f247925279af57b6ce36dd2cc99e8695abb2292289c3ef23b1eff43f
+  - path: common.yaml
+    sha256: 27d7bdf4feb98cc27e5cf716642e4e2d6e63193553da4e6622ab925c524ce9a2
   - path: expected.yaml
     sha256: 48a3745344a71692c9b5880221cdd1cba29a980a85db06f74c39996fe9b6785e
 - test_case: dcim_interface_trace_01
@@ -151,20 +159,42 @@ test_cases:
   files:
   - path: cassette.yaml
     sha256: 16a865893c3a8deb915e46b36115bf1db633bd0f801ec591c103e24a2bc4aefc
+  - path: common.yaml
+    sha256: 0e42e80a63f40a95691e6737692d8f7ad4edaeb67e6c67b899a731a63281d6a2
   - path: expected.yaml
     sha256: df1249d6f3efd240b27df3d12112d306bfca7ed1630979ac4b24d1b546e8cdfb
+- test_case: ipam_all_prefixes_01
+  files:
+  - path: cassette.yaml
+    sha256: d31a4465b344b8d36b17248b1da4c9521b839df3c668bfe02123c83341c7599c
+  - path: common.yaml
+    sha256: 64dfc7299eb6611e9005d10a30b21c35ab6d2d3da981c7773a45e2115de3d791
+  - path: expected.yaml
+    sha256: 105ee5d3f666572a6b5698fb310e5eac251f97c3f96d24b744a68f5b48ec46c2
 - test_case: ipam_ip_address_01
   files:
   - path: cassette.yaml
     sha256: f1f3d86cb8588adb106580bc88b838f04c9df34f15e3c79b19c144b6a04ebf1b
+  - path: common.yaml
+    sha256: cbc4b797fa3115bae8248c6362987aa1903451d077c4250cce3bdf323e692bf1
   - path: expected.yaml
     sha256: f0f86735aa1ff91a6a78cef766d5b296123e0e5c99451feaceaf555f30191cc2
 - test_case: ipam_ip_addresses_01
   files:
   - path: cassette.yaml
     sha256: 5310c162ef4bf01883e02c83f5435b35b04c18f86d3ec3588a9f7653d0626389
+  - path: common.yaml
+    sha256: de06d3ebdcfc14b4af80baa8a6b8b8747a96e5dd872ce573c097018d715f414b
   - path: expected.yaml
     sha256: 8b15abc0b6415a4fdecf96cb3e7c4a84804e949ca6698475965f62819bf2c4eb
+- test_case: ipam_prefixes_01
+  files:
+  - path: cassette.yaml
+    sha256: 041845a85c90df8bcd5adfb89d44e9dc5f39863b6725f4f2c23f8ae28cc8d56d
+  - path: common.yaml
+    sha256: 87a0cbab071a42a8db6837d47abb3f4dc9db5ef6c365e2425d7b4300723bf665
+  - path: expected.yaml
+    sha256: 96c2e3353913b0d9db514272e775b228149b676af044bfd0d1da21eb68db5b4a
 - test_case: tenancy_tenant_01
   files:
   - path: cassette.yaml
@@ -189,4 +219,4 @@ test_cases:
     sha256: d5f3808b3bd12a2239751c9db7e15163ba0c44a524520b6b9651b66f947cc623
   - path: expected.yaml
     sha256: d904cf9e74e3f25967466befae59a7fddbfc07623f3e6340fca62c8eb53b5009
-sha256: 02eed562a418b325269595efc0166d2cb21b51927af0723f790ecbaa3331d22a
+sha256: f5e8f66a2cbf11d168c38b6a8276265d7437d1f37eeacf784363c21dde7aae80

@@ -1,0 +1,459 @@
+# AUTO-GENERATED - DO NOT EDIT
+# Common data model made from expected.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+converter: annetbox.v41.views.convert_device
+output:
+- !!python/object:annetbox.v41.views.NetboxDeviceV41
+  id: 88
+  name: PP:B117
+  url: http://localhost:8041/api/dcim/devices/88/
+  display: PP:B117
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 11
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 13
+      name: Generic
+    model: 48-Pair Fiber Panel
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 13
+    name: NC State University
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 21
+    name: MDF
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 41
+    name: Plant 1
+  position: 37.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2021-04-02 00:00:00+00:00
+  last_updated: 2021-04-02 17:17:28.425000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 6
+    name: Patch Panel
+    slug: patch-panel
+- !!python/object:annetbox.v41.views.NetboxDeviceV41
+  id: 89
+  name: PP:B118
+  url: http://localhost:8041/api/dcim/devices/89/
+  display: PP:B118
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 11
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 13
+      name: Generic
+    model: 48-Pair Fiber Panel
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 13
+    name: NC State University
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 21
+    name: MDF
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 41
+    name: Plant 1
+  position: 35.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2021-04-02 00:00:00+00:00
+  last_updated: 2021-04-02 17:17:57.268000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 6
+    name: Patch Panel
+    slug: patch-panel
+- !!python/object:annetbox.v41.views.NetboxDeviceV41
+  id: 87
+  name: PP:B128
+  url: http://localhost:8041/api/dcim/devices/87/
+  display: PP:B128
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 11
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 13
+      name: Generic
+    model: 48-Pair Fiber Panel
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 13
+    name: NC State University
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 21
+    name: MDF
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 41
+    name: Plant 1
+  position: 39.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2021-04-02 00:00:00+00:00
+  last_updated: 2021-04-02 17:16:58.069000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 6
+    name: Patch Panel
+    slug: patch-panel
+- !!python/object:annetbox.v41.views.NetboxDeviceV41
+  id: 90
+  name: PP:MDF
+  url: http://localhost:8041/api/dcim/devices/90/
+  display: PP:MDF
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 11
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 13
+      name: Generic
+    model: 48-Pair Fiber Panel
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 13
+    name: NC State University
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 24
+    name: Butler Communications
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 39
+    name: IDF128
+  position: 39.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2021-04-02 00:00:00+00:00
+  last_updated: 2021-04-02 17:19:12.870000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 6
+    name: Patch Panel
+    slug: patch-panel
+- !!python/object:annetbox.v41.views.NetboxDeviceV41
+  id: 91
+  name: PP:MDF
+  url: http://localhost:8041/api/dcim/devices/91/
+  display: PP:MDF
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 11
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 13
+      name: Generic
+    model: 48-Pair Fiber Panel
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 13
+    name: NC State University
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 22
+    name: D. S. Weaver Labs
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 40
+    name: IDF117
+  position: 39.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2021-04-02 00:00:00+00:00
+  last_updated: 2021-04-02 17:19:41.498000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 6
+    name: Patch Panel
+    slug: patch-panel
+- !!python/object:annetbox.v41.views.NetboxDeviceV41
+  id: 92
+  name: PP:MDF
+  url: http://localhost:8041/api/dcim/devices/92/
+  display: PP:MDF
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 11
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 13
+      name: Generic
+    model: 48-Pair Fiber Panel
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 13
+    name: NC State University
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 23
+    name: Grinnells Lab
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 38
+    name: IDF118
+  position: 39.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2021-04-02 00:00:00+00:00
+  last_updated: 2021-04-02 17:20:15.226000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 6
+    name: Patch Panel
+    slug: patch-panel
+- !!python/object:annetbox.v41.views.NetboxDeviceV41
+  id: 27
+  name: dmi01-akron-pdu01
+  url: http://localhost:8041/api/dcim/devices/27/
+  display: dmi01-akron-pdu01
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 8
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 11
+      name: APC
+    model: AP7901
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: DM-Akron
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 1
+    name: Comms closet
+  position: 1.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2020-12-22 00:00:00+00:00
+  last_updated: 2020-12-30 19:02:55.760000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 5
+    name: PDU
+    slug: pdu
+- !!python/object:annetbox.v41.views.NetboxDeviceV41
+  id: 1
+  name: dmi01-akron-rtr01
+  url: http://localhost:8041/api/dcim/devices/1/
+  display: dmi01-akron-rtr01
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 6
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 3
+      name: Cisco
+    model: ISR 1111-8P
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  platform: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 1
+    name: Cisco IOS
+    slug: cisco-ios
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: DM-Akron
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 1
+    name: Comms closet
+  position: 4.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2020-12-20 00:00:00+00:00
+  last_updated: 2020-12-20 02:51:03.257000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 1
+    name: Router
+    slug: router
+- !!python/object:annetbox.v41.views.NetboxDeviceV41
+  id: 14
+  name: dmi01-akron-sw01
+  url: http://localhost:8041/api/dcim/devices/14/
+  display: dmi01-akron-sw01
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 7
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 3
+      name: Cisco
+    model: C9200-48P
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: DM-Akron
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 1
+    name: Comms closet
+  position: 10.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2020-12-22 00:00:00+00:00
+  last_updated: 2020-12-22 02:11:11.625000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 4
+    name: Access Switch
+    slug: access-switch
+- !!python/object:annetbox.v41.views.NetboxDeviceV41
+  id: 34
+  name: dmi01-albany-pdu01
+  url: http://localhost:8041/api/dcim/devices/34/
+  display: dmi01-albany-pdu01
+  device_type: !!python/object:annetbox.common.models.DeviceType
+    id: 8
+    manufacturer: !!python/object:annetbox.common.models.Entity
+      id: 11
+      name: APC
+    model: AP7901
+  tenant: !!python/object:annetbox.common.models.Entity
+    id: 5
+    name: Dunder-Mifflin, Inc.
+  platform: null
+  serial: ''
+  asset_tag: null
+  site: !!python/object:annetbox.common.models.Entity
+    id: 3
+    name: DM-Albany
+  rack: !!python/object:annetbox.common.models.Entity
+    id: 2
+    name: Comms closet
+  position: 1.0
+  face: !!python/object:annetbox.common.models.Label
+    value: front
+    label: Front
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  primary_ip: null
+  primary_ip4: null
+  primary_ip6: null
+  tags: []
+  custom_fields: {}
+  created: 2020-12-22 00:00:00+00:00
+  last_updated: 2020-12-30 19:02:55.909000+00:00
+  cluster: null
+  config_context: {}
+  config_template: null
+  interfaces: []
+  role: !!python/object:annetbox.common.models.EntityWithSlug
+    id: 5
+    name: PDU
+    slug: pdu

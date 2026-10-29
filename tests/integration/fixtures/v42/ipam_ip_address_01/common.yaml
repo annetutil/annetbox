@@ -1,0 +1,26 @@
+# AUTO-GENERATED - DO NOT EDIT
+# Common data model made from expected.yaml
+# To regenerate: python -m tests.integration.generate_fixtures
+
+converter: annetbox.v42.views.convert_ip_addresses
+output: !!python/object:annetbox.v42.views.IpAddressV42
+  id: 31
+  assigned_object_id: null
+  display: 172.16.0.1/24
+  family: !!python/object:annetbox.common.models.IpFamily
+    value: 4
+    label: IPv4
+  address: 172.16.0.1/24
+  status: !!python/object:annetbox.common.models.Label
+    value: active
+    label: Active
+  created: 2022-04-08 00:25:21.668000+00:00
+  last_updated: 2022-04-08 00:25:21.668000+00:00
+  prefix: null
+  vrf: !!python/object:annetbox.common.models.Vrf
+    id: 1
+    name: Alpha
+    rd: 65000:100
+    description: ''
+  tags: []
+  role: null
